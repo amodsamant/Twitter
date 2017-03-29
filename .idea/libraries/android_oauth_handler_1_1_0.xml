@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="android-oauth-handler-1.1.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/a03c40d87998c3b340f4f5d0cc0f640f7b81612b/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/a03c40d87998c3b340f4f5d0cc0f640f7b81612b/output/jars/libs/scribe-codepath-0.0.3.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/a03c40d87998c3b340f4f5d0cc0f640f7b81612b/output/jars/libs/codepath-utils.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/a03c40d87998c3b340f4f5d0cc0f640f7b81612b/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

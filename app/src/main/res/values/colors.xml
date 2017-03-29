@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="toolbar">#1DA1F2</color>
+    <color name="twitterBlue">#1DA1F2</color>
+    <color name="grey">#ABABAB</color>
+    <color name="fadedBlue">#d1ecfc</color>
+    <color name="twitterLightGrey">#AAB8C2</color>
+    <color name="twitterDarkerGrey">#657786</color>
+</resources>
