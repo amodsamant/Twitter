@@ -27,7 +27,6 @@ import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
-import com.twitterclient.activities.TimelineActivity;
 import com.twitterclient.databinding.ComposeFragBinding;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.models.User;
@@ -46,6 +45,8 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class ComposeTweetFragment extends DialogFragment
         implements DraftsFragment.DraftsFragmentListener{
+
+    TwitterClient twitterClient;
 
     ComposeFragBinding binding;
     public interface ComposeTweetListener {
@@ -66,9 +67,15 @@ public class ComposeTweetFragment extends DialogFragment
         return frag;
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
+        //TODO: Check where to init
+        twitterClient = TwitterClientApplication.getTwitterClient();
+
         binding = DataBindingUtil.inflate(inflater,R.layout.compose_frag,container,false);
         return binding.getRoot();
     }
@@ -256,8 +263,7 @@ public class ComposeTweetFragment extends DialogFragment
      */
     public void postTweet(String tweetStr) {
 
-        final TimelineActivity activity = (TimelineActivity)getActivity();
-        activity.getTwitterClient().postTweet(tweetStr,
+        twitterClient.postTweet(tweetStr,
                 new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -266,7 +272,10 @@ public class ComposeTweetFragment extends DialogFragment
                         Log.d(TAG, response.toString());
                         try {
                             Tweet tweet = gson.fromJson(response.toString(), Tweet.class);
-                            activity.onFinishTweet(tweet);
+
+                            //TODO:
+//                            HomeActivity activity = (HomeActivity) getActivity();
+//                            activity.onFinishTweet(tweet);
                         } catch (Exception e) {
                             Snackbar snackbar = Snackbar
                                     .make(getView(), "Error in tweeting",

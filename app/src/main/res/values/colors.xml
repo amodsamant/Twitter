@@ -6,4 +6,8 @@
     <color name="fadedBlue">#d1ecfc</color>
     <color name="twitterLightGrey">#AAB8C2</color>
     <color name="twitterDarkerGrey">#657786</color>
+
+    <color name="primary_dark">#657786</color>
+    <color name="primary">#FFFFFF</color>
+    <color name="accent">#AAB8C2</color>
 </resources>

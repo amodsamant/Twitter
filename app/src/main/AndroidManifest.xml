@@ -35,18 +35,22 @@
                     android:scheme="oauth" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".activities.TimelineActivity"
-            android:label="@string/title_activity_timeline"
-            android:theme="@style/AppTheme.NoActionBar">
+        <!--<activity-->
+            <!--android:name=".activities.TimelineActivity"-->
+            <!--android:label="@string/title_activity_timeline"-->
+            <!--android:theme="@style/AppTheme">-->
+
+        <!--</activity>-->
+        <activity android:name=".activities.TweetDetailActivity"
+            android:theme="@style/AppTheme"/>
+        <activity android:name=".activities.HomeActivity"
+            android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.SEND"/>
                 <category android:name="android.intent.category.DEFAULT"/>
                 <data android:mimeType="text/plain"></data>
             </intent-filter>
         </activity>
-        <activity android:name=".activities.TweetDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>

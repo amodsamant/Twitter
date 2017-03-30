@@ -4,5 +4,10 @@
     <string name="app_name">TwitterClient</string>
     <string name="login_label">Login</string>
     <string name="title_activity_timeline">Twitter Client</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+
 
 </resources>
