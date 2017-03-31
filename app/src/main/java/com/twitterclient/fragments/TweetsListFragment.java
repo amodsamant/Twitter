@@ -19,7 +19,7 @@ import com.twitterclient.models.Tweet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TweetsListFragment extends Fragment {
+public abstract class TweetsListFragment extends Fragment {
 
     List<Tweet> tweets;
     RecyclerView recyclerView;
@@ -29,7 +29,6 @@ public class TweetsListFragment extends Fragment {
     LinearLayoutManager layoutManager;
     EndlessRecyclerViewScrollListener scrollListener;
     SwipeRefreshLayout swipeRefreshLayout;
-
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,10 +44,9 @@ public class TweetsListFragment extends Fragment {
         scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                //TODO: loadNextDataFromApi();
+                loadNextDataFromApi();
             }
         };
-
     }
 
     @Override
@@ -79,7 +77,6 @@ public class TweetsListFragment extends Fragment {
         return view;
     }
 
-
     public void addAllTweets(List<Tweet> tweets) {
         this.tweets.addAll(tweets);
     }
@@ -89,5 +86,5 @@ public class TweetsListFragment extends Fragment {
     }
 
 
-
+    abstract void loadNextDataFromApi();
 }

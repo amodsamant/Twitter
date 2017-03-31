@@ -96,9 +96,9 @@ public class HomeActivity extends AppCompatActivity {
 
             switch (position) {
                 case 0:
-                    return new HomeTimelineFragment();
+                    return HomeTimelineFragment.newInstance();
                 case 1:
-                    return new MentionsTimelineFragment();
+                    return MentionsTimelineFragment.newInstance();
             }
             return null;
         }
