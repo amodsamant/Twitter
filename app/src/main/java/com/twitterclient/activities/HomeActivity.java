@@ -128,7 +128,8 @@ public class HomeActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
         switch(menuItem.getItemId()) {
             case R.id.profile_menu_item:
-                //TODO: Call profile activity
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
                 break;
             case R.id.settings_menu_item:
                 //TODO: Call settings activity
