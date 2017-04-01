@@ -2,7 +2,7 @@ package com.twitterclient.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
@@ -10,7 +10,6 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 
 import com.twitterclient.R;
 import com.twitterclient.adapters.FollRecyclerAdapter;
@@ -20,7 +19,7 @@ import com.twitterclient.models.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class FollowListFragment extends DialogFragment {
+public abstract class FollowListFragment extends Fragment {
 
     List<User> users;
     RecyclerView recyclerView;
@@ -86,17 +85,5 @@ public abstract class FollowListFragment extends DialogFragment {
         this.users.clear();
     }
 
-    /**
-     * Sets the windows to the correct size for this fragment
-     */
-    @Override
-    public void onResume() {
-
-        ViewGroup.LayoutParams params = getDialog().getWindow().getAttributes();
-        params.width = WindowManager.LayoutParams.MATCH_PARENT;
-        params.height = WindowManager.LayoutParams.MATCH_PARENT;
-        getDialog().getWindow().setAttributes((android.view.WindowManager.LayoutParams) params);
-        super.onResume();
-    }
 
 }

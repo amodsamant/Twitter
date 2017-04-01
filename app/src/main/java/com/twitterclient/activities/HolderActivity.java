@@ -5,6 +5,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
 import com.twitterclient.R;
+import com.twitterclient.fragments.FollowersFragment;
+import com.twitterclient.fragments.FollowingFragment;
 import com.twitterclient.fragments.TweetDetailFragment;
 import com.twitterclient.models.Tweet;
 
@@ -19,14 +21,26 @@ public class HolderActivity extends AppCompatActivity {
 
         String fragType = getIntent().getStringExtra("frag_type");
         Tweet tweet = Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
+        String screenName = getIntent().getStringExtra("screen_name");
 
+        FragmentManager fm = getSupportFragmentManager();
         switch (fragType) {
 
             case "detail":
-                FragmentManager fm = getSupportFragmentManager();
                 fm.beginTransaction()
                         .replace(R.id.holder, TweetDetailFragment.newInstance(tweet))
                         .commit();
+                break;
+            case "following":
+                fm.beginTransaction()
+                        .replace(R.id.holder, FollowingFragment.newInstance(screenName))
+                        .commit();
+                break;
+            case "followers":
+                fm.beginTransaction()
+                        .replace(R.id.holder, FollowersFragment.newInstance(screenName))
+                        .commit();
+                break;
             default:
         }
 
