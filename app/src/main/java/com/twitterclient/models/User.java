@@ -39,6 +39,26 @@ public class User extends BaseModel {
     @Expose
     boolean verified;
 
+    @Column
+    @SerializedName("description")
+    @Expose
+    String description;
+
+    @Column
+    @SerializedName("followers_count")
+    @Expose
+    long followers;
+
+    @Column
+    @SerializedName("friends_count")
+    @Expose
+    long following;
+
+    @Column
+    @SerializedName("profile_background_image_url_https")
+    @Expose
+    String profileBackground;
+
     public long getId() {
         return id;
     }
@@ -77,5 +97,37 @@ public class User extends BaseModel {
 
     public void setVerified(boolean verified) {
         this.verified = verified;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public long getFollowers() {
+        return followers;
+    }
+
+    public void setFollowers(long followers) {
+        this.followers = followers;
+    }
+
+    public long getFollowing() {
+        return following;
+    }
+
+    public void setFollowing(long following) {
+        this.following = following;
+    }
+
+    public String getProfileBackground() {
+        return profileBackground;
+    }
+
+    public void setProfileBackground(String profileBackground) {
+        this.profileBackground = profileBackground;
     }
 }

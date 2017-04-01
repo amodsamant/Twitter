@@ -13,6 +13,7 @@
         android:layout_height="@dimen/app_bar_height"
         android:fitsSystemWindows="true"
         android:theme="@style/AppTheme.AppBarOverlay">
+        <!--android:layout_height="@dimen/app_bar_height"-->
 
         <android.support.design.widget.CollapsingToolbarLayout
             android:id="@+id/profile_toolbar_layout"
@@ -27,18 +28,118 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                app:popupTheme="@style/AppTheme.PopupOverlay"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:fitsSystemWindows="true"
+                app:layout_scrollFlags="scroll|enterAlways">
+
+                <ImageView
+                    android:id="@+id/ivBackdrop"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="24dp"
+                    android:scaleType="fitXY"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentStart="true" />
+
+                <Button
+                    android:id="@+id/btnFollow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_below="@+id/ivBackdrop"
+                    android:drawableRight="@drawable/ic_friend"
+                    android:paddingRight="15dp"
+                    android:background="@android:color/transparent"
+                    />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/btnFollow"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="11dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/twitterDarkerGrey" />
+
+                <ImageView
+                    android:id="@+id/ivProfileVerified"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tvName"
+                    android:layout_marginStart="10dp"
+                    android:layout_toEndOf="@+id/tvName"
+                    app:srcCompat="@drawable/ic_verified_user"
+                    android:layout_marginTop="4dp"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/tvProfileScreenName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tvName"
+                    android:layout_below="@+id/tvName"
+                    android:layout_marginTop="6dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/twitterDarkerGrey"  />
+
+                <TextView
+                    android:id="@+id/tvTagline"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignStart="@+id/tvProfileScreenName"
+                    android:layout_below="@+id/tvProfileScreenName"
+                    android:layout_marginTop="12dp"
+                    android:textSize="16sp"
+                    android:textColor="@color/twitterDarkerGrey"
+                    android:maxLines="3"
+                    android:ellipsize="end"/>
+
+                <TextView
+                    android:id="@+id/tvFollowing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/tvTagline"
+                    android:layout_below="@+id/tvTagline"
+                    android:layout_marginTop="16dp"
+                    android:textColor="@color/twitterDarkerGrey" />
+
+                <TextView
+                    android:id="@+id/tvFollowers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/tvFollowing"
+                    android:layout_alignBottom="@+id/tvFollowing"
+                    android:layout_marginStart="16dp"
+                    android:layout_toRightOf="@id/tvFollowing"
+                    android:layout_toEndOf="@id/tvFollowing"
+                    android:textColor="@color/twitterDarkerGrey" />
+
+                <ImageView
+                    android:id="@+id/ivProfileUser"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
+                    android:layout_above="@+id/tvName"
+                    android:layout_alignStart="@+id/tvName"
+                    android:layout_marginBottom="8dp" />
+            </RelativeLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
-    </android.support.design.widget.AppBarLayout>
 
-    <!--<include layout="@layout/content_profile" />-->
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="5dp">
         <android.support.design.widget.TabLayout
             android:id="@+id/profile_tabs"
             android:layout_width="match_parent"
@@ -53,13 +154,5 @@
             android:background="@android:color/white"/>
     </LinearLayout>
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        app:layout_anchor="@id/app_bar"
-        app:layout_anchorGravity="bottom|start"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
 </android.support.design.widget.CoordinatorLayout>

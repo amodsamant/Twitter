@@ -129,6 +129,7 @@ public class HomeActivity extends AppCompatActivity {
         switch(menuItem.getItemId()) {
             case R.id.profile_menu_item:
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                intent.putExtra("screen_name", "amod_samant");
                 startActivity(intent);
                 break;
             case R.id.settings_menu_item:

@@ -17,6 +17,7 @@ import android.view.WindowManager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.twitterclient.R;
+import com.twitterclient.activities.ProfileActivity;
 import com.twitterclient.activities.TweetDetailActivity;
 import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.models.Tweet;
@@ -83,6 +84,17 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 .bitmapTransform(new RoundedCornersTransformation(context,5,0))
                 .diskCacheStrategy( DiskCacheStrategy.SOURCE )
                 .into(viewHolder.ivUser);
+
+
+        viewHolder.ivUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ProfileActivity.class);
+                intent.putExtra("screen_name",tweet.getUser().getScreenName());
+                context.startActivity(intent);
+            }
+        });
+
 
         /**
          * Code to set tweet image

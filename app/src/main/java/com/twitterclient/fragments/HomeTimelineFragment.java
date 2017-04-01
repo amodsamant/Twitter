@@ -22,7 +22,7 @@ import cz.msebera.android.httpclient.Header;
 
 public class HomeTimelineFragment extends TweetsListFragment {
 
-    TwitterClient twitterCLient;
+    TwitterClient twitterClient;
 
     public static HomeTimelineFragment newInstance() {
         HomeTimelineFragment fragment = new HomeTimelineFragment();
@@ -33,7 +33,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        twitterCLient = TwitterClientApplication.getTwitterClient();
+        twitterClient = TwitterClientApplication.getTwitterClient();
         /**
          * Calling populate time line with since id of 1 for loading the initial tweets
          */
@@ -46,7 +46,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
     private void populateTimeline(long maxId, final long sinceId) {
 
-        twitterCLient.getHomeTimeline(maxId, sinceId, new JsonHttpResponseHandler() {
+        twitterClient.getHomeTimeline(maxId, sinceId, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
 

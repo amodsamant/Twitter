@@ -38,7 +38,10 @@ public class DateGenericUtils {
 
             relativeDate = DateUtils.getRelativeTimeSpanString(dateMillis,
                     systemTime, DateUtils.SECOND_IN_MILLIS).toString();
-
+            Log.d("DEBUG", relativeDate);
+            if(relativeDate.equalsIgnoreCase("Yesterday")) {
+                return "1d";
+            }
             int space = relativeDate.indexOf(" ");
             return relativeDate.substring(0,space) + relativeDate.charAt(space+1);
         } catch (ParseException e) {
