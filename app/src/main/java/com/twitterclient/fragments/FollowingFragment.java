@@ -45,7 +45,7 @@ public class FollowingFragment extends FollowListFragment {
     private void populateFollowList() {
 
         String screenName = getArguments().getString("screen_name");
-        twitterClient.getFollowers(screenName, new JsonHttpResponseHandler() {
+        twitterClient.getFollowing( screenName, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 

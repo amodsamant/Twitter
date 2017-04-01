@@ -1,5 +1,6 @@
 package com.twitterclient.activities;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -23,8 +24,11 @@ import com.twitterclient.R;
 import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.utils.DateGenericUtils;
+import com.twitterclient.utils.PatternEditableBuilder;
 
 import org.parceler.Parcels;
+
+import java.util.regex.Pattern;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
@@ -155,6 +159,31 @@ public class TweetDetailActivity extends AppCompatActivity {
             Drawable img = getResources().getDrawable(R.drawable.ic_retweet_set);
             btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         }
+
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\@(\\w+)"),
+                        this.getResources().getColor(R.color.twitterBlue),
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+                                Intent intent = new Intent(TweetDetailActivity.this,
+                                        ProfileActivity.class);
+                                intent.putExtra("screen_name", text.substring(1));
+                                startActivity(intent);
+                            }
+                        }).into(tvText);
+
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\#(\\w+)"),
+                        this.getResources().getColor(R.color.twitterBlue),
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+//                                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+//                                intent.putExtra("screen_name", text.substring(1));
+//                                startActivity(intent);
+                            }
+                        }).into(tvText);
     }
 
     @Override

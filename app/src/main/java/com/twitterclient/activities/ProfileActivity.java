@@ -1,6 +1,7 @@
 package com.twitterclient.activities;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -28,15 +29,14 @@ import com.twitterclient.fragments.FollowersFragment;
 import com.twitterclient.fragments.FollowingFragment;
 import com.twitterclient.fragments.ProfileLikesTimelineFragment;
 import com.twitterclient.fragments.ProfileTweetsTimelineFragment;
-import com.twitterclient.models.Tweet;
 import com.twitterclient.models.User;
 import com.twitterclient.network.TwitterClient;
 import com.twitterclient.network.TwitterClientApplication;
+import com.twitterclient.utils.PatternEditableBuilder;
 
 import org.json.JSONObject;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.regex.Pattern;
 
 import cz.msebera.android.httpclient.Header;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
@@ -157,7 +157,6 @@ public class ProfileActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 
                 Log.d("DEBUG", response.toString());
-                List<Tweet> respTweets = new ArrayList<>();
                 Gson gson = new Gson();
                 User user = gson.fromJson(response.toString(),
                         User.class);
@@ -181,6 +180,29 @@ public class ProfileActivity extends AppCompatActivity {
         tvUsername.setText(user.getName());
         tvScreenName.setText("@"+ user.getScreenName());
         tvText.setText(user.getDescription());
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\@(\\w+)"),
+                        this.getResources().getColor(R.color.twitterBlue),
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+                                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+                                intent.putExtra("screen_name", text.substring(1));
+                                startActivity(intent);
+                            }
+                        }).into(tvText);
+
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\#(\\w+)"),
+                        this.getResources().getColor(R.color.twitterBlue),
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+//                                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+//                                intent.putExtra("screen_name", text.substring(1));
+//                                startActivity(intent);
+                            }
+                        }).into(tvText);
 
         /**
          * Using a Span here to have a different style inside of each text view

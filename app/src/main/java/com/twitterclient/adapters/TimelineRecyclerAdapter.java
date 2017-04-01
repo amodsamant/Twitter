@@ -23,10 +23,12 @@ import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.utils.DateGenericUtils;
 import com.twitterclient.utils.GenericUtils;
+import com.twitterclient.utils.PatternEditableBuilder;
 
 import org.parceler.Parcels;
 
 import java.util.List;
+import java.util.regex.Pattern;
 
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
@@ -139,9 +141,36 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 .createFromAsset(context.getAssets(), "fonts/HelveticaNeueLight.ttf");
         viewHolder.tvBody.setTypeface(fontLight);
         viewHolder.tvBody.setText(tweet.getBody());
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\@(\\w+)"),
+                        context.getResources().getColor(R.color.twitterBlue),
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+                                Intent intent = new Intent(context, ProfileActivity.class);
+                                intent.putExtra("screen_name", text.substring(1));
+                                context.startActivity(intent);
+                            }
+                        }).into(viewHolder.tvBody);
+
+        new PatternEditableBuilder().
+                addPattern(Pattern.compile("\\#(\\w+)"),
+                        context.getResources().getColor(R.color.twitterBlue),
+                        new PatternEditableBuilder.SpannableClickedListener() {
+                            @Override
+                            public void onSpanClicked(String text) {
+//                                Intent intent = new Intent(context, ProfileActivity.class);
+//                                intent.putExtra("screen_name", text.substring(1));
+//                                context.startActivity(intent);
+                            }
+                        }).into(viewHolder.tvBody);
+
         viewHolder.btnRetweet.setText(String.valueOf(tweet.getRetweetCount()));
         if(!tweet.isRetweeted()) {
             Drawable img = context.getResources().getDrawable(R.drawable.ic_retweet);
+            viewHolder.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+        } else {
+            Drawable img = context.getResources().getDrawable(R.drawable.ic_retweet_set);
             viewHolder.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         }
         viewHolder.btnRetweet.setOnClickListener(new View.OnClickListener() {
@@ -166,6 +195,9 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         viewHolder.btnLike.setText(String.valueOf(tweet.getFavouritesCount()));
         if(!tweet.isFavorited()) {
             Drawable img = context.getResources().getDrawable(R.drawable.ic_favorite);
+            viewHolder.btnLike.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+        } else {
+            Drawable img = context.getResources().getDrawable(R.drawable.ic_favorite_set);
             viewHolder.btnLike.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         }
         viewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
