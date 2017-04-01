@@ -23,6 +23,7 @@ import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
 import com.twitterclient.adapters.SmartFragmentStatePagerAdapter;
+import com.twitterclient.fragments.ProfileLikesTimelineFragment;
 import com.twitterclient.fragments.ProfileTweetsTimelineFragment;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.models.User;
@@ -95,7 +96,7 @@ public class ProfileActivity extends AppCompatActivity {
                 case 1:
                     return ProfileTweetsTimelineFragment.newInstance(screenName);
                 case 2:
-                    return ProfileTweetsTimelineFragment.newInstance(screenName);
+                    return ProfileLikesTimelineFragment.newInstance(screenName);
                 default:
                     return null;
             }
