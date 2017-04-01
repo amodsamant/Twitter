@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.DialogFragment;
@@ -15,19 +16,27 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 import com.twitterclient.R;
 import com.twitterclient.adapters.SmartFragmentStatePagerAdapter;
 import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.fragments.HomeTimelineFragment;
 import com.twitterclient.fragments.MentionsTimelineFragment;
+import com.twitterclient.models.Tweet;
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends AppCompatActivity implements
+        ComposeTweetFragment.ComposeTweetListener {
 
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout mDrawer;
     private Toolbar toolbar;
     private NavigationView nvDrawer;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
+    private HomeTimelineFragment homeTimelineFragment;
+    private MentionsTimelineFragment mentionsTimelineFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,11 +54,11 @@ public class HomeActivity extends AppCompatActivity {
         nvDrawer = (NavigationView) findViewById(R.id.nvView);
         setupDrawerContent(nvDrawer);
 
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new HomeViewPagerAdapter(getSupportFragmentManager(),
                 HomeActivity.this));
 
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.twitter_tabs);
+        tabLayout = (TabLayout) findViewById(R.id.twitter_tabs);
         tabLayout.setupWithViewPager(viewPager);
 
         /**
@@ -69,15 +78,15 @@ public class HomeActivity extends AppCompatActivity {
         /**
          * Compose button
          */
-        //TODO:
-//        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                openComposeFrag(null);
-//                Toast.makeText(HomeActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
-//            }
-//        });
+
+        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openComposeFrag(null);
+                Toast.makeText(HomeActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
@@ -96,9 +105,11 @@ public class HomeActivity extends AppCompatActivity {
 
             switch (position) {
                 case 0:
-                    return HomeTimelineFragment.newInstance();
+                    homeTimelineFragment = HomeTimelineFragment.newInstance();
+                    return homeTimelineFragment;
                 case 1:
-                    return MentionsTimelineFragment.newInstance();
+                    mentionsTimelineFragment = MentionsTimelineFragment.newInstance();
+                    return mentionsTimelineFragment;
             }
             return null;
         }
@@ -187,4 +198,11 @@ public class HomeActivity extends AppCompatActivity {
         fragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_FullScreen);
         fragment.show(fm,"compose_frag");
     }
+
+    @Override
+    public void onFinishTweet(Tweet tweet) {
+
+        homeTimelineFragment.onFinishTweet(tweet);
+    }
+
 }

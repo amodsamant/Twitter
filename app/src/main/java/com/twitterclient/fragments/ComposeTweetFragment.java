@@ -49,6 +49,8 @@ public class ComposeTweetFragment extends DialogFragment
     TwitterClient twitterClient;
 
     ComposeFragBinding binding;
+
+    private ComposeTweetListener listener;
     public interface ComposeTweetListener {
         void onFinishTweet(Tweet tweet);
     }
@@ -67,6 +69,16 @@ public class ComposeTweetFragment extends DialogFragment
         return frag;
     }
 
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if (context instanceof ComposeTweetListener) {
+            listener = (ComposeTweetListener) context;
+        } else {
+            throw new ClassCastException(context.toString()
+                    + " must implement ComposeTweetFragment.ComposeTweetListener");
+        }
+    }
 
 
     @Override
@@ -272,7 +284,7 @@ public class ComposeTweetFragment extends DialogFragment
                         Log.d(TAG, response.toString());
                         try {
                             Tweet tweet = gson.fromJson(response.toString(), Tweet.class);
-
+                            listener.onFinishTweet(tweet);
                             //TODO:
 //                            HomeActivity activity = (HomeActivity) getActivity();
 //                            activity.onFinishTweet(tweet);

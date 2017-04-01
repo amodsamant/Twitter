@@ -17,8 +17,8 @@ import android.view.WindowManager;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.twitterclient.R;
+import com.twitterclient.activities.HolderActivity;
 import com.twitterclient.activities.ProfileActivity;
-import com.twitterclient.activities.TweetDetailActivity;
 import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.utils.DateGenericUtils;
@@ -224,7 +224,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             public void onClick(View view) {
                 FragmentManager fm = ((AppCompatActivity)context).getSupportFragmentManager();
                 ComposeTweetFragment fragment = ComposeTweetFragment
-                        .getInstance(tweet.getUser().getScreenName());
+                        .getInstance("@"+tweet.getUser().getScreenName());
                 fragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_FullScreen);
                 fragment.show(fm,"compose_frag");
             }
@@ -233,7 +233,8 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, TweetDetailActivity.class);
+                Intent intent = new Intent(context, HolderActivity.class);
+                intent.putExtra("frag_type", "detail");
                 intent.putExtra("tweet", Parcels.wrap(tweet));
                 context.startActivity(intent);
             }

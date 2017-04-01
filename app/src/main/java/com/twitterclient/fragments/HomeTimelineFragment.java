@@ -98,4 +98,11 @@ public class HomeTimelineFragment extends TweetsListFragment {
         }
         populateTimeline(maxTweetId,-1);
     }
+
+    public void onFinishTweet(Tweet tweet) {
+        tweets.add(0,tweet);
+        adapter.notifyItemInserted(0);
+        layoutManager.scrollToPosition(0);
+    }
+
 }
