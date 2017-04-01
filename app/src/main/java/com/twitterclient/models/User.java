@@ -47,17 +47,22 @@ public class User extends BaseModel {
     @Column
     @SerializedName("followers_count")
     @Expose
-    long followers;
+    long followersCnt;
 
     @Column
     @SerializedName("friends_count")
     @Expose
-    long following;
+    long followingCnt;
 
     @Column
     @SerializedName("profile_background_image_url_https")
     @Expose
     String profileBackground;
+
+    @Column
+    @SerializedName("following")
+    @Expose
+    boolean following;
 
     public long getId() {
         return id;
@@ -108,19 +113,19 @@ public class User extends BaseModel {
     }
 
     public long getFollowers() {
-        return followers;
+        return followersCnt;
     }
 
     public void setFollowers(long followers) {
-        this.followers = followers;
+        this.followersCnt = followers;
     }
 
     public long getFollowing() {
-        return following;
+        return followingCnt;
     }
 
     public void setFollowing(long following) {
-        this.following = following;
+        this.followingCnt = following;
     }
 
     public String getProfileBackground() {
@@ -129,5 +134,13 @@ public class User extends BaseModel {
 
     public void setProfileBackground(String profileBackground) {
         this.profileBackground = profileBackground;
+    }
+
+    public boolean isFollowing() {
+        return following;
+    }
+
+    public void setFollowing(boolean following) {
+        this.following = following;
     }
 }

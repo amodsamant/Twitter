@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
@@ -23,6 +24,8 @@ import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
 import com.twitterclient.adapters.SmartFragmentStatePagerAdapter;
+import com.twitterclient.fragments.FollowersFragment;
+import com.twitterclient.fragments.FollowingFragment;
 import com.twitterclient.fragments.ProfileLikesTimelineFragment;
 import com.twitterclient.fragments.ProfileTweetsTimelineFragment;
 import com.twitterclient.models.Tweet;
@@ -125,8 +128,25 @@ public class ProfileActivity extends AppCompatActivity {
         tvFollowers = (TextView) findViewById(R.id.tvFollowers);
         tvFollowers.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueLight.ttf"));
 
+        tvFollowers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FollowersFragment frag = FollowersFragment.newInstance(screenName);
+                frag.setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_FullScreen);
+                frag.show(getSupportFragmentManager(),"followers_frag");
+            }
+        });
+
         tvFollowing = (TextView) findViewById(R.id.tvFollowing);
         tvFollowing.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueLight.ttf"));
+        tvFollowing.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FollowingFragment frag = FollowingFragment.newInstance(screenName);
+                frag.setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_FullScreen);
+                frag.show(getSupportFragmentManager(), "following_frag");
+            }
+        });
 
         ivUser = (ImageView) findViewById(R.id.ivProfileUser);
         ivBackdrop = (ImageView) findViewById(R.id.ivBackdrop);
