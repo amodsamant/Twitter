@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.twitterclient.R;
 import com.twitterclient.adapters.TimelineRecyclerAdapter;
@@ -24,6 +25,7 @@ public abstract class TweetsListFragment extends Fragment {
     List<Tweet> tweets;
     RecyclerView recyclerView;
     TimelineRecyclerAdapter adapter;
+    ProgressBar progressBar;
 
     DividerItemDecoration dividerItemDecoration;
     LinearLayoutManager layoutManager;
@@ -55,10 +57,15 @@ public abstract class TweetsListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.frag_tweets_list, container, false);
 
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
+
         recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        recyclerView.setVisibility(View.GONE);
 
         recyclerView.addOnScrollListener(scrollListener);
 

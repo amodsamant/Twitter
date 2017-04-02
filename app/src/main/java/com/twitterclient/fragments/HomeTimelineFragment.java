@@ -3,6 +3,7 @@ package com.twitterclient.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -46,6 +47,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
     void populateTimeline(long maxId, final long sinceId) {
 
+
         twitterClient.getHomeTimeline(maxId, sinceId, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
@@ -67,6 +69,9 @@ public class HomeTimelineFragment extends TweetsListFragment {
                         //TODO:
                     }
                 }
+
+                progressBar.setVisibility(View.GONE);
+                recyclerView.setVisibility(View.VISIBLE);
 
                 addAllTweets(respTweets);
 
