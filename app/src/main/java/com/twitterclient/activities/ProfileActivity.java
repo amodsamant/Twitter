@@ -29,6 +29,7 @@ import com.twitterclient.fragments.ProfileTweetsTimelineFragment;
 import com.twitterclient.models.User;
 import com.twitterclient.network.TwitterClient;
 import com.twitterclient.network.TwitterClientApplication;
+import com.twitterclient.utils.GenericUtils;
 import com.twitterclient.utils.PatternEditableBuilder;
 
 import org.json.JSONObject;
@@ -57,8 +58,11 @@ public class ProfileActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.profile_toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         twitterClient = TwitterClientApplication.getTwitterClient();
 
@@ -230,7 +234,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvFollowers.setText(ssbFollowers, TextView.BufferType.EDITABLE);
 
         ivUser.setImageResource(0);
-        Glide.with(this).load(user.getProfileImageUrl())
+        Glide.with(this).load(GenericUtils.modifyProfileImageUrl(user.getProfileImageUrl()))
                 .fitCenter()
                 .bitmapTransform( new RoundedCornersTransformation(this,5,0))
                 .into(ivUser);
@@ -239,9 +243,8 @@ public class ProfileActivity extends AppCompatActivity {
         /**
          * Using large image url with RoundedCornersTransformation
          */
-        String imageUrl = user.getProfileBackground();
+        String imageUrl = user.getProfileBackground() + "/1500x500";
         Glide.with(this).load(imageUrl)
-                .fitCenter()
                 //.bitmapTransform( new RoundedCornersTransformation(this,20,5))
                 .diskCacheStrategy( DiskCacheStrategy.SOURCE )
                 .into(ivBackdrop);
@@ -252,4 +255,9 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 }

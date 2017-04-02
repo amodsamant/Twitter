@@ -55,7 +55,7 @@ public class User extends BaseModel {
     long followingCnt;
 
     @Column
-    @SerializedName("profile_background_image_url_https")
+    @SerializedName("profile_banner_url")
     @Expose
     String profileBackground;
 

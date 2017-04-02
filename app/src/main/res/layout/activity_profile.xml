@@ -20,9 +20,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
+            <!--app:contentScrim="?attr/colorPrimary"-->
             <android.support.v7.widget.Toolbar
                 android:id="@+id/profile_toolbar"
                 android:layout_width="match_parent"
@@ -40,7 +40,7 @@
                 <ImageView
                     android:id="@+id/ivBackdrop"
                     android:layout_width="match_parent"
-                    android:layout_height="120dp"
+                    android:layout_height="150dp"
                     android:layout_marginTop="24dp"
                     android:scaleType="fitXY"
                     android:layout_alignParentTop="true"
@@ -124,11 +124,12 @@
 
                 <ImageView
                     android:id="@+id/ivProfileUser"
-                    android:layout_width="75dp"
-                    android:layout_height="75dp"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
                     android:layout_above="@+id/tvName"
                     android:layout_alignStart="@+id/tvName"
-                    android:layout_marginBottom="8dp" />
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/border_image"/>
             </RelativeLayout>
         </android.support.design.widget.CollapsingToolbarLayout>
 

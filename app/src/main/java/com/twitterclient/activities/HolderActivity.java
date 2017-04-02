@@ -34,6 +34,8 @@ public class HolderActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.holder_toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 
         String fragType = getIntent().getStringExtra("frag_type");
         Tweet tweet = Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
@@ -48,16 +50,19 @@ public class HolderActivity extends AppCompatActivity {
                 fm.beginTransaction()
                         .replace(R.id.holder, TweetDetailFragment.newInstance(tweet))
                         .commit();
+                getSupportActionBar().setTitle("Tweet");
                 break;
             case "following":
                 fm.beginTransaction()
                         .replace(R.id.holder, FollowingFragment.newInstance(screenName))
                         .commit();
+                getSupportActionBar().setTitle("Following");
                 break;
             case "followers":
                 fm.beginTransaction()
                         .replace(R.id.holder, FollowersFragment.newInstance(screenName))
                         .commit();
+                getSupportActionBar().setTitle("Followers");
                 break;
             case "search":
                 isSearch = true;
@@ -113,6 +118,12 @@ public class HolderActivity extends AppCompatActivity {
                 return false;
             }
         });
+        return true;
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
         return true;
     }
 }

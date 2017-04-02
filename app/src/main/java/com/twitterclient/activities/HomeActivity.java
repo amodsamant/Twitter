@@ -146,11 +146,6 @@ public class HomeActivity extends AppCompatActivity implements
             return NUM_ITEMS;
         }
 
-        @Override
-        public Fragment getRegisteredFragment(int position) {
-
-            return super.getRegisteredFragment(position);
-        }
     }
 
     private void setupDrawerContent(NavigationView navigationView) {

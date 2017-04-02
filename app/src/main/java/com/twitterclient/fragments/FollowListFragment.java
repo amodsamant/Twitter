@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.twitterclient.R;
 import com.twitterclient.adapters.FollRecyclerAdapter;
@@ -24,6 +25,7 @@ public abstract class FollowListFragment extends Fragment {
     List<User> users;
     RecyclerView recyclerView;
     FollRecyclerAdapter adapter;
+    ProgressBar progressBar;
 
     DividerItemDecoration dividerItemDecoration;
     LinearLayoutManager layoutManager;
@@ -59,6 +61,9 @@ public abstract class FollowListFragment extends Fragment {
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        recyclerView.setVisibility(View.GONE);
 
         recyclerView.addOnScrollListener(scrollListener);
 

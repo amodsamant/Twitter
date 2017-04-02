@@ -10,9 +10,7 @@
         android:id="@+id/holder_toolbar"
         android:layout_height="?attr/actionBarSize"
         android:layout_width="match_parent"
-        android:layout_marginTop="24dp"
-        app:theme="@style/AppThemeHome"
-        android:background="@color/twitterBlue">
+        app:theme="@style/AppThemeHome" >
     </android.support.v7.widget.Toolbar>
 
     <FrameLayout

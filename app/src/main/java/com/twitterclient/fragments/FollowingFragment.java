@@ -3,6 +3,7 @@ package com.twitterclient.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
+import android.view.View;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -57,6 +58,8 @@ public class FollowingFragment extends FollowListFragment {
 
                 Follow following = gson.fromJson(response.toString(), Follow.class);
 
+                recyclerView.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
                 addAllUsers(following.getUsers());
 
                 adapter.notifyDataSetChanged();
