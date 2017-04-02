@@ -176,4 +176,14 @@ public class TwitterClient extends OAuthBaseClient {
 
         getClient().get(apiUrl,params,handler);
     }
+
+    public void getDirectMessages(JsonHttpResponseHandler handler) {
+
+        String apiUrl = getApiUrl("/direct_messages.json");
+
+        RequestParams params = new RequestParams();
+
+        getClient().get(apiUrl,params,handler);
+    }
+
 }

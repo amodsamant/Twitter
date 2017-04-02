@@ -86,7 +86,6 @@ public class HolderActivity extends AppCompatActivity {
             searchView.requestFocus();
         }
 
-
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

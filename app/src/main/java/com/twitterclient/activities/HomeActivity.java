@@ -25,6 +25,8 @@ import com.twitterclient.adapters.SmartFragmentStatePagerAdapter;
 import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.fragments.HomeTimelineFragment;
 import com.twitterclient.fragments.MentionsTimelineFragment;
+import com.twitterclient.fragments.MessagesFragment;
+import com.twitterclient.fragments.MessagesHomeFragment;
 import com.twitterclient.models.Tweet;
 
 public class HomeActivity extends AppCompatActivity implements
@@ -38,6 +40,7 @@ public class HomeActivity extends AppCompatActivity implements
     private TabLayout tabLayout;
     private HomeTimelineFragment homeTimelineFragment;
     private MentionsTimelineFragment mentionsTimelineFragment;
+    private MessagesFragment messagesFragment;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -93,7 +96,7 @@ public class HomeActivity extends AppCompatActivity implements
 
     public class HomeViewPagerAdapter extends SmartFragmentStatePagerAdapter {
 
-        private String[] tabTitles = {"Home", "Mentions"};
+        private String[] tabTitles = {"Home", "Mentions","Messages"};
         private Context context;
 
         public HomeViewPagerAdapter(FragmentManager fragmentManager, Context context) {
@@ -111,6 +114,10 @@ public class HomeActivity extends AppCompatActivity implements
                 case 1:
                     mentionsTimelineFragment = MentionsTimelineFragment.newInstance();
                     return mentionsTimelineFragment;
+                case 2:
+                    messagesFragment = MessagesHomeFragment.newInstance();
+                    return messagesFragment;
+
             }
             return null;
         }
