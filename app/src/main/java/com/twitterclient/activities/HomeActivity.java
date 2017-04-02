@@ -15,6 +15,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
@@ -79,7 +80,7 @@ public class HomeActivity extends AppCompatActivity implements
          * Compose button
          */
 
-        FloatingActionButton fab = (FloatingActionButton)findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -137,7 +138,7 @@ public class HomeActivity extends AppCompatActivity implements
     }
 
     public void selectDrawerItem(MenuItem menuItem) {
-        switch(menuItem.getItemId()) {
+        switch (menuItem.getItemId()) {
             case R.id.profile_menu_item:
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
                 intent.putExtra("screen_name", "amod_samant");
@@ -161,7 +162,7 @@ public class HomeActivity extends AppCompatActivity implements
 
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, mDrawer, toolbar,
-                R.string.drawer_open,  R.string.drawer_close);
+                R.string.drawer_open, R.string.drawer_close);
     }
 
 
@@ -175,6 +176,12 @@ public class HomeActivity extends AppCompatActivity implements
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
+        if (item.getItemId() == R.id.action_search) {
+            Intent intent = new Intent(HomeActivity.this, HolderActivity.class);
+            intent.putExtra("frag_type", "search");
+            startActivity(intent);
+            return true;
+        }
         if (drawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
@@ -196,7 +203,7 @@ public class HomeActivity extends AppCompatActivity implements
         FragmentManager fm = getSupportFragmentManager();
         ComposeTweetFragment fragment = ComposeTweetFragment.getInstance(tweet);
         fragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_FullScreen);
-        fragment.show(fm,"compose_frag");
+        fragment.show(fm, "compose_frag");
     }
 
     @Override
@@ -205,4 +212,10 @@ public class HomeActivity extends AppCompatActivity implements
         homeTimelineFragment.onFinishTweet(tweet);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_search, menu);
+        return true;
+    }
 }
