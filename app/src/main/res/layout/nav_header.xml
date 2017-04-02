@@ -1,13 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/ivHeader"
         android:layout_width="match_parent"
-        android:layout_height="240dp"
+        android:layout_height="180dp"
         android:background="@color/twitterBlue"
         android:scaleType="centerCrop" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/ivHeaderProfile"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:id="@+id/tvHeaderName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:layout_marginTop="10dp"
+        android:textSize="16sp"
+        android:layout_below="@+id/ivHeaderProfile"
+        android:layout_alignStart="@+id/ivHeaderProfile" />
+
+    <TextView
+        android:id="@+id/tvHeaderScreenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="\@Name"
+        android:layout_marginTop="6dp"
+        android:textSize="14sp"
+        android:layout_below="@+id/tvHeaderName"
+        android:layout_alignStart="@+id/tvHeaderName" />
+
+</RelativeLayout>

@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.twitterclient.R;
 import com.twitterclient.adapters.MessagesRecyclerAdapter;
@@ -24,6 +25,7 @@ public abstract class MessagesFragment extends Fragment {
     List<Message> messages;
     RecyclerView recyclerView;
     MessagesRecyclerAdapter adapter;
+    ProgressBar progressBar;
 
     DividerItemDecoration dividerItemDecoration;
     LinearLayoutManager layoutManager;
@@ -61,6 +63,9 @@ public abstract class MessagesFragment extends Fragment {
         recyclerView.setAdapter(adapter);
 
         recyclerView.addOnScrollListener(scrollListener);
+        recyclerView.setVisibility(View.GONE);
+        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        progressBar.setVisibility(View.VISIBLE);
 
         swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {

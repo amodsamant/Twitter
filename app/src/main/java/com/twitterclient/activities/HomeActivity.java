@@ -18,8 +18,13 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.google.gson.Gson;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
 import com.twitterclient.adapters.SmartFragmentStatePagerAdapter;
 import com.twitterclient.fragments.ComposeTweetFragment;
@@ -28,6 +33,14 @@ import com.twitterclient.fragments.MentionsTimelineFragment;
 import com.twitterclient.fragments.MessagesFragment;
 import com.twitterclient.fragments.MessagesHomeFragment;
 import com.twitterclient.models.Tweet;
+import com.twitterclient.models.User;
+import com.twitterclient.network.TwitterClientApplication;
+import com.twitterclient.utils.GenericUtils;
+
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
+import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class HomeActivity extends AppCompatActivity implements
         ComposeTweetFragment.ComposeTweetListener {
@@ -41,6 +54,11 @@ public class HomeActivity extends AppCompatActivity implements
     private HomeTimelineFragment homeTimelineFragment;
     private MentionsTimelineFragment mentionsTimelineFragment;
     private MessagesFragment messagesFragment;
+
+    ImageView ivHeaderProfile;
+    ImageView ivHeader;
+    TextView tvHeaderName;
+    TextView tvHeaderScreenName;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,9 +79,11 @@ public class HomeActivity extends AppCompatActivity implements
         viewPager = (ViewPager) findViewById(R.id.viewpager);
         viewPager.setAdapter(new HomeViewPagerAdapter(getSupportFragmentManager(),
                 HomeActivity.this));
+        onPageChangeListener();
 
         tabLayout = (TabLayout) findViewById(R.id.twitter_tabs);
         tabLayout.setupWithViewPager(viewPager);
+        setupTab(0);
 
         /**
          * Code to handle implicit intents
@@ -82,7 +102,6 @@ public class HomeActivity extends AppCompatActivity implements
         /**
          * Compose button
          */
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,11 +111,12 @@ public class HomeActivity extends AppCompatActivity implements
             }
         });
 
+
     }
 
     public class HomeViewPagerAdapter extends SmartFragmentStatePagerAdapter {
 
-        private String[] tabTitles = {"Home", "Mentions","Messages"};
+        private final int NUM_ITEMS = 3;
         private Context context;
 
         public HomeViewPagerAdapter(FragmentManager fragmentManager, Context context) {
@@ -117,23 +137,30 @@ public class HomeActivity extends AppCompatActivity implements
                 case 2:
                     messagesFragment = MessagesHomeFragment.newInstance();
                     return messagesFragment;
-
             }
             return null;
         }
 
         @Override
         public int getCount() {
-            return tabTitles.length;
+            return NUM_ITEMS;
         }
 
         @Override
-        public CharSequence getPageTitle(int position) {
-            return tabTitles[position];
+        public Fragment getRegisteredFragment(int position) {
+
+            return super.getRegisteredFragment(position);
         }
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
+
+        View navHeaderView = navigationView.inflateHeaderView(R.layout.nav_header);
+        ivHeaderProfile = (ImageView)navHeaderView.findViewById(R.id.ivHeaderProfile);
+        ivHeader = (ImageView)navHeaderView.findViewById(R.id.ivHeader);
+        tvHeaderName = (TextView)navHeaderView.findViewById(R.id.tvHeaderName);
+        tvHeaderScreenName = (TextView)navHeaderView.findViewById(R.id.tvHeaderScreenName);
+
         navigationView.setNavigationItemSelectedListener(
                 new NavigationView.OnNavigationItemSelectedListener() {
                     @Override
@@ -142,6 +169,43 @@ public class HomeActivity extends AppCompatActivity implements
                         return true;
                     }
                 });
+
+        TwitterClientApplication.getTwitterClient()
+                .getPersonalUserInfo(new JsonHttpResponseHandler() {
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                    Gson gson = new Gson();
+                    User user = gson.fromJson(response.toString(),
+                            User.class);
+
+                    tvHeaderName.setText(user.getName());
+                    tvHeaderScreenName.setText("@"+user.getScreenName());
+
+                    ivHeaderProfile.setImageResource(0);
+                    String profileImageUrl = GenericUtils
+                            .modifyProfileImageUrl(user.getProfileImageUrl());
+                    Glide.with(HomeActivity.this).load(profileImageUrl)
+                            .fitCenter()
+                            .bitmapTransform(new CropCircleTransformation(HomeActivity.this))
+                            .into(ivHeaderProfile);
+
+                    ivHeader.setImageResource(0);
+                    String url = user.getProfileBackground();
+                    Glide.with(HomeActivity.this).load(url)
+                            .fitCenter()
+                            .into(ivHeader);
+                }
+
+                @Override
+                public void onFailure(int statusCode, Header[] headers,
+                        Throwable throwable, JSONObject errorResponse) {
+                    /**
+                     * Need not be handled as this would not cause any user issue
+                     */
+                    super.onFailure(statusCode, headers, throwable, errorResponse);
+                }
+        });
+
     }
 
     public void selectDrawerItem(MenuItem menuItem) {
@@ -170,6 +234,7 @@ public class HomeActivity extends AppCompatActivity implements
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, mDrawer, toolbar,
                 R.string.drawer_open, R.string.drawer_close);
+
     }
 
 
@@ -224,5 +289,47 @@ public class HomeActivity extends AppCompatActivity implements
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_search, menu);
         return true;
+    }
+
+    void setupTab(int position) {
+
+        int[] tabIcons =
+                {R.drawable.ic_home, R.drawable.ic_mentions, R.drawable.ic_message};
+        int[] tabIconsSelected =
+                {R.drawable.ic_home_selected, R.drawable.ic_mentions_selected,
+                        R.drawable.ic_message_selected};
+        String[] tabTitles = {"Home", "Mentions", "Messages"};
+
+        for(int tab=0; tab<tabIcons.length;tab++) {
+            if(tab != position) {
+                tabLayout.getTabAt(tab).setIcon(tabIcons[tab]);
+            } else {
+                tabLayout.getTabAt(tab).setIcon(tabIconsSelected[tab]);
+                getSupportActionBar().setTitle(tabTitles[position]);
+            }
+        }
+
+    }
+
+    void onPageChangeListener() {
+
+        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            // This method will be invoked when a new page becomes selected.
+            @Override
+            public void onPageSelected(int position) {
+                setupTab(position);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+        });
+
     }
 }
