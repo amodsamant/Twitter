@@ -75,6 +75,8 @@ public class FollRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             viewHolder.btnFriend.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         }
 
+        viewHolder.tvBody.setText(user.getDescription());
+
     }
 
     @Override

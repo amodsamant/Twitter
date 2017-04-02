@@ -59,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/twitterDarkerGrey"
-        android:textSize="14sp"
+        android:textSize="12sp"
         android:text="\@name"
         android:layout_below="@id/tvFollUsername"
         android:layout_above="@id/tvFollTagline"
