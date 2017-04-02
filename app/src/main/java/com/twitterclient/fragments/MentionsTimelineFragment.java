@@ -44,7 +44,7 @@ public class MentionsTimelineFragment extends TweetsListFragment {
 
     }
 
-    private void populateTimeline(long maxId, final long sinceId) {
+    void populateTimeline(long maxId, final long sinceId) {
 
         twitterCLient.getMentionsTimeline(maxId, sinceId, new JsonHttpResponseHandler() {
             @Override
@@ -62,8 +62,6 @@ public class MentionsTimelineFragment extends TweetsListFragment {
                         Tweet tweet = gson.fromJson(response.getJSONObject(x).toString(),
                                 Tweet.class);
                         respTweets.add(tweet);
-
-                        //TODO: maxTweetId = tweet.getId();
 
                     } catch (JSONException e) {
                         //TODO:

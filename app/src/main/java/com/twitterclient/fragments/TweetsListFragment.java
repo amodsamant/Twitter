@@ -66,7 +66,7 @@ public abstract class TweetsListFragment extends Fragment {
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                //TODO: populateTimeline(-1, 1);
+                populateTimeline(-1, 1);
             }
         });
 
@@ -87,4 +87,6 @@ public abstract class TweetsListFragment extends Fragment {
 
 
     abstract void loadNextDataFromApi();
+
+    abstract void populateTimeline(long maxId, long sinceId);
 }

@@ -44,7 +44,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
 
     }
 
-    private void populateTimeline(long maxId, final long sinceId) {
+    void populateTimeline(long maxId, final long sinceId) {
 
         twitterClient.getHomeTimeline(maxId, sinceId, new JsonHttpResponseHandler() {
             @Override
@@ -98,6 +98,8 @@ public class HomeTimelineFragment extends TweetsListFragment {
         }
         populateTimeline(maxTweetId,-1);
     }
+
+
 
     public void onFinishTweet(Tweet tweet) {
         tweets.add(0,tweet);

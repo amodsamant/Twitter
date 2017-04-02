@@ -33,9 +33,9 @@ public class SearchFragment extends TweetsListFragment {
         super.onCreate(savedInstanceState);
         twitterClient = TwitterClientApplication.getTwitterClient();
 
-        String query = getArguments().getString("query");
+
         if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
-            populateTimeline(query, -1, -1);
+            populateTimeline(-1, -1);
         }
     }
 
@@ -44,8 +44,9 @@ public class SearchFragment extends TweetsListFragment {
 
     }
 
-    private void populateTimeline(String query, long maxId, final long sinceId) {
+    void populateTimeline(long maxId, final long sinceId) {
 
+        String query = getArguments().getString("query");
         twitterClient.getSearchResults(query, maxId, sinceId, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {

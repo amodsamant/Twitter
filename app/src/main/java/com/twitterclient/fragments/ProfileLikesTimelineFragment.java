@@ -49,7 +49,7 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
 
     }
 
-    private void populateTimeline(long maxId, final long sinceId) {
+    void populateTimeline(long maxId, final long sinceId) {
 
         String screenName = getArguments().getString(SCREEN_NAME);
 
