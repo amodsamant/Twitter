@@ -63,7 +63,6 @@ public class ProfileActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         twitterClient = TwitterClientApplication.getTwitterClient();
 
         screenName = getIntent().getStringExtra("screen_name");
@@ -120,6 +119,7 @@ public class ProfileActivity extends AppCompatActivity {
     public void setupViews() {
 
         tvUsername = (TextView) findViewById(R.id.tvName);
+        tvUsername.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueBd.ttf"));
 
         tvScreenName = (TextView) findViewById(R.id.tvProfileScreenName);
 
@@ -166,7 +166,6 @@ public class ProfileActivity extends AppCompatActivity {
                         User.class);
 
                 populateUserInfo(user);
-
             }
 
             @Override
@@ -183,7 +182,12 @@ public class ProfileActivity extends AppCompatActivity {
 
         tvUsername.setText(user.getName());
         tvScreenName.setText("@"+ user.getScreenName());
-        tvText.setText(user.getDescription());
+        if(user.getDescription()==null || user.getDescription()=="" ) {
+            tvText.setVisibility(View.GONE);
+        } else {
+            tvText.setVisibility(View.VISIBLE);
+            tvText.setText(user.getDescription());
+        }
         new PatternEditableBuilder().
                 addPattern(Pattern.compile("\\@(\\w+)"),
                         this.getResources().getColor(R.color.twitterBlue),
