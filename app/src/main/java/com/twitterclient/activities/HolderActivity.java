@@ -36,7 +36,6 @@ public class HolderActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
         String fragType = getIntent().getStringExtra("frag_type");
         Tweet tweet = Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
         String screenName = getIntent().getStringExtra("screen_name");

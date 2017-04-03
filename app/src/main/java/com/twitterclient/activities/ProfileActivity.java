@@ -115,7 +115,7 @@ public class ProfileActivity extends AppCompatActivity {
 
     public class ProfileViewPagerAdapter extends SmartFragmentStatePagerAdapter {
 
-        private String[] tabTitles = {"TWEETS", "MEDIA", "LIKES"};
+        private String[] tabTitles = {"TWEETS", "LIKES"};
         Context mContext;
 
         public ProfileViewPagerAdapter(FragmentManager fm, Context context) {
@@ -131,8 +131,6 @@ public class ProfileActivity extends AppCompatActivity {
                 case 0:
                     return ProfileTweetsTimelineFragment.newInstance(screenName);
                 case 1:
-                    return ProfileTweetsTimelineFragment.newInstance(screenName);
-                case 2:
                     return ProfileLikesTimelineFragment.newInstance(screenName);
                 default:
                     return null;
@@ -253,7 +251,7 @@ public class ProfileActivity extends AppCompatActivity {
         ForegroundColorSpan blackSpan = new ForegroundColorSpan(
                 getResources().getColor(R.color.twitterDarkerGrey));
         SpannableStringBuilder ssb = new SpannableStringBuilder(
-                String.valueOf(user.getFollowing()));
+                String.valueOf(GenericUtils.format(user.getFollowing())));
         ssb.setSpan(
                 blackSpan,
                 0,
@@ -263,7 +261,7 @@ public class ProfileActivity extends AppCompatActivity {
         tvFollowing.setText(ssb, TextView.BufferType.EDITABLE);
 
         SpannableStringBuilder ssbFollowers = new SpannableStringBuilder(
-                String.valueOf(user.getFollowers()));
+                String.valueOf(GenericUtils.format(user.getFollowers())));
         ssbFollowers.setSpan(
                 blackSpan,
                 0,
@@ -284,10 +282,8 @@ public class ProfileActivity extends AppCompatActivity {
          */
         String imageUrl = user.getProfileBackground() + "/1500x500";
         Glide.with(this).load(imageUrl)
-                //.bitmapTransform( new RoundedCornersTransformation(this,20,5))
-                .diskCacheStrategy( DiskCacheStrategy.SOURCE )
+                 .diskCacheStrategy( DiskCacheStrategy.SOURCE )
                 .into(ivBackdrop);
-
 
         if(!user.isVerified()) {
             ivVerified.setVisibility(View.GONE);

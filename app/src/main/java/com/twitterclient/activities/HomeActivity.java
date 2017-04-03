@@ -210,8 +210,10 @@ public class HomeActivity extends AppCompatActivity implements
                 intent.putExtra("screen_name", "amod_samant");
                 startActivity(intent);
                 break;
-            case R.id.settings_menu_item:
-                //TODO: Call settings activity
+            case R.id.log_off_item:
+                TwitterClientApplication.getTwitterClient().clearAccessToken();
+                Intent logoutIntent = new Intent(HomeActivity.this, LoginActivity.class);
+                startActivity(logoutIntent);
                 break;
 
             default:

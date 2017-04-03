@@ -11,4 +11,5 @@
     <color name="primary">#ffffff</color>
     <color name="accent">#AAB8C2</color>
     <color name="transparent">#00000000</color>
+    <color name="lightGrey">#DFDFDF</color>
 </resources>
