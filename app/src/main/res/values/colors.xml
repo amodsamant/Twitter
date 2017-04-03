@@ -10,4 +10,5 @@
     <color name="primary_dark">#657786</color>
     <color name="primary">#ffffff</color>
     <color name="accent">#AAB8C2</color>
+    <color name="transparent">#00000000</color>
 </resources>

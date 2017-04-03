@@ -2,13 +2,18 @@ package com.twitterclient.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.Toolbar;
 import android.text.SpannableStringBuilder;
 import android.text.Spanned;
@@ -52,6 +57,9 @@ public class ProfileActivity extends AppCompatActivity {
     ImageView ivBackdrop;
     ImageView ivVerified;
 
+    CollapsingToolbarLayout collapsingToolbar;
+    AppBarLayout appBarLayout;
+
     TwitterClient twitterClient;
 
     @Override
@@ -62,6 +70,32 @@ public class ProfileActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.profile_toolbar_layout);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
+                R.drawable.palatte);
+        Palette.from(bitmap).generate(new Palette.PaletteAsyncListener() {
+            @SuppressWarnings("ResourceType")
+            @Override
+            public void onGenerated(Palette palette) {
+                int vibrantColor = palette.getVibrantColor(R.color.twitterBlue);
+                collapsingToolbar.setContentScrimColor(vibrantColor);
+                collapsingToolbar.setStatusBarScrimColor(R.color.twitterBlue);
+            }
+        });
+
+        appBarLayout = (AppBarLayout) findViewById(R.id.app_bar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (Math.abs(verticalOffset) > 800) {
+                    collapsingToolbar.setTitle(tvUsername.getText().toString());
+                } else {
+                    collapsingToolbar.setTitle("");
+                }
+            }
+        });
 
         twitterClient = TwitterClientApplication.getTwitterClient();
 
@@ -181,6 +215,7 @@ public class ProfileActivity extends AppCompatActivity {
     void populateUserInfo(User user) {
 
         tvUsername.setText(user.getName());
+
         tvScreenName.setText("@"+ user.getScreenName());
         if(user.getDescription()==null || user.getDescription()=="" ) {
             tvText.setVisibility(View.GONE);

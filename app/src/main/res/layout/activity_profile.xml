@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fitsSystemWindows="true"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!--android:theme="@style/AppTheme.AppBarOverlay">-->
         <!--android:layout_height="@dimen/app_bar_height"-->
         <!--android:layout_height="@dimen/app_bar_height"-->
 
@@ -24,14 +25,10 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <!--app:contentScrim="?attr/colorPrimary"-->
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/profile_toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:layout_collapseMode="pin"
-                app:theme="@style/AppThemeHome"/>
 
+            <!--app:theme="@style/AppThemeHome"-->
             <RelativeLayout
+
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@android:color/white"
@@ -132,6 +129,14 @@
                     android:layout_marginBottom="5dp"
                     android:background="@drawable/border_image"/>
             </RelativeLayout>
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/profile_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:layout_collapseMode="pin"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
         </android.support.design.widget.CollapsingToolbarLayout>
 
     </android.support.design.widget.AppBarLayout>
