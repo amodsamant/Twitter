@@ -42,13 +42,13 @@ The following **additional** features are implemented:
 
 List anything else that you can get done to improve the app functionality!
 * [X] Icons are displayed according to the page that is selected in the home activity with toolbar title
-* [X] Followers and following counts are displayed in a readable format(in K, Millions,...)
-* [X] Added Drawler layout
+* [X] Followers and following counts are displayed in a readable format(in K(Thousands), M(Millions),...)
+* [X] Added Drawler layout with header containing user's information
 * [X] Added log off functionality in the app
-* [X] Profile view shows banner at the top, likes in a separate tab, shows if friend of autheticating user
-* [X] Verified icon at all places if user is verified
+* [X] Profile view shows banner at the top, likes in a separate tab, shows if friend of autheticating user else shows follow add button
+* [X] Verified icon at all places if user is verified. All icons get updated on click.
 * [X] Fonts/Color used to make UI similar to Twitter
-* [X] Collapsable Toolbar in the profile view
+* [X] Collapsable Toolbar in the profile view.
 * [X] On Scroll with collapsable toolbar shows the username in the toolbar
 
 ## Video Walkthrough
