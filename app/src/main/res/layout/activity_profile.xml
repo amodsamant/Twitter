@@ -109,7 +109,8 @@
                     android:layout_alignStart="@+id/tvTagline"
                     android:layout_below="@+id/tvTagline"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Following"
                     android:textColor="@color/twitterLightGrey" />
 
                 <TextView
@@ -118,10 +119,11 @@
                     android:layout_height="wrap_content"
                     android:layout_alignBaseline="@+id/tvFollowing"
                     android:layout_alignBottom="@+id/tvFollowing"
-                    android:layout_marginStart="16dp"
+                    android:layout_marginStart="24dp"
                     android:layout_toRightOf="@id/tvFollowing"
                     android:layout_toEndOf="@id/tvFollowing"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:text="Followers"
                     android:textColor="@color/twitterLightGrey" />
 
                 <ImageView
