@@ -101,4 +101,5 @@ public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     public int getItemCount() {
         return messages.size();
     }
+
 }

@@ -15,19 +15,64 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/fileSnapshots.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.bin" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" afterPath="$PROJECT_DIR$/.gradle/3.3/taskArtifacts/taskArtifacts.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/palatte.png" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable/palatte.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-hdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-ldpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-mdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xhdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxhdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-xxxhdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/raizlabs/android/dbflow/config/GeneratedDatabaseHolder.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/raizlabs/android/dbflow/config/GeneratedDatabaseHolder.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$2.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$3.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$4.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$HomeViewPagerAdapter.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity$HomeViewPagerAdapter.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/activities/HomeActivity.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/fragments/MessagesHomeFragment$1.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/fragments/MessagesHomeFragment$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/fragments/MessagesHomeFragment.class" afterPath="$PROJECT_DIR$/app/build/intermediates/classes/debug/com/twitterclient/fragments/MessagesHomeFragment.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-hdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-hdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-ldpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-ldpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-mdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-mdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-xhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-xhdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-xxhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-xxhdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-xxxhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-xxxhdpi/ic_menu_profile.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/zip-cache/W4aKOOcLtK5CpZj70p5st3AXqWs=" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/zip-cache/W4aKOOcLtK5CpZj70p5st3AXqWs=" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/palatte.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable/palatte.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/debug_69dd6f376e712daf52e8c3c764216f57544d5f69.jar" afterPath="$PROJECT_DIR$/app/build/intermediates/pre-dexed/debug/debug_69dd6f376e712daf52e8c3c764216f57544d5f69.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-hdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-ldpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-mdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xhdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxhdpi/ic_menu_profile.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_menu_profile.png" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-xxxhdpi/ic_menu_profile.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" afterPath="$PROJECT_DIR$/app/build/intermediates/res/resources-debug.ap_" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" afterPath="$PROJECT_DIR$/app/build/intermediates/transforms/dex/debug/folders/1000/1f/main/classes.dex" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" afterPath="$PROJECT_DIR$/app/build/outputs/apk/app-debug.apk" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/palatte-web.png" afterPath="$PROJECT_DIR$/app/src/main/palatte-web.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/palatte.png" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/palatte.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/activity_profile.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/layout/activity_profile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_profile.xml" afterPath="$PROJECT_DIR$/app/build/generated/res/pngs/debug/drawable-anydpi-v21/ic_menu_profile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/raizlabs/android/dbflow/config/GeneratedDatabaseHolder.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/raizlabs/android/dbflow/config/GeneratedDatabaseHolder.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Entities$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Entities$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/ExtendedEntities$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/ExtendedEntities$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Follow$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Follow$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Media$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Media$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Message$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Message$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Size$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Size$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Sizes$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Sizes$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Statuses$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Statuses$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Tweet$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Tweet$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Url$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Url$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/User$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/User$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Variants$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/Variants$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/VideoInfo$$Parcelable.java" afterPath="$PROJECT_DIR$/app/build/generated/source/apt/debug/com/twitterclient/models/VideoInfo$$Parcelable.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/generated/source/dataBinding/debug/android/databinding/layouts/DataBindingInfo.java" afterPath="$PROJECT_DIR$/app/build/generated/source/dataBinding/debug/android/databinding/layouts/DataBindingInfo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-anydpi-v21/ic_menu_profile.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/data-binding-layout-out/debug/drawable-anydpi-v21/ic_menu_profile.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/compile-file-map.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" afterPath="$PROJECT_DIR$/app/build/intermediates/incremental/packageDebug/dex-renamer-state.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_profile.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/layout/activity_profile.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_profile.xml" afterPath="$PROJECT_DIR$/app/build/intermediates/res/merged/debug/drawable-anydpi-v21/ic_menu_profile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/HomeActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/HomeActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/twitterclient/adapters/MessagesRecyclerAdapter.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/twitterclient/adapters/MessagesRecyclerAdapter.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/MessagesHomeFragment.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/MessagesHomeFragment.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_profile.xml" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_profile.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/basic_foll_row.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/basic_foll_row.xml" />
     </list>
     <ignored path="TwitterClient.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -58,7 +103,81 @@
     <favorites_list name="TwitterClient" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="HomeActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/HomeActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="205" column="35" selection-start-line="205" selection-start-column="35" selection-end-line="205" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3770#3928#0" expanded="true" />
+                <element signature="e#3927#3928#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="drawer_view.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_view.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ic_menu_profile.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_profile.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basic_foll_row.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/basic_foll_row.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ProfileActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/ProfileActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nav_header.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="99">
+              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -1977,8 +2096,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/ComposeTweetFragment.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/adapters/TimelineRecyclerAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/TweetDetailActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/TimelineActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/footer_progress.xml" />
@@ -1994,7 +2111,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_mentions.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_mentions_selected.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_home.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/MessagesHomeFragment.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_mentions.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_home.xml" />
@@ -2019,15 +2135,18 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/drawer_view.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/ProfileActivity.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/HomeActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/message_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/border_button_add.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_friend.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/border_button.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_friend_add.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/adapters/FollRecyclerAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/basic_foll_row.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/adapters/MessagesRecyclerAdapter.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/MessagesHomeFragment.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/HomeActivity.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_profile.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/basic_foll_row.xml" />
       </list>
     </option>
   </component>
@@ -2063,146 +2182,7 @@
     <panes>
       <pane id="Scratches" />
       <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mipmap-hdpi" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Twitter" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="res" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
+        <subPane />
       </pane>
       <pane id="AndroidView">
         <subPane>
@@ -2283,6 +2263,10 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2296,10 +2280,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="drawable" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2426,8 +2406,8 @@
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="HT6960203928" />
-    <property name="VectorAssetImportPath" value="$PROJECT_DIR$/../../../.." />
+    <property name="device.picker.selection" value="Nexus_5_API_23" />
+    <property name="VectorAssetImportPath" value="/" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
     <property name="android.project.structure.last.selected" value="app" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -2788,7 +2768,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1280" height="707" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20473774" sideWeight="0.49676898" order="7" side_tool="false" content_ui="tabs" />
@@ -2796,7 +2776,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.7109244" sideWeight="0.4022617" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14213198" sideWeight="0.59773827" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.534687" sideWeight="0.59773827" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994923" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3282572" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -2804,12 +2784,12 @@
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42689076" sideWeight="0.14378029" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3147208" sideWeight="0.5541195" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3147208" sideWeight="0.5541195" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3000,35 +2980,11 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="97" />
+      <option name="time" value="98" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_mentions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_mentions.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_mentions_selected.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values-v14/styles.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -3276,46 +3232,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-204">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="33" selection-start-line="15" selection-start-column="33" selection-end-line="15" selection-end-column="33" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
-          <folding>
-            <element signature="e#740#758#0" expanded="true" />
-            <element signature="e#923#939#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/HomeActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="215" column="42" selection-start-line="215" selection-start-column="42" selection-end-line="215" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -3336,14 +3257,6 @@
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/MessagesHomeFragment.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="27" column="39" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/FollowersFragment.java">
@@ -3415,20 +3328,9 @@
         <state relative-caret-position="134">
           <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/basic_foll_row.xml">
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/FollowListFragment.java">
@@ -3439,22 +3341,103 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/ProfileActivity.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/models/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="263">
-          <caret line="284" column="16" selection-start-line="284" selection-start-column="16" selection-end-line="284" selection-end-column="16" />
+        <state relative-caret-position="75">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/adapters/MessagesRecyclerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding>
+            <marker date="1491186953000" expanded="false" signature="44:720" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/fragments/MessagesHomeFragment.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_profile.xml">
       <provider editor-type-id="text-editor">
-        <state relative-caret-position="420">
+        <state relative-caret-position="1860">
           <caret line="124" column="51" selection-start-line="124" selection-start-column="51" selection-end-line="124" selection-end-column="51" />
           <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/ProfileActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="67" column="46" selection-start-line="67" selection-start-column="46" selection-end-line="67" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/nav_header.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/twitterclient/activities/HomeActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="205" column="35" selection-start-line="205" selection-start-column="35" selection-end-line="205" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3770#3928#0" expanded="true" />
+            <element signature="e#3927#3928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/menu/drawer_view.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="49" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable/ic_menu_profile.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="51" selection-start-line="6" selection-start-column="51" selection-end-line="6" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/basic_foll_row.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="34" column="40" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>

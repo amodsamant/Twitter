@@ -17,6 +17,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 
 import cz.msebera.android.httpclient.Header;
@@ -56,9 +57,9 @@ public class MessagesHomeFragment extends MessagesFragment {
                 Gson gson = new Gson();
                 for(int x = 0; x < response.length();x++) {
                     try {
-                        Message messgae = gson.fromJson(response.getJSONObject(x).toString(),
+                        Message message = gson.fromJson(response.getJSONObject(x).toString(),
                                 Message.class);
-                        messages.add(messgae);
+                        messages.add(message);
 
                     } catch (JSONException e) {
                         //TODO:
@@ -68,7 +69,7 @@ public class MessagesHomeFragment extends MessagesFragment {
                 progressBar.setVisibility(View.GONE);
                 recyclerView.setVisibility(View.VISIBLE);
 
-                addAllMessages(messages);
+                addAllMessages(recycleMessages(messages));
 
                 int curSize = adapter.getItemCount();
                 adapter.notifyItemRangeInserted(curSize, messages.size()-1);
@@ -91,4 +92,17 @@ public class MessagesHomeFragment extends MessagesFragment {
     void loadNextDataFromApi() {
     }
 
+    public List<Message> recycleMessages(List<Message> messages) {
+
+        List<Message> result = new ArrayList<>();
+        HashSet<Long> senderIds = new HashSet<>();
+
+        for(Message message: messages) {
+            if (!senderIds.contains(message.getSender().getId())) {
+                senderIds.add(message.getSender().getId());
+                result.add(message);
+            }
+        }
+        return result;
+    }
 }

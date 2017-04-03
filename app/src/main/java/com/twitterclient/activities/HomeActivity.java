@@ -20,7 +20,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.gson.Gson;
@@ -107,7 +106,6 @@ public class HomeActivity extends AppCompatActivity implements
             @Override
             public void onClick(View view) {
                 openComposeFrag(null);
-                Toast.makeText(HomeActivity.this, "Clicked", Toast.LENGTH_SHORT).show();
             }
         });
 
