@@ -40,7 +40,7 @@ The following **bonus** features are implemented:
 
 The following **additional** features are implemented:
 
-* [X] List anything else that you can get done to improve the app functionality!
+List anything else that you can get done to improve the app functionality!
 * [X] Icons are displayed according to the page that is selected in the home activity with toolbar title
 * [X] Followers and following counts are displayed in a readable format(in K, Millions,...)
 * [X] Added Drawler layout
