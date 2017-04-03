@@ -1,6 +1,7 @@
 package com.twitterclient.adapters;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -69,13 +70,19 @@ public class FollRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         if(!user.isFollowing()) {
             Drawable img = context.getResources().getDrawable(R.drawable.ic_friend_add);
-            viewHolder.btnFriend.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+
+            viewHolder.btnFriend
+                    .setBackground(context.getResources().getDrawable(R.drawable.border_button_add));
+            viewHolder.btnFriend.setCompoundDrawablesWithIntrinsicBounds(null, img, null, null);
         } else {
             Drawable img = context.getResources().getDrawable(R.drawable.ic_friend);
-            viewHolder.btnFriend.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+            viewHolder.btnFriend.setCompoundDrawablesWithIntrinsicBounds(null, img, null, null);
         }
 
         viewHolder.tvBody.setText(user.getDescription());
+        Typeface fontLight = Typeface
+                .createFromAsset(context.getAssets(), "fonts/HelveticaNeueLight.ttf");
+        viewHolder.tvBody.setTypeface(fontLight);
 
     }
 

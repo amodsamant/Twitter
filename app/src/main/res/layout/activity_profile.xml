@@ -46,13 +46,15 @@
 
                 <Button
                     android:id="@+id/btnFollow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="40dp"
+                    android:layout_height="30dp"
                     android:layout_alignParentEnd="true"
                     android:layout_below="@+id/ivBackdrop"
-                    android:drawableRight="@drawable/ic_friend"
-                    android:paddingRight="15dp"
-                    android:background="@android:color/transparent"
+                    android:drawableTop="@drawable/ic_friend"
+                    android:background="@drawable/border_button"
+                    android:paddingTop="2dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="15dp"
                     />
 
                 <TextView

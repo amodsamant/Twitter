@@ -39,8 +39,7 @@
         android:layout_marginRight="5dp"
         android:background="@drawable/ic_verified_user"
         android:layout_alignTop="@+id/tvUsernameMR"
-        android:layout_toEndOf="@+id/tvUsernameMR"
-        android:layout_marginStart="12dp" />
+        android:layout_toEndOf="@+id/tvUsernameMR" />
 
     <TextView
         android:id="@+id/tvScreenNameMR"
@@ -50,8 +49,7 @@
         android:textSize="14sp"
         android:text="\@ name"
         android:layout_alignTop="@+id/ivVerifiedBR"
-        android:layout_toEndOf="@+id/ivVerifiedBR"
-        android:layout_marginStart="14dp" />
+        android:layout_toEndOf="@+id/ivVerifiedBR" />
 
     <TextView
         android:id="@+id/tvSinceTimeMR"

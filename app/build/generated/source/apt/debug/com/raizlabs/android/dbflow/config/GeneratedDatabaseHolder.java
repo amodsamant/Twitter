@@ -20,12 +20,12 @@ public final class GeneratedDatabaseHolder extends DatabaseHolder {
     typeConverters.put(Date.class, new SqlDateConverter());
     typeConverters.put(Time.class, new SqlDateConverter());
     typeConverters.put(Timestamp.class, new SqlDateConverter());
+    typeConverters.put(BigDecimal.class, new BigDecimalConverter());
     typeConverters.put(Calendar.class, new CalendarConverter());
     typeConverters.put(GregorianCalendar.class, new CalendarConverter());
+    typeConverters.put(Boolean.class, new BooleanConverter());
     typeConverters.put(UUID.class, new UUIDConverter());
     typeConverters.put(java.util.Date.class, new DateConverter());
-    typeConverters.put(BigDecimal.class, new BigDecimalConverter());
-    typeConverters.put(Boolean.class, new BooleanConverter());
     new MyDatabaseTwitterClientDatabase_Database(this);
     new TwitterDatabaseTimelineDb_Database(this);
   }
