@@ -31,7 +31,8 @@
         android:linksClickable="true"
         android:textColor="@color/twitterDarkerGrey"
         android:layout_below="@+id/btnFoll"
-        android:layout_toEndOf="@+id/ivFollUser" />
+        android:layout_toEndOf="@+id/ivFollUser"
+        android:layout_marginBottom="5dp"/>
 
     <TextView
         android:id="@+id/tvFollUsername"
