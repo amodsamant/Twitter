@@ -34,7 +34,7 @@ The following **optional** features are implemented:
 The following **bonus** features are implemented:
 
 * [X] Use Parcelable instead of Serializable using the popular [Parceler library](http://guides.codepath.com/android/Using-Parceler).
-* [X] Leverages the [data binding support module](http://guides.codepath.com/android/Applying-Data-Binding-for-Views) to bind data into layout templates.
+* [X] Leverages the [data binding support module](http://guides.codepath.com/android/Applying-Data-Binding-for-Views) to bind data into layout templates. This is added in TweetDetailFragment.
 * [X] On the profile screen, leverage the [CoordinatorLayout](http://guides.codepath.com/android/Handling-Scrolls-with-CoordinatorLayout#responding-to-scroll-events) to [apply scrolling behavior](https://hackmd.io/s/SJyDOCgU) as the user scrolls through the profile timeline.
 * [X] User can view their direct messages (or send new ones)(User can view there messages)
 
@@ -42,6 +42,7 @@ The following **additional** features are implemented:
 
 * [X] List anything else that you can get done to improve the app functionality!
 * [X] Icons are displayed according to the page that is selected in the home activity with toolbar title
+* [X] Followers and following counts are displayed in a readable format(in K, Millions,...)
 * [X] Added Drawler layout
 * [X] Added log off functionality in the app
 * [X] Profile view shows banner at the top, likes in a separate tab, shows if friend of autheticating user
