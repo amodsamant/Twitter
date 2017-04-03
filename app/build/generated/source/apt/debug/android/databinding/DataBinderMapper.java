@@ -7,6 +7,8 @@ class DataBinderMapper  {
     }
     public android.databinding.ViewDataBinding getDataBinder(android.databinding.DataBindingComponent bindingComponent, android.view.View view, int layoutId) {
         switch(layoutId) {
+                case com.twitterclient.R.layout.frag_tweet_detail:
+                    return com.twitterclient.databinding.FragTweetDetailBinding.bind(view, bindingComponent);
                 case com.twitterclient.R.layout.compose_frag:
                     return com.twitterclient.databinding.ComposeFragBinding.bind(view, bindingComponent);
         }
@@ -23,6 +25,12 @@ class DataBinderMapper  {
         }
         final int code = tag.hashCode();
         switch(code) {
+            case -161775272: {
+                if(tag.equals("layout/frag_tweet_detail_0")) {
+                    return com.twitterclient.R.layout.frag_tweet_detail;
+                }
+                break;
+            }
             case 525073909: {
                 if(tag.equals("layout/compose_frag_0")) {
                     return com.twitterclient.R.layout.compose_frag;
