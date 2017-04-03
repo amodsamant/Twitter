@@ -2,6 +2,7 @@ package com.twitterclient.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 
@@ -46,8 +47,6 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
         if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
             populateTimeline(-1, -1);
         }
-
-
     }
 
     void populateTimeline(long maxId, final long sinceId) {
@@ -96,6 +95,8 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
                 swipeRefreshLayout.setRefreshing(false);
+                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
+                        Snackbar.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
@@ -107,7 +108,6 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
         if(tweets.size() > 0) {
             maxTweetId = tweets.get(tweets.size()-1).getId();
         }
-
         populateTimeline(maxTweetId,-1);
     }
 }

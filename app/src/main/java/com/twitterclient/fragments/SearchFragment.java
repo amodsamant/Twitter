@@ -3,6 +3,7 @@ package com.twitterclient.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 
@@ -82,6 +83,8 @@ public class SearchFragment extends TweetsListFragment {
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
                 swipeRefreshLayout.setRefreshing(false);
+                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
+                        Snackbar.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });

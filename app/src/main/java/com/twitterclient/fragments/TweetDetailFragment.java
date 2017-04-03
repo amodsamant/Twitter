@@ -63,30 +63,17 @@ public class TweetDetailFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-//        TextView tvUsername = (TextView) view.findViewById(R.id.tvUsername);
-
-//        TextView tvScreenName = (TextView) view.findViewById(R.id.tvScreenName);
-
-//        TextView tvText = (TextView) view.findViewById(R.id.tvText);
         binding.tvText.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/HelveticaNeueLight.ttf"));
 
-//        TextView tvRetweetCount = (TextView) view.findViewById(R.id.tvRetweetCount);
         binding.tvRetweetCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/HelveticaNeueLight.ttf"));
-//        TextView tvLikeCount = (TextView) view.findViewById(tvLikeCount);
         binding.tvLikeCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/HelveticaNeueLight.ttf"));
 
-//        ImageView ivUser = (ImageView) view.findViewById(R.id.ivUser);
-//        ImageView ivTweet = (ImageView) view.findViewById(R.id.ivTweet);
-//        ImageView ivVerified = (ImageView) view.findViewById(R.id.ivVerified);
-
-//        TextView tvDate = (TextView) view.findViewById(R.id.tvDate);
         binding.tvDate.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/HelveticaNeueLight.ttf"));
 
-//        TextView tvTime = (TextView) view.findViewById(R.id.tvTime);
         binding.tvTime.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
                 "fonts/HelveticaNeueLight.ttf"));
 
@@ -133,7 +120,6 @@ public class TweetDetailFragment extends Fragment {
         binding.tvTime.setText(DateGenericUtils.getTime(tweet.getCreatedAt()));
 
 
-//        Button btnReply = (Button) view.findViewById(R.id.btnReply);
         binding.btnReply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -145,8 +131,6 @@ public class TweetDetailFragment extends Fragment {
             }
         });
 
-
-//        final Button btnLike = (Button) view.findViewById(R.id.btnLike);
         if(tweet.isFavorited()) {
             Drawable img = getResources().getDrawable(R.drawable.ic_favorite_set);
             binding.btnLike.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
@@ -172,8 +156,6 @@ public class TweetDetailFragment extends Fragment {
         });
 
 
-
-//        final Button btnRetweet = (Button) view.findViewById(R.id.btnRetweet);
         if(tweet.isRetweeted()) {
             Drawable img = getResources().getDrawable(R.drawable.ic_retweet_set);
             binding.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
@@ -218,7 +200,7 @@ public class TweetDetailFragment extends Fragment {
                         new PatternEditableBuilder.SpannableClickedListener() {
                             @Override
                             public void onSpanClicked(String text) {
-//                                Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
+//                                Intent intent = new Intent(HolderActivity.this, ProfileActivity.class);
 //                                intent.putExtra("screen_name", text.substring(1));
 //                                startActivity(intent);
                             }

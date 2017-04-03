@@ -2,6 +2,7 @@ package com.twitterclient.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
 import android.view.View;
 
@@ -62,7 +63,8 @@ public class MessagesHomeFragment extends MessagesFragment {
                         messages.add(message);
 
                     } catch (JSONException e) {
-                        //TODO:
+                        Snackbar.make(getView(), "Try Again",
+                                Snackbar.LENGTH_LONG).show();
                     }
                 }
 
@@ -74,7 +76,6 @@ public class MessagesHomeFragment extends MessagesFragment {
                 int curSize = adapter.getItemCount();
                 adapter.notifyItemRangeInserted(curSize, messages.size()-1);
 
-                swipeRefreshLayout.setRefreshing(false);
 
 
             }
@@ -82,16 +83,19 @@ public class MessagesHomeFragment extends MessagesFragment {
             @Override
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
-                swipeRefreshLayout.setRefreshing(false);
+
+                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
+                        Snackbar.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
     }
 
-    @Override
-    void loadNextDataFromApi() {
-    }
-
+    /**
+     * Function only keeps the latest message to display in the Message timeline
+     * @param messages
+     * @return
+     */
     public List<Message> recycleMessages(List<Message> messages) {
 
         List<Message> result = new ArrayList<>();

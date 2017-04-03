@@ -3,7 +3,6 @@ package com.twitterclient.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -30,7 +29,6 @@ public abstract class FollowListFragment extends Fragment {
     DividerItemDecoration dividerItemDecoration;
     LinearLayoutManager layoutManager;
     EndlessRecyclerViewScrollListener scrollListener;
-    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -42,13 +40,6 @@ public abstract class FollowListFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
         dividerItemDecoration = new DividerItemDecoration(getActivity(),
                 layoutManager.getOrientation());
-
-        scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
-            @Override
-            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
-                //loadNextDataFromApi();
-            }
-        };
     }
 
     @Override
@@ -66,18 +57,6 @@ public abstract class FollowListFragment extends Fragment {
         recyclerView.setVisibility(View.GONE);
 
         recyclerView.addOnScrollListener(scrollListener);
-
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
-//        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-//            @Override
-//            public void onRefresh() {
-//                //TODO: populateTimeline(-1, 1);
-//            }
-//        });
-//
-//        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
-//                android.R.color.holo_green_light,
-//                android.R.color.holo_orange_light);
 
         return view;
     }

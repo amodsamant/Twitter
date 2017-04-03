@@ -285,9 +285,6 @@ public class ComposeTweetFragment extends DialogFragment
                         try {
                             Tweet tweet = gson.fromJson(response.toString(), Tweet.class);
                             listener.onFinishTweet(tweet);
-                            //TODO:
-//                            HomeActivity activity = (HomeActivity) getActivity();
-//                            activity.onFinishTweet(tweet);
                         } catch (Exception e) {
                             Snackbar snackbar = Snackbar
                                     .make(getView(), "Error in tweeting",
