@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
-        "source": "/Users/Amod/Documents/CodePath/TwitterClient/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/mipmap-xhdpi/ic_launcher.png",
         "source": "/Users/Amod/Documents/CodePath/Twitter/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     }

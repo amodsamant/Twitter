@@ -1,10 +1,22 @@
 [
     {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/menu/login.xml",
-        "source": "/Users/Amod/Documents/CodePath/TwitterClient/app/src/main/res/menu/login.xml"
+        "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/menu/holder_menu_search.xml",
+        "source": "/Users/Amod/Documents/CodePath/Twitter/app/src/main/res/menu/holder_menu_search.xml"
     },
     {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/menu/login.xml",
         "source": "/Users/Amod/Documents/CodePath/Twitter/app/src/main/res/menu/login.xml"
+    },
+    {
+        "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/menu/drawer_view.xml",
+        "source": "/Users/Amod/Documents/CodePath/Twitter/app/src/main/res/menu/drawer_view.xml"
+    },
+    {
+        "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/menu/menu_profile.xml",
+        "source": "/Users/Amod/Documents/CodePath/Twitter/app/src/main/res/menu/menu_profile.xml"
+    },
+    {
+        "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/menu/menu_search.xml",
+        "source": "/Users/Amod/Documents/CodePath/Twitter/app/src/main/res/menu/menu_search.xml"
     }
 ]

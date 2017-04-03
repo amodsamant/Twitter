@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:2:1-52:12
+ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:2:1-56:12
 	package
 		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:3:5-32
 		INJECTED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml
@@ -28,7 +28,7 @@ ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.x
 	android:name
 		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:9:22-78
 application
-ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:12:5-50:19
+ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:12:5-54:19
 MERGED from [com.github.Raizlabs.DBFlow:dbflow:4.0.0-beta5] /Users/Amod/.android/build-cache/285f442d8df6e1f925c420e24787fb5cdf5c9c1b/output/AndroidManifest.xml:11:5-20
 MERGED from [com.android.support:design:25.3.0] /Users/Amod/.android/build-cache/e1ce7374f563390f207e864440f3e765531a892a/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:transition:25.3.0] /Users/Amod/.android/build-cache/480cdd9f1f9b979902b20adaadc6386f24af04e7/output/AndroidManifest.xml:26:5-20
@@ -38,6 +38,7 @@ MERGED from [com.android.support:support-v13:25.3.0] /Users/Amod/.android/build-
 MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/Amod/.android/build-cache/0b855e02d14b43921a0ccd1ad567097dbf206b6f/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/Amod/.android/build-cache/82782b6cabf97aa90669199699781ec89730acd3/output/AndroidManifest.xml:26:5-20
+MERGED from [com.android.support:palette-v7:25.3.0] /Users/Amod/.android/build-cache/90c13c3ef7adbf0861cd596801bae6ca77263e62/output/AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-v4:25.3.0] /Users/Amod/.android/build-cache/f98129e843f79ecc5b74ade25e34b20fa3d7c167/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-fragment:25.3.0] /Users/Amod/.android/build-cache/976c92ee42c787dac1a7913ec811f8438ff593cc/output/AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:25.3.0] /Users/Amod/.android/build-cache/a6aeaab2466415f86c268357ee04d7d0c3c3f661/output/AndroidManifest.xml:29:5-20
@@ -92,26 +93,28 @@ ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.x
 		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:34:21-53
 	android:scheme
 		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:35:21-43
-activity#com.twitterclient.activities.TimelineActivity
-ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:38:9-47:20
-	android:label
-		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:40:13-60
+activity#com.twitterclient.activities.HomeActivity
+ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:39:9-49:20
 	android:theme
-		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:41:13-56
+		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:41:13-44
 	android:name
-		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:39:13-56
+		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:40:13-52
 intent-filter#android.intent.action.SEND+android.intent.category.DEFAULT
-ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:42:13-46:29
+ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:42:13-48:29
 action#android.intent.action.SEND
-ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:43:17-68
+ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:43:17-69
 	android:name
 		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:43:25-66
-activity#com.twitterclient.activities.TweetDetailActivity
-ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:48:9-49:58
+activity#com.twitterclient.activities.ProfileActivity
+ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:50:9-52:47
 	android:theme
-		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:49:13-56
+		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:52:13-44
 	android:name
-		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:48:19-65
+		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:51:13-55
+activity#com.twitterclient.activities.HolderActivity
+ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:53:9-72
+	android:name
+		ADDED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml:53:19-60
 uses-sdk
 INJECTED from /Users/Amod/Documents/CodePath/Twitter/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [com.github.Raizlabs.DBFlow:dbflow:4.0.0-beta5] /Users/Amod/.android/build-cache/285f442d8df6e1f925c420e24787fb5cdf5c9c1b/output/AndroidManifest.xml:7:5-9:41
@@ -127,6 +130,7 @@ MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/Amod/.android/build
 MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/Amod/.android/build-cache/0b855e02d14b43921a0ccd1ad567097dbf206b6f/output/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/Amod/.android/build-cache/82782b6cabf97aa90669199699781ec89730acd3/output/AndroidManifest.xml:20:5-43
 MERGED from [jp.wasabeef:glide-transformations:2.0.2] /Users/Amod/.android/build-cache/ecfbaae45ff7f6bb73cd2f458072697c54413357/output/AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:palette-v7:25.3.0] /Users/Amod/.android/build-cache/90c13c3ef7adbf0861cd596801bae6ca77263e62/output/AndroidManifest.xml:20:5-43
 MERGED from [com.android.databinding:adapters:1.3.1] /Users/Amod/.android/build-cache/1467219a00f096fb2275409816beefe67ce9862a/output/AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.databinding:library:1.3.1] /Users/Amod/.android/build-cache/eb5ee116ab223d3344500bb421ab252f359aa2ff/output/AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-v4:25.3.0] /Users/Amod/.android/build-cache/f98129e843f79ecc5b74ade25e34b20fa3d7c167/output/AndroidManifest.xml:21:5-23:54
@@ -151,6 +155,7 @@ MERGED from [com.android.support:recyclerview-v7:25.3.0] /Users/Amod/.android/bu
 MERGED from [com.android.support:appcompat-v7:25.3.0] /Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:animated-vector-drawable:25.3.0] /Users/Amod/.android/build-cache/0b855e02d14b43921a0ccd1ad567097dbf206b6f/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-vector-drawable:25.3.0] /Users/Amod/.android/build-cache/82782b6cabf97aa90669199699781ec89730acd3/output/AndroidManifest.xml:22:5-24:34
+MERGED from [com.android.support:palette-v7:25.3.0] /Users/Amod/.android/build-cache/90c13c3ef7adbf0861cd596801bae6ca77263e62/output/AndroidManifest.xml:22:5-24:34
 MERGED from [com.android.support:support-v4:25.3.0] /Users/Amod/.android/build-cache/f98129e843f79ecc5b74ade25e34b20fa3d7c167/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-fragment:25.3.0] /Users/Amod/.android/build-cache/976c92ee42c787dac1a7913ec811f8438ff593cc/output/AndroidManifest.xml:25:5-27:34
 MERGED from [com.android.support:support-media-compat:25.3.0] /Users/Amod/.android/build-cache/a6aeaab2466415f86c268357ee04d7d0c3c3f661/output/AndroidManifest.xml:25:5-27:34

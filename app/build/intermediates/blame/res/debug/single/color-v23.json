@@ -1,19 +1,7 @@
 [
     {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_tint_seek_thumb.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_seek_thumb.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_tint_default.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_default.xml"
-    },
-    {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
         "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_btn_colored_text_material.xml"
     },
     {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
@@ -28,32 +16,12 @@
         "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_seek_thumb.xml"
     },
     {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_borderless_text_material.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_btn_colored_borderless_text_material.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_tint_edittext.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_edittext.xml"
-    },
-    {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
         "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_switch_thumb.xml"
     },
     {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml",
         "source": "/Users/Amod/.android/build-cache/e1ce7374f563390f207e864440f3e765531a892a/output/res/color-v23/design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/design_tint_password_toggle.xml",
-        "source": "/Users/Amod/.android/build-cache/e1ce7374f563390f207e864440f3e765531a892a/output/res/color-v23/design_tint_password_toggle.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_switch_thumb.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_tint_spinner.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_spinner.xml"
     },
     {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
@@ -64,20 +32,8 @@
         "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_spinner.xml"
     },
     {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_color_highlight_material.xml"
-    },
-    {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/color-v23/abc_color_highlight_material.xml",
         "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_color_highlight_material.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_track.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_switch_track.xml"
-    },
-    {
-        "merged": "/Users/Amod/Documents/CodePath/TwitterClient/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",
-        "source": "/Users/Amod/.android/build-cache/f0006ef14809e7cc7ca7f6e4647939f02d34826b/output/res/color-v23/abc_tint_btn_checkable.xml"
     },
     {
         "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/color-v23/abc_tint_btn_checkable.xml",

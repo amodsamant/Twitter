@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/drawable-hdpi-v21/ic_mentions.xml",
+        "source": "/Users/Amod/Documents/CodePath/Twitter/app/build/generated/res/pngs/debug/drawable-hdpi-v21/ic_mentions.xml"
+    },
+    {
+        "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/drawable-hdpi-v21/ic_message_selected.xml",
+        "source": "/Users/Amod/Documents/CodePath/Twitter/app/build/generated/res/pngs/debug/drawable-hdpi-v21/ic_message_selected.xml"
+    },
+    {
+        "merged": "/Users/Amod/Documents/CodePath/Twitter/app/build/intermediates/res/merged/debug/drawable-hdpi-v21/ic_home_selected.xml",
+        "source": "/Users/Amod/Documents/CodePath/Twitter/app/build/generated/res/pngs/debug/drawable-hdpi-v21/ic_home_selected.xml"
+    }
+]

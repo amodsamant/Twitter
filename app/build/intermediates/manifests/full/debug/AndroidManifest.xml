@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="19"
         android:targetSdkVersion="25" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -42,9 +42,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.twitterclient.activities.TimelineActivity"
-            android:label="@string/title_activity_timeline"
-            android:theme="@style/AppTheme.NoActionBar" >
+            android:name="com.twitterclient.activities.HomeActivity"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -54,8 +53,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.twitterclient.activities.TweetDetailActivity"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:name="com.twitterclient.activities.ProfileActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.twitterclient.activities.HolderActivity" />
     </application>
 
 </manifest>

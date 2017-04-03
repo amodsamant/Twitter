@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/ivFollUser"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="8dp"
+        tools:srcCompat="@mipmap/ic_launcher"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:id="@+id/tvFollTagline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="5"
+        android:text="text to display"
+        android:layout_marginRight="5dp"
+        android:textSize="16sp"
+        android:autoLink="all"
+        android:linksClickable="true"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/btnFoll"
+        android:layout_toEndOf="@+id/ivFollUser" />
+
+    <TextView
+        android:id="@+id/tvFollUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Name"
+        android:layout_alignTop="@+id/ivFollUser"
+        android:layout_toEndOf="@+id/ivFollUser" />
+
+    <ImageView
+        android:id="@+id/ivFollVerified"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="14dp"
+        android:layout_toEndOf="@id/tvFollUsername"
+        android:background="@drawable/ic_verified_user" />
+
+    <TextView
+        android:id="@+id/tvFollScreenName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/twitterDarkerGrey"
+        android:textSize="12sp"
+        android:text="\@name"
+        android:layout_below="@id/tvFollUsername"
+        android:layout_above="@id/tvFollTagline"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_toEndOf="@+id/ivFollUser" />
+
+    <Button
+        android:id="@+id/btnFoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:drawableRight="@drawable/ic_friend"
+        android:background="@android:color/transparent"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginBottom="5dp"/>
+
+</RelativeLayout>
