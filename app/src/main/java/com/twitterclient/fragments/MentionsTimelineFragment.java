@@ -27,8 +27,7 @@ public class MentionsTimelineFragment extends TweetsListFragment {
     TwitterClient twitterCLient;
 
     public static MentionsTimelineFragment newInstance() {
-        MentionsTimelineFragment fragment = new MentionsTimelineFragment();
-        return fragment;
+        return new MentionsTimelineFragment();
     }
 
     @Override
@@ -66,7 +65,8 @@ public class MentionsTimelineFragment extends TweetsListFragment {
                         respTweets.add(tweet);
 
                     } catch (JSONException e) {
-                        //TODO:
+                        Snackbar.make(getView(), "Try Again",
+                                Snackbar.LENGTH_LONG).show();
                     }
                 }
 
@@ -83,14 +83,13 @@ public class MentionsTimelineFragment extends TweetsListFragment {
                     scrollListener.resetState();
                     layoutManager.scrollToPosition(0);
                 }
-
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
                 swipeRefreshLayout.setRefreshing(false);
-                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
+                Snackbar.make(getView(), "Error fetching Mentions! Try Again",
                         Snackbar.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }

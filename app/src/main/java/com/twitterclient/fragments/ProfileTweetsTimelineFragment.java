@@ -24,8 +24,9 @@ import cz.msebera.android.httpclient.Header;
 
 public class ProfileTweetsTimelineFragment extends TweetsListFragment {
 
-    private static final String SCREEN_NAME = "screen_name";
     TwitterClient twitterCLient;
+
+    private static final String SCREEN_NAME = "screen_name";
 
     public static ProfileTweetsTimelineFragment newInstance(String screenName) {
         ProfileTweetsTimelineFragment fragment = new ProfileTweetsTimelineFragment();
@@ -47,8 +48,6 @@ public class ProfileTweetsTimelineFragment extends TweetsListFragment {
         if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
             populateTimeline(-1, -1);
         }
-
-
     }
 
     void populateTimeline(long maxId, final long sinceId) {
@@ -91,7 +90,6 @@ public class ProfileTweetsTimelineFragment extends TweetsListFragment {
                     scrollListener.resetState();
                     layoutManager.scrollToPosition(0);
                 }
-
             }
 
             @Override

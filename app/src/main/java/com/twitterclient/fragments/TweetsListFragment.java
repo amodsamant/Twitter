@@ -92,7 +92,9 @@ public abstract class TweetsListFragment extends Fragment {
         this.tweets.clear();
     }
 
-
+    /**
+     * Abstract functions to be implemented individually as per requirement
+     */
     abstract void loadNextDataFromApi();
 
     abstract void populateTimeline(long maxId, long sinceId);

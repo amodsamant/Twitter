@@ -1,10 +1,8 @@
 package com.twitterclient.utils;
 
-/**
- * Created by Amod on 3/26/17.
- */
-
 public class GenericUtils {
+
+    public static final String LIGHT_FONT = "fonts/HelveticaNeueLight.ttf";
 
     /**
      * Modifies the default url for profile image from _normal to _bigger

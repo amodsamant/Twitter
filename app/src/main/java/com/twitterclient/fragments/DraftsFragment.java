@@ -37,10 +37,7 @@ public class DraftsFragment extends DialogFragment {
     }
 
     public static DraftsFragment getInstance() {
-        DraftsFragment draftsFragment = new DraftsFragment();
-        Bundle args = new Bundle();
-        draftsFragment.setArguments(args);
-        return draftsFragment;
+        return new DraftsFragment();
     }
 
     @Nullable

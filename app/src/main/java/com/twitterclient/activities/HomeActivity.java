@@ -109,7 +109,6 @@ public class HomeActivity extends AppCompatActivity implements
             }
         });
 
-
     }
 
     public class HomeViewPagerAdapter extends SmartFragmentStatePagerAdapter {
@@ -216,12 +215,8 @@ public class HomeActivity extends AppCompatActivity implements
 
             default:
         }
-
-        // Highlight the selected item has been done by NavigationView
         menuItem.setChecked(true);
-        // Set action bar title
         setTitle(menuItem.getTitle());
-        // Close the navigation drawer
         mDrawer.closeDrawers();
     }
 
@@ -229,7 +224,6 @@ public class HomeActivity extends AppCompatActivity implements
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, mDrawer, toolbar,
                 R.string.drawer_open, R.string.drawer_close);
-
     }
 
 
@@ -286,6 +280,9 @@ public class HomeActivity extends AppCompatActivity implements
         return true;
     }
 
+    /**
+     * Function used to set the correct icons on the tab with title
+     */
     void setupTab(int position) {
 
         int[] tabIcons =
@@ -306,6 +303,9 @@ public class HomeActivity extends AppCompatActivity implements
 
     }
 
+    /**
+     * Function used to set the correct icons on the tab
+     */
     void onPageChangeListener() {
 
         viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -317,13 +317,10 @@ public class HomeActivity extends AppCompatActivity implements
             }
 
             @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
+            public void onPageScrollStateChanged(int state) {}
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
+            public void onPageScrolled(int position,
+                                       float positionOffset, int positionOffsetPixels) {}
         });
 
     }

@@ -127,7 +127,6 @@ public class ProfileActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
 
             switch (position) {
-
                 case 0:
                     return ProfileTweetsTimelineFragment.newInstance(screenName);
                 case 1:
@@ -277,8 +276,9 @@ public class ProfileActivity extends AppCompatActivity {
                 .into(ivUser);
 
         ivBackdrop.setImageResource(0);
+
         /**
-         * Using large image url with RoundedCornersTransformation
+         * Using the banner url
          */
         String imageUrl = user.getProfileBackground() + "/1500x500";
         Glide.with(this).load(imageUrl)

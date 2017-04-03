@@ -155,15 +155,8 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         new PatternEditableBuilder().
                 addPattern(Pattern.compile("\\#(\\w+)"),
-                        context.getResources().getColor(R.color.twitterBlue),
-                        new PatternEditableBuilder.SpannableClickedListener() {
-                            @Override
-                            public void onSpanClicked(String text) {
-//                                Intent intent = new Intent(context, ProfileActivity.class);
-//                                intent.putExtra("screen_name", text.substring(1));
-//                                context.startActivity(intent);
-                            }
-                        }).into(viewHolder.tvBody);
+                        context.getResources().getColor(R.color.twitterBlue),null)
+                .into(viewHolder.tvBody);
 
         viewHolder.btnRetweet.setText(String.valueOf(tweet.getRetweetCount()));
         if(!tweet.isRetweeted()) {

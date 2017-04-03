@@ -27,8 +27,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
     TwitterClient twitterClient;
 
     public static HomeTimelineFragment newInstance() {
-        HomeTimelineFragment fragment = new HomeTimelineFragment();
-        return fragment;
+        return new HomeTimelineFragment();
     }
 
     @Override

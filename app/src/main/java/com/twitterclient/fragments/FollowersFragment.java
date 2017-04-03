@@ -54,16 +54,11 @@ public class FollowersFragment extends FollowListFragment {
 
                 Log.d("DEBUG", response.toString());
                 Gson gson = new Gson();
-
                 Follow followers = gson.fromJson(response.toString(), Follow.class);
-
                 recyclerView.setVisibility(View.VISIBLE);
                 progressBar.setVisibility(View.GONE);
-
                 addAllUsers(followers.getUsers());
-
                 adapter.notifyDataSetChanged();
-
             }
 
             @Override

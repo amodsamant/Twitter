@@ -24,8 +24,9 @@ import cz.msebera.android.httpclient.Header;
 
 public class ProfileLikesTimelineFragment extends TweetsListFragment {
 
-    private static final String SCREEN_NAME = "screen_name";
     TwitterClient twitterCLient;
+
+    private static final String SCREEN_NAME = "screen_name";
 
     public static ProfileLikesTimelineFragment newInstance(String screenName) {
         ProfileLikesTimelineFragment fragment = new ProfileLikesTimelineFragment();
@@ -71,7 +72,8 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
                         respTweets.add(tweet);
 
                     } catch (JSONException e) {
-                        //TODO:
+                        Snackbar.make(getView(), "Error fetching likes! Try Again",
+                                Snackbar.LENGTH_LONG).show();
                     }
                 }
 
@@ -88,14 +90,13 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
                     scrollListener.resetState();
                     layoutManager.scrollToPosition(0);
                 }
-
             }
 
             @Override
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
                 swipeRefreshLayout.setRefreshing(false);
-                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
+                Snackbar.make(getView(), "Error fetching Likes! Try Again",
                         Snackbar.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }

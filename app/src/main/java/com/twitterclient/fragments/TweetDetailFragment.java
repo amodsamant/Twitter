@@ -24,6 +24,7 @@ import com.twitterclient.activities.ProfileActivity;
 import com.twitterclient.databinding.FragTweetDetailBinding;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.utils.DateGenericUtils;
+import com.twitterclient.utils.GenericUtils;
 import com.twitterclient.utils.PatternEditableBuilder;
 
 import org.parceler.Parcels;
@@ -35,6 +36,8 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 public class TweetDetailFragment extends Fragment {
 
     FragTweetDetailBinding binding;
+
+    ForegroundColorSpan twitterGreySpan;
 
     public static TweetDetailFragment newInstance(Tweet tweet) {
 
@@ -63,19 +66,22 @@ public class TweetDetailFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        twitterGreySpan = new ForegroundColorSpan(
+                getResources().getColor(R.color.twitterDarkerGrey));
+
         binding.tvText.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLight.ttf"));
+                GenericUtils.LIGHT_FONT));
 
         binding.tvRetweetCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLight.ttf"));
+                GenericUtils.LIGHT_FONT));
         binding.tvLikeCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLight.ttf"));
+                GenericUtils.LIGHT_FONT));
 
         binding.tvDate.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLight.ttf"));
+                GenericUtils.LIGHT_FONT));
 
         binding.tvTime.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                "fonts/HelveticaNeueLight.ttf"));
+                GenericUtils.LIGHT_FONT));
 
         final Tweet tweet = Parcels.unwrap(getArguments().getParcelable("tweet"));
 
@@ -165,16 +171,16 @@ public class TweetDetailFragment extends Fragment {
             public void onClick(View view) {
                 if(!tweet.isRetweeted()) {
                     Drawable img = getResources().getDrawable(R.drawable.ic_retweet_set);
-                    binding.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+                    binding.btnRetweet
+                            .setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
                     tweet.setRetweetCount(tweet.getRetweetCount() + 1);
-                    tweet.setRetweetCount(tweet.getRetweetCount());
                     tweet.setRetweeted(true);
 
                 } else {
                     Drawable img = getResources().getDrawable(R.drawable.ic_retweet);
-                    binding.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
+                    binding.btnRetweet
+                            .setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
                     tweet.setRetweetCount(tweet.getRetweetCount() - 1);
-                    tweet.setRetweetCount(tweet.getRetweetCount());
                     tweet.setRetweeted(false);
                 }
                 updateRetweets(tweet);
@@ -196,23 +202,19 @@ public class TweetDetailFragment extends Fragment {
 
         new PatternEditableBuilder().
                 addPattern(Pattern.compile("\\#(\\w+)"),
-                        this.getResources().getColor(R.color.twitterBlue),
-                        new PatternEditableBuilder.SpannableClickedListener() {
-                            @Override
-                            public void onSpanClicked(String text) {
-//                                Intent intent = new Intent(HolderActivity.this, ProfileActivity.class);
-//                                intent.putExtra("screen_name", text.substring(1));
-//                                startActivity(intent);
-                            }
-                        }).into(binding.tvText);
+                        this.getResources().getColor(R.color.twitterBlue),null).into(binding.tvText);
     }
 
+    /**
+     * Function udpates the tweets to the desired span styles
+     * @param tweet
+     */
     void updateRetweets(Tweet tweet) {
-        ForegroundColorSpan blackSpan = new ForegroundColorSpan(
-                getResources().getColor(R.color.twitterDarkerGrey));
-        SpannableStringBuilder ssb = new SpannableStringBuilder(String.valueOf(tweet.getRetweetCount()));
+
+        SpannableStringBuilder ssb = new SpannableStringBuilder(
+                String.valueOf(tweet.getRetweetCount()));
         ssb.setSpan(
-                blackSpan,
+                twitterGreySpan,
                 0,
                 ssb.length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -220,12 +222,16 @@ public class TweetDetailFragment extends Fragment {
         binding.tvRetweetCount.setText(ssb, TextView.BufferType.EDITABLE);
     }
 
+    /**
+     * Function udpates the tweets to the desired span styles
+     * @param tweet
+     */
     void updateLikes(Tweet tweet) {
-        ForegroundColorSpan blackSpan = new ForegroundColorSpan(
-                getResources().getColor(R.color.twitterDarkerGrey));
-        SpannableStringBuilder ssbFav = new SpannableStringBuilder(String.valueOf(tweet.getFavouritesCount()));
+
+        SpannableStringBuilder ssbFav = new SpannableStringBuilder(
+                String.valueOf(tweet.getFavouritesCount()));
         ssbFav.setSpan(
-                blackSpan,
+                twitterGreySpan,
                 0,
                 ssbFav.length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

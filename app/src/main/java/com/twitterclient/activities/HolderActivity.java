@@ -72,15 +72,11 @@ public class HolderActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.holder_menu_search, menu);
-
-        // Search View menu item
         MenuItem searchItem = menu.findItem(R.id.holder_search);
         searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
         EditText etSearchView = (EditText) searchView.
                 findViewById(android.support.v7.appcompat.R.id.search_src_text);
-        // Assigning text color for search view
         etSearchView.setTextColor(Color.GRAY);
         etSearchView.setHintTextColor(Color.GRAY);
         etSearchView.setFocusable(true);

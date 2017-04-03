@@ -28,8 +28,7 @@ public class MessagesHomeFragment extends MessagesFragment {
     TwitterClient twitterClient;
 
     public static MessagesHomeFragment newInstance() {
-        MessagesHomeFragment fragment = new MessagesHomeFragment();
-        return fragment;
+        return new MessagesHomeFragment();
     }
 
     @Override
@@ -43,8 +42,6 @@ public class MessagesHomeFragment extends MessagesFragment {
         if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
             populateMessages();
         }
-
-
     }
 
     private void populateMessages() {
@@ -75,9 +72,6 @@ public class MessagesHomeFragment extends MessagesFragment {
 
                 int curSize = adapter.getItemCount();
                 adapter.notifyItemRangeInserted(curSize, messages.size()-1);
-
-
-
             }
 
             @Override
