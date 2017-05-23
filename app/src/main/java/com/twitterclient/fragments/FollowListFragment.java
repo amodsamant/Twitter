@@ -19,7 +19,7 @@ import com.twitterclient.models.User;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class FollowListFragment extends Fragment {
+public class FollowListFragment extends Fragment {
 
     List<User> users;
     RecyclerView recyclerView;
