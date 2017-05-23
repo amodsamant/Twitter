@@ -98,17 +98,6 @@ public class HomeTimelineFragment extends TweetsListFragment {
         });
     }
 
-    @Override
-    void loadNextDataFromApi() {
-        long maxTweetId = -1;
-        if(tweets.size() > 0) {
-            maxTweetId = tweets.get(tweets.size()-1).getId();
-        }
-        populateTimeline(maxTweetId,-1);
-    }
-
-
-
     public void onFinishTweet(Tweet tweet) {
         tweets.add(0,tweet);
         adapter.notifyItemInserted(0);

@@ -29,7 +29,6 @@ import com.twitterclient.adapters.SmartFragmentStatePagerAdapter;
 import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.fragments.HomeTimelineFragment;
 import com.twitterclient.fragments.MentionsTimelineFragment;
-import com.twitterclient.fragments.MessagesFragment;
 import com.twitterclient.fragments.MessagesHomeFragment;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.models.User;
@@ -51,8 +50,6 @@ public class HomeActivity extends AppCompatActivity implements
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private HomeTimelineFragment homeTimelineFragment;
-    private MentionsTimelineFragment mentionsTimelineFragment;
-    private MessagesFragment messagesFragment;
 
     ImageView ivHeaderProfile;
     ImageView ivHeader;
@@ -129,11 +126,9 @@ public class HomeActivity extends AppCompatActivity implements
                     homeTimelineFragment = HomeTimelineFragment.newInstance();
                     return homeTimelineFragment;
                 case 1:
-                    mentionsTimelineFragment = MentionsTimelineFragment.newInstance();
-                    return mentionsTimelineFragment;
+                    return MentionsTimelineFragment.newInstance();
                 case 2:
-                    messagesFragment = MessagesHomeFragment.newInstance();
-                    return messagesFragment;
+                    return MessagesHomeFragment.newInstance();
             }
             return null;
         }

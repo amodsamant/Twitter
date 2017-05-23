@@ -40,6 +40,10 @@ public abstract class FollowListFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
         dividerItemDecoration = new DividerItemDecoration(getActivity(),
                 layoutManager.getOrientation());
+        scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {}
+        };
     }
 
     @Override
@@ -48,7 +52,7 @@ public abstract class FollowListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.frag_tweets_list, container, false);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rvMessages);
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);

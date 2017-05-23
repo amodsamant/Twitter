@@ -60,7 +60,7 @@ public abstract class TweetsListFragment extends Fragment {
         progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
         progressBar.setVisibility(View.VISIBLE);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
+        recyclerView = (RecyclerView) view.findViewById(R.id.rvMessages);
         recyclerView.addItemDecoration(dividerItemDecoration);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
@@ -92,10 +92,13 @@ public abstract class TweetsListFragment extends Fragment {
         this.tweets.clear();
     }
 
-    /**
-     * Abstract functions to be implemented individually as per requirement
-     */
-    abstract void loadNextDataFromApi();
+    void loadNextDataFromApi() {
+        long maxTweetId = -1;
+        if(tweets.size() > 0) {
+            maxTweetId = tweets.get(tweets.size()-1).getId();
+        }
+        populateTimeline(maxTweetId,-1);
+    }
 
     abstract void populateTimeline(long maxId, long sinceId);
 }
