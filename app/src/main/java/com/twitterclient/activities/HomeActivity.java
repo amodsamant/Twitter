@@ -50,6 +50,7 @@ public class HomeActivity extends AppCompatActivity implements
     private ViewPager viewPager;
     private TabLayout tabLayout;
     private HomeTimelineFragment homeTimelineFragment;
+    private String screenName;
 
     ImageView ivHeaderProfile;
     ImageView ivHeader;
@@ -80,6 +81,8 @@ public class HomeActivity extends AppCompatActivity implements
         tabLayout = (TabLayout) findViewById(R.id.twitter_tabs);
         tabLayout.setupWithViewPager(viewPager);
         setupTab(0);
+
+        screenName = getIntent().getStringExtra("screen_name");
 
         /**
          * Code to handle implicit intents
@@ -199,7 +202,7 @@ public class HomeActivity extends AppCompatActivity implements
         switch (menuItem.getItemId()) {
             case R.id.profile_menu_item:
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-                intent.putExtra("screen_name", "amod_samant");
+                intent.putExtra("screen_name", screenName);
                 startActivity(intent);
                 break;
             case R.id.log_off_item:

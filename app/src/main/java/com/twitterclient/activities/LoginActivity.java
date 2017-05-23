@@ -4,10 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.widget.Toast;
 
 import com.codepath.oauth.OAuthLoginActionBarActivity;
+import com.google.gson.Gson;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
+import com.twitterclient.models.User;
 import com.twitterclient.network.TwitterClient;
+import com.twitterclient.network.TwitterClientApplication;
+
+import org.json.JSONObject;
+
+import cz.msebera.android.httpclient.Header;
 
 public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 
@@ -28,8 +37,26 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 	// i.e Display application "homepage"
 	@Override
 	public void onLoginSuccess() {
-		Intent intent = new Intent(this, HomeActivity.class);
-		startActivity(intent);
+		TwitterClient client = TwitterClientApplication.getTwitterClient();
+		client.getUser(new JsonHttpResponseHandler() {
+			@Override
+			public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+
+				Gson gson = new Gson();
+				User user = gson.fromJson(response.toString(), User.class);
+
+				Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+				intent.putExtra("screen_name",user.getScreenName());
+				startActivity(intent);
+			}
+
+			@Override
+			public void onFailure(int statusCode, Header[] headers, String responseString,
+					Throwable throwable) {
+				Toast.makeText(LoginActivity.this, "Error retrieving user info",
+						Toast.LENGTH_LONG).show();
+			}
+		});
 	}
 
 	// OAuth authentication flow failed, handle the error
