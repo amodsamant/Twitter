@@ -2,24 +2,33 @@ package com.twitterclient.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import com.google.gson.Gson;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
 import com.twitterclient.adapters.FollRecyclerAdapter;
 import com.twitterclient.helpers.EndlessRecyclerViewScrollListener;
+import com.twitterclient.models.Follow;
 import com.twitterclient.models.User;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class FollowListFragment extends Fragment {
+import cz.msebera.android.httpclient.Header;
+
+public abstract class FollowListFragment extends Fragment {
 
     List<User> users;
     RecyclerView recyclerView;
@@ -73,5 +82,30 @@ public class FollowListFragment extends Fragment {
         this.users.clear();
     }
 
+    protected JsonHttpResponseHandler getHandler() {
+        return new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 
+                clearAllUsers();
+                adapter.notifyDataSetChanged();
+
+                Log.d("DEBUG", response.toString());
+                Gson gson = new Gson();
+                Follow followers = gson.fromJson(response.toString(), Follow.class);
+                recyclerView.setVisibility(View.VISIBLE);
+                progressBar.setVisibility(View.GONE);
+                addAllUsers(followers.getUsers());
+                adapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers,
+                                  Throwable throwable, JSONObject errorResponse) {
+                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
+                        Snackbar.LENGTH_LONG).show();
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        };
+    }
 }
