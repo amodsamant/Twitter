@@ -90,7 +90,6 @@ public class ComposeTweetFragment extends DialogFragment
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         if(new SharedPrefHelper().getAll(getActivity()).isEmpty()) {
             binding.btnDraft.setVisibility(View.GONE);
         }
@@ -300,7 +299,6 @@ public class ComposeTweetFragment extends DialogFragment
                 });
     }
 
-
     /**
      * Function used to save the draft to preferences
      * @param draftTweet
@@ -311,9 +309,7 @@ public class ComposeTweetFragment extends DialogFragment
         editor.putString(draftTweet, draftTweet);
         editor.apply();
         binding.btnDraft.setVisibility(View.VISIBLE);
-
     }
-
 
     @Override
     public void onFinishDraft(String tweet) {

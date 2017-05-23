@@ -11,7 +11,6 @@ import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.models.Statuses;
 import com.twitterclient.network.NetworkUtils;
-import com.twitterclient.network.TwitterClient;
 import com.twitterclient.network.TwitterClientApplication;
 
 import org.json.JSONObject;
@@ -19,8 +18,6 @@ import org.json.JSONObject;
 import cz.msebera.android.httpclient.Header;
 
 public class SearchFragment extends TweetsListFragment {
-
-    TwitterClient twitterClient;
 
     public static SearchFragment newInstance(String query) {
         SearchFragment fragment = new SearchFragment();
@@ -33,9 +30,6 @@ public class SearchFragment extends TweetsListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        twitterClient = TwitterClientApplication.getTwitterClient();
-
-
         if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
             populateTimeline(-1, -1);
         }
@@ -49,7 +43,8 @@ public class SearchFragment extends TweetsListFragment {
     void populateTimeline(long maxId, final long sinceId) {
 
         String query = getArguments().getString("query");
-        twitterClient.getSearchResults(query, maxId, sinceId, new JsonHttpResponseHandler() {
+        TwitterClientApplication.getTwitterClient()
+                .getSearchResults(query, maxId, sinceId, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 

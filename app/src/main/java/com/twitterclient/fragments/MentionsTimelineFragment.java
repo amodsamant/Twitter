@@ -1,12 +1,12 @@
 package com.twitterclient.fragments;
 
+import static com.twitterclient.utils.Constants.DEFAULT_RESET_SINCE_ID;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.twitterclient.network.NetworkUtils;
 import com.twitterclient.network.TwitterClientApplication;
-
-import static com.twitterclient.utils.Constants.DEFAULT_RESET_SINCE_ID;
 
 public class MentionsTimelineFragment extends TweetsListFragment {
 
