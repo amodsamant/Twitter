@@ -10,7 +10,6 @@ import android.view.View;
 import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.models.Statuses;
-import com.twitterclient.network.NetworkUtils;
 import com.twitterclient.network.TwitterClientApplication;
 
 import org.json.JSONObject;
@@ -30,14 +29,7 @@ public class SearchFragment extends TweetsListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
-            populateTimeline(-1, -1);
-        }
-    }
-
-    @Override
-    void loadNextDataFromApi() {
-
+        populateTimeline();
     }
 
     void populateTimeline(long maxId, final long sinceId) {

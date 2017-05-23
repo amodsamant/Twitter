@@ -5,7 +5,6 @@ import static com.twitterclient.utils.Constants.DEFAULT_RESET_SINCE_ID;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.twitterclient.network.NetworkUtils;
 import com.twitterclient.network.TwitterClientApplication;
 
 public class MentionsTimelineFragment extends TweetsListFragment {
@@ -17,10 +16,7 @@ public class MentionsTimelineFragment extends TweetsListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
-            populateTimeline(-1, -1);
-        }
+        populateTimeline();
     }
 
     void populateTimeline(long maxId, long sinceId) {

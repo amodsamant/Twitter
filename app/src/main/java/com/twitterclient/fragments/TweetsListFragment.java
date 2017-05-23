@@ -20,6 +20,8 @@ import com.twitterclient.R;
 import com.twitterclient.adapters.TimelineRecyclerAdapter;
 import com.twitterclient.helpers.EndlessRecyclerViewScrollListener;
 import com.twitterclient.models.Tweet;
+import com.twitterclient.network.NetworkUtils;
+import com.twitterclient.utils.Constants;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -160,6 +162,12 @@ public abstract class TweetsListFragment extends Fragment {
             }
         };
 
+    }
+
+    protected void populateTimeline() {
+        if (NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
+            populateTimeline(Constants.DEFAULT_MAX_ID, Constants.DEFAULT_SINCE_ID);
+        }
     }
 
     abstract void populateTimeline(long maxId, long sinceId);

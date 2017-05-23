@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.twitterclient.models.Tweet;
-import com.twitterclient.network.NetworkUtils;
 import com.twitterclient.network.TwitterClientApplication;
 
 public class HomeTimelineFragment extends TweetsListFragment {
@@ -18,10 +17,7 @@ public class HomeTimelineFragment extends TweetsListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
-            populateTimeline(-1, -1);
-        }
+        populateTimeline();
     }
 
     void populateTimeline(long maxId, long sinceId) {

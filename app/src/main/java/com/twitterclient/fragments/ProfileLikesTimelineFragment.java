@@ -3,7 +3,6 @@ package com.twitterclient.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.twitterclient.network.NetworkUtils;
 import com.twitterclient.network.TwitterClientApplication;
 import com.twitterclient.utils.Constants;
 
@@ -22,18 +21,12 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        if(NetworkUtils.isNetworkAvailable(getActivity()) && NetworkUtils.isOnline()) {
-            populateTimeline(-1, -1);
-        }
+        populateTimeline();
     }
 
     void populateTimeline(long maxId, long sinceId) {
-
         String screenName = getArguments().getString(SCREEN_NAME);
-
-        TwitterClientApplication.getTwitterClient()
-                .getFavorites(screenName, maxId, sinceId,
+        TwitterClientApplication.getTwitterClient().getFavorites(screenName, maxId, sinceId,
                         getHandler(sinceId==Constants.DEFAULT_RESET_SINCE_ID));
     }
 }
