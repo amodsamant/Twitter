@@ -56,8 +56,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignParentStart="true"
                         android:layout_below="@+id/btnFollow"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginStart="@dimen/text_margin"
+                        android:layout_marginTop="@dimen/xsmall_margin"
                         android:textSize="@dimen/text16"
                         android:textColor="@color/twitterDarkerGrey"/>
 
@@ -66,7 +66,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignTop="@+id/tvName"
-                        android:layout_marginStart="10dp"
+                        android:layout_marginStart="@dimen/small_margin"
                         android:layout_toEndOf="@+id/tvName"
                         app:srcCompat="@drawable/ic_verified_user"
                         android:layout_marginTop="4dp"
@@ -101,8 +101,8 @@
                         android:layout_height="wrap_content"
                         android:layout_alignStart="@+id/tvTagline"
                         android:layout_below="@+id/tvTagline"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="@dimen/text_margin"
+                        android:layout_marginBottom="@dimen/small_margin"
                         android:text="Following"
                         android:textColor="@color/twitterLightGrey"/>
 
@@ -115,17 +115,17 @@
                         android:layout_marginStart="24dp"
                         android:layout_toRightOf="@id/tvFollowing"
                         android:layout_toEndOf="@id/tvFollowing"
-                        android:layout_marginBottom="10dp"
+                        android:layout_marginBottom="@dimen/small_margin"
                         android:text="Followers"
                         android:textColor="@color/twitterLightGrey"/>
 
                     <ImageView
                         android:id="@+id/ivProfileUser"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="@dimen/profile_detail_image_size"
+                        android:layout_height="@dimen/profile_detail_image_size"
                         android:layout_above="@+id/tvName"
                         android:layout_alignStart="@+id/tvName"
-                        android:layout_marginBottom="5dp"
+                        android:layout_marginBottom="@dimen/xsmall_margin"
                         android:background="@drawable/border_image"/>
                 </RelativeLayout>
 
@@ -150,7 +150,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="3dp"
                 android:background="@color/lightGrey"
-                android:layout_marginBottom="5dp"/>
+                android:layout_marginBottom="@dimen/xsmall_margin"/>
 
             <android.support.design.widget.TabLayout
                 android:id="@+id/profile_tabs"

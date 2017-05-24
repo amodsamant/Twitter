@@ -6,16 +6,16 @@
 
     <ImageView
         android:id="@+id/ivFollUser"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/profile_image_size"
+        android:layout_height="@dimen/profile_image_size"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="8dp"
         tools:srcCompat="@mipmap/ic_launcher"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginBottom="@dimen/small_margin"/>
 
     <TextView
         android:id="@+id/tvFollTagline"
@@ -24,20 +24,20 @@
         android:ellipsize="end"
         android:maxLines="5"
         android:text="text to display"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
         android:textSize="@dimen/text16"
         android:autoLink="all"
         android:linksClickable="true"
         android:textColor="@color/twitterDarkerGrey"
         android:layout_below="@+id/btnFoll"
         android:layout_toEndOf="@+id/ivFollUser"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginBottom="@dimen/xsmall_margin"/>
 
     <TextView
         android:id="@+id/tvFollUsername"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
         android:textStyle="bold"
         android:textSize="@dimen/text16"
         android:text="Name"
@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
         android:layout_marginTop="14dp"
         android:layout_toEndOf="@id/tvFollUsername"
         android:background="@drawable/ic_verified_user"/>
@@ -63,8 +63,8 @@
         android:text="\@name"
         android:layout_below="@id/tvFollUsername"
         android:layout_above="@id/tvFollTagline"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="@dimen/xsmall_margin"
+        android:layout_marginBottom="@dimen/xsmall_margin"
         android:layout_toEndOf="@+id/ivFollUser"/>
 
     <Button
@@ -74,8 +74,8 @@
         android:drawableTop="@drawable/ic_friend"
         android:background="@drawable/border_button"
         android:paddingTop="2dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/small_margin"
+        android:layout_marginRight="@dimen/small_margin"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"/>
 

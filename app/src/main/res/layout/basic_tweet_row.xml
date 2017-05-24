@@ -6,23 +6,23 @@
 
     <ImageView
         android:id="@+id/ivUserBR"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/profile_image_size"
+        android:layout_height="@dimen/profile_image_size"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="8dp"
         tools:srcCompat="@mipmap/ic_launcher"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="@dimen/small_margin"/>
 
     <TextView
         android:id="@+id/tvUsernameBR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:layout_toEndOf="@id/ivUserBR"
         android:layout_toRightOf="@id/ivUserBR"
         android:textStyle="bold"
@@ -33,7 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
         android:layout_marginTop="14dp"
         android:layout_toEndOf="@id/tvUsernameBR"
         android:background="@drawable/ic_verified_user"/>
@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="@dimen/small_margin"
         android:layout_toEndOf="@id/ivVerified"
         android:textColor="@color/twitterDarkerGrey"
         android:textSize="@dimen/text14"
@@ -57,7 +57,7 @@
         android:layout_alignTop="@+id/tvScreenNameBR"
         android:layout_marginLeft="4dp"
         android:layout_toEndOf="@+id/tvScreenNameBR"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="@dimen/xsmall_margin"
         android:text="."/>
 
     <TextView
@@ -65,8 +65,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginLeft="@dimen/xsmall_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:layout_toEndOf="@id/dot"
         android:textColor="@color/twitterDarkerGrey"
         android:text="Time"/>
@@ -81,8 +81,8 @@
         android:layout_below="@+id/tvUsernameBR"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/ivUserBR"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
+        android:layout_marginTop="@dimen/xsmall_margin"
         android:textSize="@dimen/text16"
         android:autoLink="all"
         android:linksClickable="true"
@@ -96,8 +96,8 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@id/tvTextBR"
         android:layout_below="@id/tvTextBR"
-        android:layout_marginTop="5dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginTop="@dimen/xsmall_margin"
+        android:layout_marginRight="@dimen/small_margin"
         android:layout_toRightOf="@id/ivUserBR"
         tools:srcCompat="@mipmap/ic_launcher"
         android:scaleType="fitXY"/>
@@ -107,26 +107,26 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ivTweetBR"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
         android:layout_toRightOf="@id/ivUserBR"
         android:background="@android:color/transparent"
         android:drawableLeft="@drawable/ic_reply"
         android:textColor="@color/twitterLightGrey"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"/>
+        android:paddingLeft="@dimen/small_margin"
+        android:paddingRight="@dimen/small_margin"/>
 
     <Button
         android:id="@+id/btnRetweetBR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/ivTweetBR"
-        android:layout_marginRight="5dp"
+        android:layout_marginRight="@dimen/xsmall_margin"
         android:layout_toRightOf="@id/btnReplyBR"
         android:background="@android:color/transparent"
         android:textColor="@color/twitterLightGrey"
         android:drawableLeft="@drawable/ic_retweet"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"/>
+        android:paddingLeft="@dimen/small_margin"
+        android:paddingRight="@dimen/small_margin"/>
 
     <Button
         android:id="@+id/btnLikeBR"
@@ -137,7 +137,7 @@
         android:background="@android:color/transparent"
         android:textColor="@color/twitterLightGrey"
         android:drawableLeft="@drawable/ic_favorite"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"/>
+        android:paddingLeft="@dimen/small_margin"
+        android:paddingRight="@dimen/small_margin"/>
 
 </RelativeLayout>
