@@ -1,5 +1,7 @@
 package com.twitterclient.activities;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.FragmentManager;
@@ -38,7 +40,7 @@ public class HolderActivity extends AppCompatActivity {
 
         String fragType = getIntent().getStringExtra("frag_type");
         Tweet tweet = Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
-        String screenName = getIntent().getStringExtra("screen_name");
+        String screenName = getIntent().getStringExtra(SCREEN_NAME);
 
         isSearch = false;
 

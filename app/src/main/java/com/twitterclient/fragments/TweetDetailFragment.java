@@ -1,5 +1,7 @@
 package com.twitterclient.fragments;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Typeface;
@@ -195,7 +197,7 @@ public class TweetDetailFragment extends Fragment {
                             public void onSpanClicked(String text) {
                                 Intent intent = new Intent(getContext(),
                                         ProfileActivity.class);
-                                intent.putExtra("screen_name", text.substring(1));
+                                intent.putExtra(SCREEN_NAME, text.substring(1));
                                 startActivity(intent);
                             }
                         }).into(binding.tvText);

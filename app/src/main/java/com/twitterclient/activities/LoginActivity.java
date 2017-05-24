@@ -1,5 +1,7 @@
 package com.twitterclient.activities;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -46,7 +48,7 @@ public class LoginActivity extends OAuthLoginActionBarActivity<TwitterClient> {
 				User user = gson.fromJson(response.toString(), User.class);
 
 				Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-				intent.putExtra("screen_name",user.getScreenName());
+				intent.putExtra(SCREEN_NAME,user.getScreenName());
 				startActivity(intent);
 			}
 

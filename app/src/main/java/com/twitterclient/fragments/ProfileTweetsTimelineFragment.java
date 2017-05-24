@@ -5,7 +5,6 @@ import static com.twitterclient.network.TwitterClient.SCREEN_NAME;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.twitterclient.network.TwitterClient;
 import com.twitterclient.network.TwitterClientApplication;
 import com.twitterclient.utils.Constants;
 
@@ -14,7 +13,7 @@ public class ProfileTweetsTimelineFragment extends TweetsListFragment {
     public static ProfileTweetsTimelineFragment newInstance(String screenName) {
         ProfileTweetsTimelineFragment fragment = new ProfileTweetsTimelineFragment();
         Bundle args = new Bundle();
-        args.putString(TwitterClient.SCREEN_NAME, screenName);
+        args.putString(SCREEN_NAME, screenName);
         fragment.setArguments(args);
         return fragment;
     }

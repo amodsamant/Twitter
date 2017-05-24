@@ -1,5 +1,7 @@
 package com.twitterclient.activities;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.content.Context;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
@@ -80,7 +82,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        screenName = getIntent().getStringExtra("screen_name");
+        screenName = getIntent().getStringExtra(SCREEN_NAME);
 
         setupViews();
 
@@ -140,7 +142,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, HolderActivity.class);
                 intent.putExtra("frag_type","followers");
-                intent.putExtra("screen_name",screenName);
+                intent.putExtra(SCREEN_NAME,screenName);
                 startActivity(intent);
             }
         });
@@ -151,7 +153,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, HolderActivity.class);
                 intent.putExtra("frag_type","following");
-                intent.putExtra("screen_name",screenName);
+                intent.putExtra(SCREEN_NAME,screenName);
                 startActivity(intent);
             }
         });
@@ -194,7 +196,7 @@ public class ProfileActivity extends AppCompatActivity {
                             @Override
                             public void onSpanClicked(String text) {
                                 Intent intent = new Intent(ProfileActivity.this, ProfileActivity.class);
-                                intent.putExtra("screen_name", text.substring(1));
+                                intent.putExtra(SCREEN_NAME, text.substring(1));
                                 startActivity(intent);
                             }
                         }).into(binding.tvTagline);

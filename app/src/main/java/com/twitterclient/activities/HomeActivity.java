@@ -1,5 +1,7 @@
 package com.twitterclient.activities;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -82,7 +84,7 @@ public class HomeActivity extends AppCompatActivity implements
         tabLayout.setupWithViewPager(viewPager);
         setupTab(0);
 
-        screenName = getIntent().getStringExtra("screen_name");
+        screenName = getIntent().getStringExtra(SCREEN_NAME);
 
         /**
          * Code to handle implicit intents
@@ -202,7 +204,7 @@ public class HomeActivity extends AppCompatActivity implements
         switch (menuItem.getItemId()) {
             case R.id.profile_menu_item:
                 Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
-                intent.putExtra("screen_name", screenName);
+                intent.putExtra(SCREEN_NAME, screenName);
                 startActivity(intent);
                 break;
             case R.id.log_off_item:
@@ -283,10 +285,8 @@ public class HomeActivity extends AppCompatActivity implements
      */
     void setupTab(int position) {
 
-        int[] tabIcons =
-                {R.drawable.ic_home, R.drawable.ic_mentions, R.drawable.ic_message};
-        int[] tabIconsSelected =
-                {R.drawable.ic_home_selected, R.drawable.ic_mentions_selected,
+        int[] tabIcons = {R.drawable.ic_home, R.drawable.ic_mentions, R.drawable.ic_message};
+        int[] tabIconsSelected = {R.drawable.ic_home_selected, R.drawable.ic_mentions_selected,
                         R.drawable.ic_message_selected};
         String[] tabTitles = {"Home", "Mentions", "Messages"};
 
@@ -316,9 +316,9 @@ public class HomeActivity extends AppCompatActivity implements
 
             @Override
             public void onPageScrollStateChanged(int state) {}
+
             @Override
-            public void onPageScrolled(int position,
-                                       float positionOffset, int positionOffsetPixels) {}
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
         });
 
     }

@@ -1,5 +1,7 @@
 package com.twitterclient.fragments;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -7,8 +9,6 @@ import com.twitterclient.network.TwitterClientApplication;
 import com.twitterclient.utils.Constants;
 
 public class ProfileLikesTimelineFragment extends TweetsListFragment {
-
-    private static final String SCREEN_NAME = "screen_name";
 
     public static ProfileLikesTimelineFragment newInstance(String screenName) {
         ProfileLikesTimelineFragment fragment = new ProfileLikesTimelineFragment();

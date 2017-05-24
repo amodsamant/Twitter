@@ -1,5 +1,7 @@
 package com.twitterclient.adapters;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -78,7 +80,7 @@ public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ProfileActivity.class);
-                intent.putExtra("screen_name",message.getSender().getScreenName());
+                intent.putExtra(SCREEN_NAME, message.getSender().getScreenName());
                 context.startActivity(intent);
             }
         });

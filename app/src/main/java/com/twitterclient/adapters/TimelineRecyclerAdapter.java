@@ -1,5 +1,7 @@
 package com.twitterclient.adapters;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Typeface;
@@ -92,7 +94,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(context, ProfileActivity.class);
-                intent.putExtra("screen_name",tweet.getUser().getScreenName());
+                intent.putExtra(SCREEN_NAME, tweet.getUser().getScreenName());
                 context.startActivity(intent);
             }
         });
@@ -148,7 +150,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                             @Override
                             public void onSpanClicked(String text) {
                                 Intent intent = new Intent(context, ProfileActivity.class);
-                                intent.putExtra("screen_name", text.substring(1));
+                                intent.putExtra(SCREEN_NAME, text.substring(1));
                                 context.startActivity(intent);
                             }
                         }).into(viewHolder.tvBody);

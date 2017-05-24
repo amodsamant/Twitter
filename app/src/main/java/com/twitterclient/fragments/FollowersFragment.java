@@ -1,5 +1,7 @@
 package com.twitterclient.fragments;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
@@ -11,7 +13,7 @@ public class FollowersFragment extends FollowListFragment {
     public static FollowersFragment newInstance(String screenName) {
         FollowersFragment fragment = new FollowersFragment();
         Bundle args = new Bundle();
-        args.putString("screen_name", screenName);
+        args.putString(SCREEN_NAME, screenName);
         fragment.setArguments(args);
         return fragment;
     }
@@ -26,7 +28,7 @@ public class FollowersFragment extends FollowListFragment {
     }
 
     private void populateFollowList() {
-        String screenName = getArguments().getString("screen_name");
+        String screenName = getArguments().getString(SCREEN_NAME);
         TwitterClientApplication.getTwitterClient().getFollowers(screenName, getHandler());
     }
 }
