@@ -28,25 +28,21 @@ import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
 import com.twitterclient.databinding.ComposeFragBinding;
+import com.twitterclient.helpers.SharedPrefHelper;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.models.User;
-import com.twitterclient.network.TwitterClient;
 import com.twitterclient.network.TwitterClientApplication;
 import com.twitterclient.utils.GenericUtils;
 
 import org.json.JSONObject;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import cz.msebera.android.httpclient.Header;
 import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class ComposeTweetFragment extends DialogFragment
         implements DraftsFragment.DraftsFragmentListener{
-
-    TwitterClient twitterClient;
 
     ComposeFragBinding binding;
 
@@ -85,9 +81,6 @@ public class ComposeTweetFragment extends DialogFragment
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        //TODO: Check where to init
-        twitterClient = TwitterClientApplication.getTwitterClient();
-
         binding = DataBindingUtil.inflate(inflater,R.layout.compose_frag,container,false);
         return binding.getRoot();
     }
@@ -96,7 +89,7 @@ public class ComposeTweetFragment extends DialogFragment
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        if(getDrafts().isEmpty()) {
+        if(new SharedPrefHelper().getAll(getActivity()).isEmpty()) {
             binding.btnDraft.setVisibility(View.GONE);
         }
 
@@ -148,18 +141,14 @@ public class ComposeTweetFragment extends DialogFragment
             }
         });
 
-        /**
-         * Add the text only if its passed this fragment
-         */
+        /* Add the text only if its passed this fragment */
         String screenName = getArguments().getString(TWEET);
         if(screenName!=null) {
             binding.etTweet.setText(screenName);
             binding.etTweet.setSelection(screenName.length());
         }
 
-        /**
-         * Listener for closing the compose fragment
-         */
+        /* Listener for closing the compose fragment */
         binding.ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,9 +179,7 @@ public class ComposeTweetFragment extends DialogFragment
             }
         });
 
-        /**
-         * Listener for tweeting
-         */
+        /* Listener for tweeting */
         binding.btnTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -204,11 +191,8 @@ public class ComposeTweetFragment extends DialogFragment
             }
         });
 
-        /**
-         * Here personal info is requested to get the profile url
-         */
-        TwitterClient twitterCLient = TwitterClientApplication.getTwitterClient();
-        twitterCLient.getPersonalUserInfo(new JsonHttpResponseHandler() {
+        /* Here personal info is requested to get the profile url */
+        TwitterClientApplication.getTwitterClient().getPersonalUserInfo(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 Gson gson = new Gson();
@@ -227,9 +211,7 @@ public class ComposeTweetFragment extends DialogFragment
             @Override
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
-                /**
-                 * Need not be handled as this would not cause any user issue
-                 */
+                /* Need not be handled as this would not cause any user issue */
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
@@ -275,7 +257,7 @@ public class ComposeTweetFragment extends DialogFragment
      */
     public void postTweet(String tweetStr) {
 
-        twitterClient.postTweet(tweetStr,
+        TwitterClientApplication.getTwitterClient().postTweet(tweetStr,
                 new JsonHttpResponseHandler() {
                     @Override
                     public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
@@ -305,46 +287,16 @@ public class ComposeTweetFragment extends DialogFragment
                 });
     }
 
-
     /**
      * Function used to save the draft to preferences
      * @param draftTweet
      */
     private void onSaveDraft(String draftTweet) {
 
-        SharedPreferences.Editor editor = getSharedPreferences().edit();
+        SharedPreferences.Editor editor = SharedPrefHelper.getSharedPreferences(getActivity()).edit();
         editor.putString(draftTweet, draftTweet);
         editor.apply();
         binding.btnDraft.setVisibility(View.VISIBLE);
-
-    }
-
-    /**
-     * Function returns the SharedPreferences
-     * @return
-     */
-    private SharedPreferences getSharedPreferences() {
-
-        SharedPreferences draftsPref = getActivity()
-                .getSharedPreferences("Drafts", Context.MODE_PRIVATE);
-
-        return draftsPref;
-    }
-
-    /**
-     * Function returns a list of drafts
-     * @return
-     */
-    private List<String> getDrafts() {
-
-        SharedPreferences sharedPreferences = getSharedPreferences();
-        Map<String,String> draftsMap = (Map<String, String>) sharedPreferences.getAll();
-        List<String> drafts = new ArrayList<>(draftsMap.values());
-        if(drafts!=null && !drafts.isEmpty()) {
-            Log.d("DEBUG", drafts.get(0));
-        }
-
-        return drafts;
     }
 
     @Override
@@ -353,7 +305,8 @@ public class ComposeTweetFragment extends DialogFragment
         binding.etTweet.setText(tweet);
         binding.etTweet.setSelection(tweet.length());
 
-        if(getDrafts()==null || getDrafts().isEmpty()) {
+        List<String> drafts = new SharedPrefHelper().getAll(getActivity());
+        if(drafts==null || drafts.isEmpty()) {
             binding.btnDraft.setVisibility(View.GONE);
         }
     }

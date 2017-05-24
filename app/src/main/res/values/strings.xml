@@ -11,7 +11,14 @@
     <string name="title_activity_profile">ProfileActivity</string>
     <string name="action_share">Share</string>
     <string name="send">Send</string>
-    <string name="profile_me">My Profile Pic</string>
-    <string name="profile_other">Other profile pic</string>
     <string name="logoff">Log Off</string>
+    <string name="username">username</string>
+    <string name="time">Time</string>
+    <string name="date">Date</string>
+    <string name="following">Following</string>
+    <string name="followers">Followers</string>
+    <string name="text_to_display">text to display</string>
+    <string name="name">Name</string>
+    <string name="dot">.</string>
+    <string name="text_to_display_140chars">text to display 140chars</string>
 </resources>

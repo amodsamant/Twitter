@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout  xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -18,8 +17,8 @@
 
         <ImageView
             android:id="@+id/ivUser"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/compose_profile_image_size"
+            android:layout_height="@dimen/compose_profile_image_size"
             android:layout_alignParentTop="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
@@ -36,19 +35,19 @@
             android:layout_alignParentLeft="true"
             android:fontFamily="sans-serif"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/text_margin"
             android:layout_above="@+id/btnTweet"
             android:gravity="start"
             android:background="@android:color/transparent"
             android:padding="8dp"/>
 
         <View android:id="@+id/sepTweet"
-            android:background="#e4e4e4"
+            android:background="@color/backgroundShade"
             android:layout_width = "match_parent"
             android:layout_height="1dp"
             android:layout_above="@+id/btnTweet"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true"/>
         <Button
             android:id="@+id/btnTweet"
             android:layout_width="wrap_content"
@@ -57,12 +56,11 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_marginTop="8dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="@dimen/small_margin"
             android:layout_marginBottom="8dp"
             android:text="Tweet"
             android:textColor="@android:color/white"
-            android:background="@color/twitterBlue"
-            />
+            android:background="@color/twitterBlue"/>
 
         <TextView
             android:id="@+id/tvLetterCount"
@@ -71,14 +69,13 @@
             android:layout_alignTop="@+id/btnTweet"
             android:layout_toLeftOf="@+id/btnTweet"
             android:layout_toStartOf="@+id/btnTweet"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="@dimen/small_margin"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="@dimen/small_margin"
             android:text="140"
             android:textColor="@color/grey"
             android:layout_alignParentBottom="true"
-            android:gravity="center"
-            />
+            android:gravity="center"/>
 
         <Button
             android:id="@+id/btnDraft"

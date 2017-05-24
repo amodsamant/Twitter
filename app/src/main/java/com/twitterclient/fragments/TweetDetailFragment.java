@@ -1,5 +1,7 @@
 package com.twitterclient.fragments;
 
+import static com.twitterclient.utils.Constants.SCREEN_NAME;
+
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.graphics.Typeface;
@@ -23,8 +25,8 @@ import com.twitterclient.R;
 import com.twitterclient.activities.ProfileActivity;
 import com.twitterclient.databinding.FragTweetDetailBinding;
 import com.twitterclient.models.Tweet;
+import com.twitterclient.utils.Constants;
 import com.twitterclient.utils.DateGenericUtils;
-import com.twitterclient.utils.GenericUtils;
 import com.twitterclient.utils.PatternEditableBuilder;
 
 import org.parceler.Parcels;
@@ -37,7 +39,7 @@ public class TweetDetailFragment extends Fragment {
 
     FragTweetDetailBinding binding;
 
-    ForegroundColorSpan twitterGreySpan;
+    private ForegroundColorSpan mTwitterGreySpan;
 
     public static TweetDetailFragment newInstance(Tweet tweet) {
 
@@ -66,22 +68,22 @@ public class TweetDetailFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        twitterGreySpan = new ForegroundColorSpan(
+        mTwitterGreySpan = new ForegroundColorSpan(
                 getResources().getColor(R.color.twitterDarkerGrey));
 
         binding.tvText.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         binding.tvRetweetCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
         binding.tvLikeCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         binding.tvDate.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         binding.tvTime.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         final Tweet tweet = Parcels.unwrap(getArguments().getParcelable("tweet"));
 
@@ -195,7 +197,7 @@ public class TweetDetailFragment extends Fragment {
                             public void onSpanClicked(String text) {
                                 Intent intent = new Intent(getContext(),
                                         ProfileActivity.class);
-                                intent.putExtra("screen_name", text.substring(1));
+                                intent.putExtra(SCREEN_NAME, text.substring(1));
                                 startActivity(intent);
                             }
                         }).into(binding.tvText);
@@ -214,7 +216,7 @@ public class TweetDetailFragment extends Fragment {
         SpannableStringBuilder ssb = new SpannableStringBuilder(
                 String.valueOf(tweet.getRetweetCount()));
         ssb.setSpan(
-                twitterGreySpan,
+                mTwitterGreySpan,
                 0,
                 ssb.length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -231,7 +233,7 @@ public class TweetDetailFragment extends Fragment {
         SpannableStringBuilder ssbFav = new SpannableStringBuilder(
                 String.valueOf(tweet.getFavouritesCount()));
         ssbFav.setSpan(
-                twitterGreySpan,
+                mTwitterGreySpan,
                 0,
                 ssbFav.length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

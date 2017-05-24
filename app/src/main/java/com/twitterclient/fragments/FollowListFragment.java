@@ -2,44 +2,57 @@ package com.twitterclient.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
+import com.google.gson.Gson;
+import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
 import com.twitterclient.adapters.FollRecyclerAdapter;
 import com.twitterclient.helpers.EndlessRecyclerViewScrollListener;
+import com.twitterclient.models.Follow;
 import com.twitterclient.models.User;
+
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import cz.msebera.android.httpclient.Header;
+
 public abstract class FollowListFragment extends Fragment {
 
-    List<User> users;
-    RecyclerView recyclerView;
-    FollRecyclerAdapter adapter;
-    ProgressBar progressBar;
+    private List<User> mUsers;
+    private RecyclerView mRecyclerView;
+    private FollRecyclerAdapter mAdapter;
+    private ProgressBar mProgressBar;
 
-    DividerItemDecoration dividerItemDecoration;
-    LinearLayoutManager layoutManager;
-    EndlessRecyclerViewScrollListener scrollListener;
+    private DividerItemDecoration mDividerItemDecoration;
+    private LinearLayoutManager mLayoutManager;
+    private EndlessRecyclerViewScrollListener mScrollListener;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        users = new ArrayList<>();
-        adapter = new FollRecyclerAdapter(getActivity(),users);
+        mUsers = new ArrayList<>();
+        mAdapter = new FollRecyclerAdapter(getActivity(),mUsers);
 
-        layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
-        dividerItemDecoration = new DividerItemDecoration(getActivity(),
-                layoutManager.getOrientation());
+        mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
+        mDividerItemDecoration = new DividerItemDecoration(getActivity(),
+                mLayoutManager.getOrientation());
+        mScrollListener = new EndlessRecyclerViewScrollListener(mLayoutManager) {
+            @Override
+            public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {}
+        };
     }
 
     @Override
@@ -48,26 +61,62 @@ public abstract class FollowListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.frag_tweets_list, container, false);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycleView);
-        recyclerView.addItemDecoration(dividerItemDecoration);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.rvMessages);
+        mRecyclerView.addItemDecoration(mDividerItemDecoration);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        recyclerView.setVisibility(View.GONE);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mRecyclerView.setVisibility(View.GONE);
 
-        recyclerView.addOnScrollListener(scrollListener);
+        mRecyclerView.addOnScrollListener(mScrollListener);
 
         return view;
     }
 
+    /**
+     * Function adds all the users passed in the params
+     * @param users
+     */
     public void addAllUsers(List<User> users) {
-        this.users.addAll(users);
+        this.mUsers.addAll(users);
     }
 
+    /**
+     * Function clears all the users
+     */
     public void clearAllUsers() {
-        this.users.clear();
+        this.mUsers.clear();
     }
 
+    /**
+     * Handler function to respond to follow apis
+     * @return
+     */
+    protected JsonHttpResponseHandler getHandler() {
+        return new JsonHttpResponseHandler() {
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 
+                clearAllUsers();
+                mAdapter.notifyDataSetChanged();
+
+                Log.d("DEBUG", response.toString());
+                Gson gson = new Gson();
+                Follow followers = gson.fromJson(response.toString(), Follow.class);
+                mRecyclerView.setVisibility(View.VISIBLE);
+                mProgressBar.setVisibility(View.GONE);
+                addAllUsers(followers.getUsers());
+                mAdapter.notifyDataSetChanged();
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers,
+                                  Throwable throwable, JSONObject errorResponse) {
+                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
+                        Snackbar.LENGTH_LONG).show();
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        };
+    }
 }

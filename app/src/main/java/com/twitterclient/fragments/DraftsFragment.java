@@ -7,7 +7,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,10 +17,9 @@ import android.widget.ListView;
 
 import com.twitterclient.R;
 import com.twitterclient.adapters.DraftsAdapter;
+import com.twitterclient.helpers.SharedPrefHelper;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class DraftsFragment extends DialogFragment {
 
@@ -29,12 +27,11 @@ public class DraftsFragment extends DialogFragment {
         void onFinishDraft(String tweet);
     }
 
-    ListView lvDrafts;
-    DraftsAdapter adapter;
-    List<String> drafts;
+    private ListView mLvDrafts;
+    private DraftsAdapter mAdapter;
+    private List<String> mDrafts;
 
-    public DraftsFragment() {
-    }
+    public DraftsFragment() { }
 
     public static DraftsFragment getInstance() {
         return new DraftsFragment();
@@ -57,43 +54,24 @@ public class DraftsFragment extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        drafts = getDrafts();
-        lvDrafts = (ListView) view.findViewById(R.id.lvDrafts);
-        adapter = new DraftsAdapter(getContext(), drafts);
-        lvDrafts.setAdapter(adapter);
+        mDrafts = new SharedPrefHelper().getAll(getActivity());
+        mLvDrafts = (ListView) view.findViewById(R.id.lvDrafts);
+        mAdapter = new DraftsAdapter(getContext(), mDrafts);
+        mLvDrafts.setAdapter(mAdapter);
 
-        lvDrafts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mLvDrafts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 SharedPreferences sharedPreferences = getActivity()
                         .getSharedPreferences("Drafts", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.remove(adapter.getItem(i));
+                editor.remove(mAdapter.getItem(i));
                 editor.apply();
 
-                sendBackResult(adapter.getItem(i));
+                sendBackResult(mAdapter.getItem(i));
             }
         });
-
-    }
-
-    /**
-     * Function gets a list of drafts from the saved shared preferences
-     * @return
-     */
-    private List<String> getDrafts() {
-
-       SharedPreferences sharedPreferences = getActivity()
-                .getSharedPreferences("Drafts", Context.MODE_PRIVATE);
-
-        Map<String,String> draftsMap = (Map<String, String>) sharedPreferences.getAll();
-        List<String> drafts = new ArrayList<>(draftsMap.values());
-        if(drafts!=null && !drafts.isEmpty()) {
-            Log.d("DEBUG", drafts.get(0));
-        }
-
-        return drafts;
     }
 
     /**

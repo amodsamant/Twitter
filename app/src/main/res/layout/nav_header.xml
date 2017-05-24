@@ -9,25 +9,25 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@color/twitterBlue"
-        android:scaleType="centerCrop" />
+        android:scaleType="centerCrop"/>
 
     <ImageView
         android:id="@+id/ivHeaderProfile"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="@dimen/profile_image_size"
+        android:layout_height="@dimen/profile_image_size"
         app:srcCompat="@mipmap/ic_launcher"
         android:layout_marginTop="50dp"
         android:layout_marginStart="20dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"/>
 
     <TextView
         android:id="@+id/tvHeaderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
-        android:layout_marginTop="10dp"
-        android:textSize="16sp"
+        android:text="@string/name"
+        android:layout_marginTop="@dimen/small_margin"
+        android:textSize="@dimen/text16"
         android:layout_below="@+id/ivHeaderProfile"
         android:layout_alignStart="@+id/ivHeaderProfile"
         android:textColor="@android:color/white"/>
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:text="\@Name"
         android:layout_marginTop="6dp"
-        android:textSize="14sp"
+        android:textSize="@dimen/text14"
         android:layout_below="@+id/tvHeaderName"
         android:layout_alignStart="@+id/tvHeaderName"
         android:textColor="@android:color/white"/>

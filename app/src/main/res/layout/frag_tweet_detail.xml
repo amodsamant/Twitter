@@ -2,9 +2,7 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <RelativeLayout
-
-        android:layout_width="match_parent"
+    <RelativeLayout android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
@@ -12,48 +10,47 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            >
+            android:layout_alignParentTop="true">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="5dp"
+                android:layout_margin="@dimen/xsmall_margin"
                 android:layout_marginBottom="10dp"
                 android:padding="4dp">
 
                 <ImageView
                     android:id="@+id/ivUser"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
+                    android:layout_width="@dimen/profile_image_size"
+                    android:layout_height="@dimen/profile_image_size"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentTop="true"
-                    app:srcCompat="@mipmap/ic_launcher" />
+                    app:srcCompat="@mipmap/ic_launcher"/>
 
                 <TextView
                     android:id="@+id/tvUsername"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="10dp"
-                    android:textSize="16sp"
+                    android:layout_marginLeft="@dimen/xsmall_margin"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:textSize="@dimen/text16"
                     android:layout_toEndOf="@+id/ivUser"
                     android:layout_toRightOf="@+id/ivUser"
                     android:textStyle="bold"
-                    android:text="username" />
+                    android:text="@string/username"/>
 
                 <TextView
                     android:id="@+id/tvScreenName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignBottom="@+id/ivUser"
-                    android:layout_marginBottom="10dp"
-                    android:layout_marginLeft="5dp"
-                    android:textSize="14sp"
+                    android:layout_marginBottom="@dimen/small_margin"
+                    android:layout_marginLeft="@dimen/xsmall_margin"
+                    android:textSize="@dimen/text14"
                     android:layout_toEndOf="@+id/ivUser"
                     android:layout_toRightOf="@+id/ivUser"
-                    android:text="\@ name" />
+                    android:text="\@ name"/>
 
                 <TextView
                     android:id="@+id/tvText"
@@ -64,14 +61,13 @@
                     android:layout_below="@+id/ivUser"
                     android:layout_marginLeft="4dp"
                     android:layout_marginRight="4dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:layout_marginBottom="@dimen/xsmall_margin"
                     android:ellipsize="end"
                     android:maxLines="5"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/text20"
                     android:autoLink="all"
-                    android:linksClickable="true"
-                    />
+                    android:linksClickable="true"/>
 
                 <ImageView
                     android:id="@+id/ivTweet"
@@ -80,10 +76,10 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/tvText"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:layout_marginBottom="@dimen/xsmall_margin"
+                    android:layout_marginLeft="@dimen/xsmall_margin"
+                    android:layout_marginRight="@dimen/xsmall_margin"
                     android:scaleType="fitXY"/>
 
                 <View
@@ -93,8 +89,8 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/tvRetweetCount"
-                    android:layout_marginTop="5dp"
-                    android:background="#e4e4e4" />
+                    android:layout_marginTop="@dimen/xsmall_margin"
+                    android:background="@color/backgroundShade"/>
 
                 <Button
                     android:id="@+id/btnReply"
@@ -103,11 +99,11 @@
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentStart="true"
                     android:layout_marginLeft="45dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="@dimen/xsmall_margin"
                     android:background="@drawable/ic_reply_detail"
                     android:minHeight="0dp"
                     android:minWidth="0dp"
-                    android:layout_alignParentLeft="true" />
+                    android:layout_alignParentLeft="true"/>
 
                 <Button
                     android:id="@+id/btnRetweet"
@@ -118,7 +114,7 @@
                     android:minWidth="0dp"
                     android:layout_marginTop="8dp"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"/>
 
                 <Button
                     android:id="@+id/btnLike"
@@ -132,7 +128,7 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/ic_favorite_detail"
                     android:minHeight="0dp"
-                    android:minWidth="0dp" />
+                    android:minWidth="0dp"/>
 
                 <View
                     android:id="@+id/separator1"
@@ -141,9 +137,9 @@
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
                     android:layout_below="@+id/tvTime"
-                    android:layout_marginBottom="5dp"
+                    android:layout_marginBottom="@dimen/xsmall_margin"
                     android:layout_marginTop="8dp"
-                    android:background="#e4e4e4" />
+                    android:background="@color/backgroundShade"/>
 
                 <TextView
                     android:id="@+id/tvRetweetCount"
@@ -157,7 +153,7 @@
                     android:layout_marginRight="4dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
-                    android:textSize="14dp"/>
+                    android:textSize="@dimen/text14"/>
 
                 <TextView
                     android:id="@+id/tvLikeCount"
@@ -171,8 +167,7 @@
                     android:layout_toEndOf="@+id/tvRetweetCount"
                     android:layout_toRightOf="@+id/tvRetweetCount"
                     android:textColor="@color/twitterLightGrey"
-                    android:textSize="14dp"
-                    />
+                    android:textSize="@dimen/text14"/>
 
                 <TextView
                     android:id="@+id/tvTime"
@@ -186,36 +181,36 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     android:textColor="@color/twitterLightGrey"
-                    android:textSize="14dp"
-                    android:text="Time" />
+                    android:textSize="@dimen/text14"
+                    android:text="@string/time"/>
 
                 <TextView
                     android:id="@+id/tvDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="2dp"
-                    android:layout_marginStart="10dp"
+                    android:layout_marginStart="@dimen/small_margin"
                     android:layout_toEndOf="@+id/tvTime"
                     android:layout_toRightOf="@+id/tvTime"
-                    android:paddingLeft="10dp"
+                    android:paddingLeft="@dimen/small_margin"
                     android:textColor="@color/twitterLightGrey"
-                    android:text="Date"
+                    android:text="@string/date"
                     android:layout_marginRight="2dp"
                     android:layout_alignBottom="@+id/tvTime"
-                    android:textSize="14dp"
-                    android:layout_alignTop="@+id/tvTime" />
+                    android:textSize="@dimen/text14"
+                    android:layout_alignTop="@+id/tvTime"/>
 
                 <ImageView
                     android:id="@+id/ivVerified"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/tvUsername"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="@dimen/xsmall_margin"
                     android:layout_marginTop="3dp"
                     android:layout_toEndOf="@+id/tvUsername"
                     android:layout_toRightOf="@+id/tvUsername"
                     app:srcCompat="@drawable/ic_verified_user"
-                    tools:ignore="VectorDrawableCompat" />
+                    tools:ignore="VectorDrawableCompat"/>
             </RelativeLayout>
         </ScrollView>
     </RelativeLayout>

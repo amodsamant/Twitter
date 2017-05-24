@@ -7,9 +7,9 @@
         android:id="@+id/tvDraft"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp"
+        android:padding="@dimen/small_margin"
         android:fontFamily="serif"
-        android:textSize="22sp"
+        android:textSize="@dimen/text22"
         android:maxLines="3"
         android:ellipsize="end"
         android:textColor="@color/twitterDarkerGrey"/>

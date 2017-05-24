@@ -8,7 +8,6 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!-- <uses-permission android:name="android.permission.WRITE_SETTINGS"/> -->
     <application
         android:name=".network.TwitterClientApplication"
         android:allowBackup="true"
@@ -38,7 +37,8 @@
 
         <activity
             android:name=".activities.HomeActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
 
@@ -49,8 +49,9 @@
         </activity>
         <activity
             android:name=".activities.ProfileActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".activities.HolderActivity"></activity>
+            android:theme="@style/AppTheme"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activities.HolderActivity"/>
     </application>
 
 </manifest>

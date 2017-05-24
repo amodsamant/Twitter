@@ -15,17 +15,17 @@
         android:layout_height="wrap_content"
         android:onClick="loginToRest"
         android:text="@string/login_label"
-        android:layout_marginBottom="35dp"
+        android:layout_marginBottom="@dimen/login_button_margin"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="174dp"
-        app:srcCompat="@drawable/ic_twitter_logo"
+        android:layout_width="@dimen/login_logo_margin"
+        android:layout_height="@dimen/login_logo_margin"
+        android:layout_marginTop="@dimen/login_logo_marginTop"
+        android:background="@drawable/ic_twitter_logo"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>
