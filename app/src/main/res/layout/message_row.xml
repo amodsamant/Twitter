@@ -12,7 +12,6 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginRight="8dp"
-        tools:srcCompat="@mipmap/ic_launcher"
         android:layout_marginLeft="8dp"
         android:layout_marginTop="@dimen/small_margin"
         android:layout_marginBottom="@dimen/xsmall_margin"/>
@@ -28,7 +27,7 @@
         android:layout_toRightOf="@id/ivUserMR"
         android:textStyle="bold"
         android:textSize="@dimen/text16"
-        android:text="Name"/>
+        android:text="@string/name"/>
 
     <ImageView
         android:id="@+id/ivVerifiedBR"
@@ -86,7 +85,6 @@
         android:layout_marginTop="@dimen/xsmall_margin"
         android:layout_marginRight="@dimen/small_margin"
         android:layout_toRightOf="@id/ivUserMR"
-        tools:srcCompat="@mipmap/ic_launcher"
         android:scaleType="fitXY"/>
 
 </RelativeLayout>

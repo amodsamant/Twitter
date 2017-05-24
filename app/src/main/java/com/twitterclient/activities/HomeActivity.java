@@ -85,9 +85,7 @@ public class HomeActivity extends AppCompatActivity implements
 
         mScreenName = getIntent().getStringExtra(SCREEN_NAME);
 
-        /**
-         * Code to handle implicit intents
-         */
+        /* Code to handle implicit intents */
         Intent intent = getIntent();
         String action = intent.getAction();
         String type = intent.getType();
@@ -99,9 +97,7 @@ public class HomeActivity extends AppCompatActivity implements
             }
         }
 
-        /**
-         * Compose button
-         */
+        /* Compose button */
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,6 +108,9 @@ public class HomeActivity extends AppCompatActivity implements
 
     }
 
+    /**
+     * Adapter for view pager on the home screen
+     */
     public class HomeViewPagerAdapter extends SmartFragmentStatePagerAdapter {
 
         private final int NUM_ITEMS = 3;
@@ -197,6 +196,10 @@ public class HomeActivity extends AppCompatActivity implements
 
     }
 
+    /**
+     * Function for drawer selector
+     * @param menuItem
+     */
     public void selectDrawerItem(MenuItem menuItem) {
         switch (menuItem.getItemId()) {
             case R.id.profile_menu_item:
@@ -217,7 +220,10 @@ public class HomeActivity extends AppCompatActivity implements
         mDrawer.closeDrawers();
     }
 
-
+    /**
+     * Setup function for action bar drawer
+     * @return
+     */
     private ActionBarDrawerToggle setupDrawerToggle() {
         return new ActionBarDrawerToggle(this, mDrawer, mToolbar,
                 R.string.drawer_open, R.string.drawer_close);
@@ -257,6 +263,10 @@ public class HomeActivity extends AppCompatActivity implements
         startActivity(intent);
     }
 
+    /**
+     * Function opens a compose screen for user to tweet
+     * @param tweet
+     */
     public void openComposeFrag(String tweet) {
         FragmentManager fm = getSupportFragmentManager();
         ComposeTweetFragment fragment = ComposeTweetFragment.getInstance(tweet);
@@ -278,6 +288,7 @@ public class HomeActivity extends AppCompatActivity implements
 
     /**
      * Function used to set the correct icons on the tab with title
+     * @param position
      */
     void setupTab(int position) {
 

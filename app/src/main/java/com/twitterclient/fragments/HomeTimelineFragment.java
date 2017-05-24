@@ -20,11 +20,20 @@ public class HomeTimelineFragment extends TweetsListFragment {
         populateTimeline();
     }
 
+    /**
+     * Function to populate the main home timeline
+     * @param maxId
+     * @param sinceId
+     */
     void populateTimeline(long maxId, long sinceId) {
         TwitterClientApplication.getTwitterClient()
                 .getHomeTimeline(maxId, sinceId, getHandler(sinceId==DEFAULT_RESET_SINCE_ID));
     }
 
+    /**
+     * Function to notify on finishing a tweet
+     * @param tweet
+     */
     public void onFinishTweet(Tweet tweet) {
         mTweets.add(0,tweet);
         mAdapter.notifyItemInserted(0);

@@ -38,7 +38,7 @@
                     android:layout_toEndOf="@+id/ivUser"
                     android:layout_toRightOf="@+id/ivUser"
                     android:textStyle="bold"
-                    android:text="username"/>
+                    android:text="@string/username"/>
 
                 <TextView
                     android:id="@+id/tvScreenName"
@@ -182,7 +182,7 @@
                     android:layout_marginBottom="8dp"
                     android:textColor="@color/twitterLightGrey"
                     android:textSize="@dimen/text14"
-                    android:text="Time"/>
+                    android:text="@string/time"/>
 
                 <TextView
                     android:id="@+id/tvDate"
@@ -194,7 +194,7 @@
                     android:layout_toRightOf="@+id/tvTime"
                     android:paddingLeft="@dimen/small_margin"
                     android:textColor="@color/twitterLightGrey"
-                    android:text="Date"
+                    android:text="@string/date"
                     android:layout_marginRight="2dp"
                     android:layout_alignBottom="@+id/tvTime"
                     android:textSize="@dimen/text14"

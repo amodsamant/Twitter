@@ -93,10 +93,11 @@ public class ProfileActivity extends AppCompatActivity {
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.profile_tabs);
         tabLayout.setupWithViewPager(viewPager);
-
     }
 
-
+    /**
+     * Adapter for profile activity view pager
+     */
     public class ProfileViewPagerAdapter extends SmartFragmentStatePagerAdapter {
 
         private String[] tabTitles = {"TWEETS", "LIKES"};
@@ -131,6 +132,9 @@ public class ProfileActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * Function sets up all the views in the profile activity
+     */
     public void setupViews() {
 
         binding.tvName.setTypeface(Typeface.createFromAsset(getAssets(), Constants.FONT_BOLD));
@@ -179,6 +183,10 @@ public class ProfileActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Function populates the user information in the screen
+     * @param user
+     */
     void populateUserInfo(User user) {
 
         binding.tvName.setText(user.getName());
@@ -202,9 +210,7 @@ public class ProfileActivity extends AppCompatActivity {
                             }
                         }).into(binding.tvTagline);
 
-        /**
-         * Using a Span here to have a different style inside of each text view
-         */
+        /* Using a Span here to have a different style inside of each text view */
         ForegroundColorSpan blackSpan = new ForegroundColorSpan(
                 getResources().getColor(R.color.twitterDarkerGrey));
         SpannableStringBuilder ssb = new SpannableStringBuilder(
@@ -235,9 +241,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         binding.ivBackdrop.setImageResource(0);
 
-        /**
-         * Using the banner url
-         */
+        /* Using the banner url */
         String imageUrl = user.getProfileBackground() + "/1500x500";
         Glide.with(this).load(imageUrl)
                  .diskCacheStrategy( DiskCacheStrategy.SOURCE )

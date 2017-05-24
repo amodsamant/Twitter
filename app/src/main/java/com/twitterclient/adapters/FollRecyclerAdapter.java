@@ -31,7 +31,7 @@ public class FollRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        RecyclerView.ViewHolder viewHolder = null;
+        RecyclerView.ViewHolder viewHolder;
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         switch (viewType) {
             default:
@@ -58,9 +58,8 @@ public class FollRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         viewHolder.tvScreenName.setText("@"+user.getScreenName());
 
         viewHolder.ivUser.setImageResource(0);
-        /**
-         * Code to set profile image
-         */
+
+        /* Code to set profile image */
         String profileImageUrl = GenericUtils.modifyProfileImageUrl(user.getProfileImageUrl());
         Glide.with(mContext).load(profileImageUrl)
                 .fitCenter()

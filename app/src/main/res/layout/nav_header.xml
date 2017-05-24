@@ -25,7 +25,7 @@
         android:id="@+id/tvHeaderName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="@string/name"
         android:layout_marginTop="@dimen/small_margin"
         android:textSize="@dimen/text16"
         android:layout_below="@+id/ivHeaderProfile"

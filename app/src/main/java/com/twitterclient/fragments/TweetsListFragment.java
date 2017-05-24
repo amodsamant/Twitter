@@ -105,6 +105,9 @@ public abstract class TweetsListFragment extends Fragment {
         this.mTweets.clear();
     }
 
+    /**
+     * Function loads data for next set
+     */
     void loadNextDataFromApi() {
         long maxTweetId = -1;
         if(mTweets.size() > 0) {
@@ -113,6 +116,11 @@ public abstract class TweetsListFragment extends Fragment {
         populateTimeline(maxTweetId,-1);
     }
 
+    /**
+     * Handler functino to process the received tweets
+     * @param reset if reset true then clear and populate
+     * @return
+     */
     protected JsonHttpResponseHandler getHandler(final boolean reset) {
         return new JsonHttpResponseHandler() {
             @Override

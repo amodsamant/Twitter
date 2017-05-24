@@ -31,7 +31,6 @@ import com.twitterclient.databinding.ComposeFragBinding;
 import com.twitterclient.helpers.SharedPrefHelper;
 import com.twitterclient.models.Tweet;
 import com.twitterclient.models.User;
-import com.twitterclient.network.TwitterClient;
 import com.twitterclient.network.TwitterClientApplication;
 import com.twitterclient.utils.GenericUtils;
 
@@ -142,18 +141,14 @@ public class ComposeTweetFragment extends DialogFragment
             }
         });
 
-        /**
-         * Add the text only if its passed this fragment
-         */
+        /* Add the text only if its passed this fragment */
         String screenName = getArguments().getString(TWEET);
         if(screenName!=null) {
             binding.etTweet.setText(screenName);
             binding.etTweet.setSelection(screenName.length());
         }
 
-        /**
-         * Listener for closing the compose fragment
-         */
+        /* Listener for closing the compose fragment */
         binding.ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -184,9 +179,7 @@ public class ComposeTweetFragment extends DialogFragment
             }
         });
 
-        /**
-         * Listener for tweeting
-         */
+        /* Listener for tweeting */
         binding.btnTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -198,11 +191,8 @@ public class ComposeTweetFragment extends DialogFragment
             }
         });
 
-        /**
-         * Here personal info is requested to get the profile url
-         */
-        TwitterClient twitterCLient = TwitterClientApplication.getTwitterClient();
-        twitterCLient.getPersonalUserInfo(new JsonHttpResponseHandler() {
+        /* Here personal info is requested to get the profile url */
+        TwitterClientApplication.getTwitterClient().getPersonalUserInfo(new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 Gson gson = new Gson();
@@ -221,9 +211,7 @@ public class ComposeTweetFragment extends DialogFragment
             @Override
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
-                /**
-                 * Need not be handled as this would not cause any user issue
-                 */
+                /* Need not be handled as this would not cause any user issue */
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });

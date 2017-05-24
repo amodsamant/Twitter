@@ -58,7 +58,7 @@
         android:layout_marginLeft="4dp"
         android:layout_toEndOf="@+id/tvScreenNameBR"
         android:layout_marginBottom="@dimen/xsmall_margin"
-        android:text="."/>
+        android:text="@string/dot"/>
 
     <TextView
         android:id="@+id/tvSinceTimeBR"
@@ -69,7 +69,7 @@
         android:layout_marginTop="@dimen/small_margin"
         android:layout_toEndOf="@id/dot"
         android:textColor="@color/twitterDarkerGrey"
-        android:text="Time"/>
+        android:text="@string/time"/>
 
     <TextView
         android:id="@+id/tvTextBR"
@@ -77,7 +77,7 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="5"
-        android:text="text to display 140chars"
+        android:text="@string/text_to_display_140chars"
         android:layout_below="@+id/tvUsernameBR"
         android:layout_alignParentEnd="true"
         android:layout_toEndOf="@+id/ivUserBR"

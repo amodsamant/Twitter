@@ -32,6 +32,11 @@ public class SearchFragment extends TweetsListFragment {
         populateTimeline();
     }
 
+    /**
+     * Function to populate search timeline
+     * @param maxId
+     * @param sinceId
+     */
     void populateTimeline(long maxId, final long sinceId) {
 
         String query = getArguments().getString("query");

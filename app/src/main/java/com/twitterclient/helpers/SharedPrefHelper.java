@@ -11,6 +11,11 @@ import java.util.Map;
 
 public class SharedPrefHelper {
 
+    /**
+     * Function to get all the saved preferences
+     * @param context
+     * @return
+     */
     public List<String> getAll(Context context) {
 
         SharedPreferences sharedPreferences = getSharedPreferences(context);

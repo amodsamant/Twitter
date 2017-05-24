@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:ellipsize="end"
         android:maxLines="5"
-        android:text="text to display"
+        android:text="@string/text_to_display"
         android:layout_marginRight="@dimen/xsmall_margin"
         android:textSize="@dimen/text16"
         android:autoLink="all"
@@ -40,7 +40,7 @@
         android:layout_marginRight="@dimen/xsmall_margin"
         android:textStyle="bold"
         android:textSize="@dimen/text16"
-        android:text="Name"
+        android:text="@string/name"
         android:layout_alignTop="@+id/ivFollUser"
         android:layout_toEndOf="@+id/ivFollUser"/>
 

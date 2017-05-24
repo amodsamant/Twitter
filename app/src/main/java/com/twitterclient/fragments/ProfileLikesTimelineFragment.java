@@ -24,6 +24,11 @@ public class ProfileLikesTimelineFragment extends TweetsListFragment {
         populateTimeline();
     }
 
+    /**
+     * Function to populate profile likes timeline
+     * @param maxId
+     * @param sinceId
+     */
     void populateTimeline(long maxId, long sinceId) {
         String screenName = getArguments().getString(SCREEN_NAME);
         TwitterClientApplication.getTwitterClient().getFavorites(screenName, maxId, sinceId,

@@ -24,6 +24,11 @@ public class ProfileTweetsTimelineFragment extends TweetsListFragment {
         populateTimeline();
     }
 
+    /**
+     * Function populate the profile tweets timeline
+     * @param maxId
+     * @param sinceId
+     */
     void populateTimeline(long maxId, long sinceId) {
 
         String screenName = getArguments().getString(SCREEN_NAME);

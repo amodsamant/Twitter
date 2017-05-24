@@ -27,6 +27,9 @@ public class FollowingFragment extends FollowListFragment {
         }
     }
 
+    /**
+     * Function populates the following list
+     */
     private void populateFollowList() {
         String screenName = getArguments().getString(SCREEN_NAME);
         TwitterClientApplication.getTwitterClient().getFollowing(screenName, getHandler());

@@ -24,7 +24,7 @@
         android:layout_width="@dimen/login_logo_margin"
         android:layout_height="@dimen/login_logo_margin"
         android:layout_marginTop="@dimen/login_logo_marginTop"
-        app:srcCompat="@drawable/ic_twitter_logo"
+        android:background="@drawable/ic_twitter_logo"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"/>
 

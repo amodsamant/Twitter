@@ -103,7 +103,7 @@
                         android:layout_below="@+id/tvTagline"
                         android:layout_marginTop="@dimen/text_margin"
                         android:layout_marginBottom="@dimen/small_margin"
-                        android:text="Following"
+                        android:text="@string/following"
                         android:textColor="@color/twitterLightGrey"/>
 
                     <TextView
@@ -116,7 +116,7 @@
                         android:layout_toRightOf="@id/tvFollowing"
                         android:layout_toEndOf="@id/tvFollowing"
                         android:layout_marginBottom="@dimen/small_margin"
-                        android:text="Followers"
+                        android:text="@string/followers"
                         android:textColor="@color/twitterLightGrey"/>
 
                     <ImageView

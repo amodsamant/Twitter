@@ -74,14 +74,25 @@ public abstract class FollowListFragment extends Fragment {
         return view;
     }
 
+    /**
+     * Function adds all the users passed in the params
+     * @param users
+     */
     public void addAllUsers(List<User> users) {
         this.mUsers.addAll(users);
     }
 
+    /**
+     * Function clears all the users
+     */
     public void clearAllUsers() {
         this.mUsers.clear();
     }
 
+    /**
+     * Handler function to respond to follow apis
+     * @return
+     */
     protected JsonHttpResponseHandler getHandler() {
         return new JsonHttpResponseHandler() {
             @Override

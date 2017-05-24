@@ -49,7 +49,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
-        RecyclerView.ViewHolder viewHolder = null;
+        RecyclerView.ViewHolder viewHolder;
 
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
@@ -137,9 +137,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         }
 
-        /**
-         * Custom font HelveticaNeueLight
-         */
+        /* Custom font HelveticaNeueLight */
         Typeface fontLight = Typeface
                 .createFromAsset(mContext.getAssets(), Constants.FONT_LIGHT);
         viewHolder.tvBody.setTypeface(fontLight);
