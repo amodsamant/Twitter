@@ -37,12 +37,12 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    Context context;
-    List<Tweet> tweets;
+    Context mContext;
+    List<Tweet> mTweets;
 
     public TimelineRecyclerAdapter(Context context, List<Tweet> tweets) {
-        this.context = context;
-        this.tweets = tweets;
+        this.mContext = context;
+        this.mTweets = tweets;
     }
 
     @Override
@@ -64,7 +64,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        final Tweet tweet = tweets.get(position);
+        final Tweet tweet = mTweets.get(position);
         final ViewHolderBR viewHolder = (ViewHolderBR) holder;
 
         viewHolder.tvUser.setText(tweet.getUser().getName());
@@ -83,9 +83,9 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
          * Code to set profile image
          */
         String profileImageUrl = GenericUtils.modifyProfileImageUrl(tweet.getUser().getProfileImageUrl());
-        Glide.with(context).load(profileImageUrl)
+        Glide.with(mContext).load(profileImageUrl)
                 .fitCenter()
-                .bitmapTransform(new RoundedCornersTransformation(context,5,0))
+                .bitmapTransform(new RoundedCornersTransformation(mContext,5,0))
                 .diskCacheStrategy( DiskCacheStrategy.SOURCE )
                 .into(viewHolder.ivUser);
 
@@ -93,9 +93,9 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         viewHolder.ivUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ProfileActivity.class);
+                Intent intent = new Intent(mContext, ProfileActivity.class);
                 intent.putExtra(SCREEN_NAME, tweet.getUser().getScreenName());
-                context.startActivity(intent);
+                mContext.startActivity(intent);
             }
         });
 
@@ -109,23 +109,23 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
                 tweet.getEntities().getMedia().get(0).getMediaUrlHttps()!=null) {
 
             DisplayMetrics displayMetrics = new DisplayMetrics();
-            WindowManager window = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+            WindowManager window = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
             window.getDefaultDisplay().getMetrics(displayMetrics);
             int height = displayMetrics.heightPixels;
             int width = displayMetrics.widthPixels;
 
             String imageUrl = tweet.getEntities().getMedia().get(0).getMediaUrlHttps()+":large";
 
-            Glide.with(context).load(imageUrl)
+            Glide.with(mContext).load(imageUrl)
                     .override(width/2,height/2)
                     .fitCenter()
-                    .bitmapTransform( new RoundedCornersTransformation(context,10,0))
+                    .bitmapTransform( new RoundedCornersTransformation(mContext,10,0))
                     .diskCacheStrategy( DiskCacheStrategy.SOURCE )
                     .into(viewHolder.ivTweet);
         }
 
         /**
-         * Handle video url
+         * TODO: Handle video url
          */
         if(tweet.getExtendedEntities()!=null && tweet.getExtendedEntities().getMedia()!=null &&
                 !tweet.getExtendedEntities().getMedia().isEmpty()  &&
@@ -140,45 +140,45 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
          * Custom font HelveticaNeueLight
          */
         Typeface fontLight = Typeface
-                .createFromAsset(context.getAssets(), "fonts/HelveticaNeueLight.ttf");
+                .createFromAsset(mContext.getAssets(), "fonts/HelveticaNeueLight.ttf");
         viewHolder.tvBody.setTypeface(fontLight);
         viewHolder.tvBody.setText(tweet.getBody());
         new PatternEditableBuilder().
                 addPattern(Pattern.compile("\\@(\\w+)"),
-                        context.getResources().getColor(R.color.twitterBlue),
+                        mContext.getResources().getColor(R.color.twitterBlue),
                         new PatternEditableBuilder.SpannableClickedListener() {
                             @Override
                             public void onSpanClicked(String text) {
-                                Intent intent = new Intent(context, ProfileActivity.class);
+                                Intent intent = new Intent(mContext, ProfileActivity.class);
                                 intent.putExtra(SCREEN_NAME, text.substring(1));
-                                context.startActivity(intent);
+                                mContext.startActivity(intent);
                             }
                         }).into(viewHolder.tvBody);
 
         new PatternEditableBuilder().
                 addPattern(Pattern.compile("\\#(\\w+)"),
-                        context.getResources().getColor(R.color.twitterBlue),null)
+                        mContext.getResources().getColor(R.color.twitterBlue),null)
                 .into(viewHolder.tvBody);
 
         viewHolder.btnRetweet.setText(String.valueOf(tweet.getRetweetCount()));
         if(!tweet.isRetweeted()) {
-            Drawable img = context.getResources().getDrawable(R.drawable.ic_retweet);
+            Drawable img = mContext.getResources().getDrawable(R.drawable.ic_retweet);
             viewHolder.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         } else {
-            Drawable img = context.getResources().getDrawable(R.drawable.ic_retweet_set);
+            Drawable img = mContext.getResources().getDrawable(R.drawable.ic_retweet_set);
             viewHolder.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         }
         viewHolder.btnRetweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!tweet.isRetweeted()) {
-                    Drawable img = context.getResources().getDrawable(R.drawable.ic_retweet_set);
+                    Drawable img = mContext.getResources().getDrawable(R.drawable.ic_retweet_set);
                     viewHolder.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
                     tweet.setRetweetCount(tweet.getRetweetCount() + 1);
                     tweet.setRetweeted(true);
                     viewHolder.btnRetweet.setText(String.valueOf(tweet.getRetweetCount()));
                 } else {
-                    Drawable img = context.getResources().getDrawable(R.drawable.ic_retweet);
+                    Drawable img = mContext.getResources().getDrawable(R.drawable.ic_retweet);
                     viewHolder.btnRetweet.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
                     tweet.setRetweetCount(tweet.getRetweetCount() - 1);
                     tweet.setRetweeted(false);
@@ -189,23 +189,23 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
         viewHolder.btnLike.setText(String.valueOf(tweet.getFavouritesCount()));
         if(!tweet.isFavorited()) {
-            Drawable img = context.getResources().getDrawable(R.drawable.ic_favorite);
+            Drawable img = mContext.getResources().getDrawable(R.drawable.ic_favorite);
             viewHolder.btnLike.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         } else {
-            Drawable img = context.getResources().getDrawable(R.drawable.ic_favorite_set);
+            Drawable img = mContext.getResources().getDrawable(R.drawable.ic_favorite_set);
             viewHolder.btnLike.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
         }
         viewHolder.btnLike.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if(!tweet.isFavorited()) {
-                    Drawable img = context.getResources().getDrawable(R.drawable.ic_favorite_set);
+                    Drawable img = mContext.getResources().getDrawable(R.drawable.ic_favorite_set);
                     viewHolder.btnLike.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
                     tweet.setFavouritesCount(tweet.getFavouritesCount() + 1);
                     tweet.setFavorited(true);
                     viewHolder.btnLike.setText(String.valueOf(tweet.getFavouritesCount()));
                 } else {
-                    Drawable img = context.getResources().getDrawable(R.drawable.ic_favorite);
+                    Drawable img = mContext.getResources().getDrawable(R.drawable.ic_favorite);
                     viewHolder.btnLike.setCompoundDrawablesWithIntrinsicBounds(img, null, null, null);
                     tweet.setFavouritesCount(tweet.getFavouritesCount() - 1);
                     tweet.setFavorited(false);
@@ -217,7 +217,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         viewHolder.btnReply.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentManager fm = ((AppCompatActivity)context).getSupportFragmentManager();
+                FragmentManager fm = ((AppCompatActivity)mContext).getSupportFragmentManager();
                 ComposeTweetFragment fragment = ComposeTweetFragment
                         .getInstance("@"+tweet.getUser().getScreenName());
                 fragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.Dialog_FullScreen);
@@ -228,10 +228,10 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, HolderActivity.class);
+                Intent intent = new Intent(mContext, HolderActivity.class);
                 intent.putExtra("frag_type", "detail");
                 intent.putExtra("tweet", Parcels.wrap(tweet));
-                context.startActivity(intent);
+                mContext.startActivity(intent);
             }
         });
 
@@ -239,6 +239,6 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemCount() {
-        return tweets.size();
+        return mTweets.size();
     }
 }

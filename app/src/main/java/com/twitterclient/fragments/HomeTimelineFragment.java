@@ -26,9 +26,9 @@ public class HomeTimelineFragment extends TweetsListFragment {
     }
 
     public void onFinishTweet(Tweet tweet) {
-        tweets.add(0,tweet);
-        adapter.notifyItemInserted(0);
-        layoutManager.scrollToPosition(0);
+        mTweets.add(0,tweet);
+        mAdapter.notifyItemInserted(0);
+        mLayoutManager.scrollToPosition(0);
     }
 
 }

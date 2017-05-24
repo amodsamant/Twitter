@@ -1,4 +1,4 @@
-package com.twitterclient.adapters;
+package com.twitterclient.helpers;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

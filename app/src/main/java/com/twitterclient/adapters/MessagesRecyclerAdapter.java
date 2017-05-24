@@ -27,12 +27,12 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
 
 public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    Context context;
-    List<Message> messages;
+    private Context mContext;
+    private List<Message> mMessages;
 
     public MessagesRecyclerAdapter(Context context, List<Message> messages) {
-        this.context = context;
-        this.messages = messages;
+        this.mContext = context;
+        this.mMessages = messages;
     }
 
     @Override
@@ -43,7 +43,6 @@ public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
 
         switch (viewType) {
-
             default:
                 View view = inflater.inflate(R.layout.message_row, parent, false);
                 viewHolder = new ViewHolderMR(view);
@@ -54,7 +53,7 @@ public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        final Message message = messages.get(position);
+        final Message message = mMessages.get(position);
         final ViewHolderMR viewHolder = (ViewHolderMR) holder;
 
         viewHolder.tvUser.setText(message.getSender().getName());
@@ -70,18 +69,18 @@ public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         viewHolder.ivUser.setImageResource(0);
         String profileImageUrl = GenericUtils.modifyProfileImageUrl(
                 message.getSender().getProfileImageUrl());
-        Glide.with(context).load(profileImageUrl)
+        Glide.with(mContext).load(profileImageUrl)
                 .fitCenter()
-                .bitmapTransform(new CropCircleTransformation(context))
+                .bitmapTransform(new CropCircleTransformation(mContext))
                 .diskCacheStrategy( DiskCacheStrategy.SOURCE )
                 .into(viewHolder.ivUser);
 
         viewHolder.ivUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, ProfileActivity.class);
+                Intent intent = new Intent(mContext, ProfileActivity.class);
                 intent.putExtra(SCREEN_NAME, message.getSender().getScreenName());
-                context.startActivity(intent);
+                mContext.startActivity(intent);
             }
         });
 
@@ -90,10 +89,10 @@ public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, HolderActivity.class);
+                Intent intent = new Intent(mContext, HolderActivity.class);
                 intent.putExtra("frag_type", "message");
                 intent.putExtra("message", Parcels.wrap(message));
-                context.startActivity(intent);
+                mContext.startActivity(intent);
             }
         });
 
@@ -101,7 +100,7 @@ public class MessagesRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     @Override
     public int getItemCount() {
-        return messages.size();
+        return mMessages.size();
     }
 
 }

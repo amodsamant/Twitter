@@ -34,28 +34,28 @@ import cz.msebera.android.httpclient.Header;
 
 public abstract class TweetsListFragment extends Fragment {
 
-    List<Tweet> tweets;
-    RecyclerView recyclerView;
-    TimelineRecyclerAdapter adapter;
-    ProgressBar progressBar;
+    protected List<Tweet> mTweets;
+    protected RecyclerView mRecyclerView;
+    protected TimelineRecyclerAdapter mAdapter;
+    protected ProgressBar mProgressBar;
 
-    DividerItemDecoration dividerItemDecoration;
-    LinearLayoutManager layoutManager;
-    EndlessRecyclerViewScrollListener scrollListener;
-    SwipeRefreshLayout swipeRefreshLayout;
+    protected DividerItemDecoration mDividerItemDecoration;
+    protected LinearLayoutManager mLayoutManager;
+    protected EndlessRecyclerViewScrollListener mScrollListener;
+    protected SwipeRefreshLayout mSwipeRefreshLayout;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        tweets = new ArrayList<>();
-        adapter = new TimelineRecyclerAdapter(getActivity(),tweets);
+        mTweets = new ArrayList<>();
+        mAdapter = new TimelineRecyclerAdapter(getActivity(),mTweets);
 
-        layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
-        dividerItemDecoration = new DividerItemDecoration(getActivity(),
-                layoutManager.getOrientation());
+        mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
+        mDividerItemDecoration = new DividerItemDecoration(getActivity(),
+                mLayoutManager.getOrientation());
 
-        scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
+        mScrollListener = new EndlessRecyclerViewScrollListener(mLayoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {
                 loadNextDataFromApi();
@@ -69,27 +69,27 @@ public abstract class TweetsListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.frag_tweets_list, container, false);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        progressBar.setVisibility(View.VISIBLE);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mProgressBar.setVisibility(View.VISIBLE);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.rvMessages);
-        recyclerView.addItemDecoration(dividerItemDecoration);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.rvMessages);
+        mRecyclerView.addItemDecoration(mDividerItemDecoration);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
 
-        recyclerView.setVisibility(View.GONE);
+        mRecyclerView.setVisibility(View.GONE);
 
-        recyclerView.addOnScrollListener(scrollListener);
+        mRecyclerView.addOnScrollListener(mScrollListener);
 
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        mSwipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
+        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 populateTimeline(-1, 1);
             }
         });
 
-        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+        mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light);
 
@@ -97,29 +97,29 @@ public abstract class TweetsListFragment extends Fragment {
     }
 
     public void addAllTweets(List<Tweet> tweets) {
-        this.tweets.addAll(tweets);
+        this.mTweets.addAll(tweets);
     }
 
     public void clearAllTweets() {
-        this.tweets.clear();
+        this.mTweets.clear();
     }
 
     void loadNextDataFromApi() {
         long maxTweetId = -1;
-        if(tweets.size() > 0) {
-            maxTweetId = tweets.get(tweets.size()-1).getId();
+        if(mTweets.size() > 0) {
+            maxTweetId = mTweets.get(mTweets.size()-1).getId();
         }
         populateTimeline(maxTweetId,-1);
     }
 
-    protected  JsonHttpResponseHandler getHandler(final boolean reset) {
+    protected JsonHttpResponseHandler getHandler(final boolean reset) {
         return new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONArray response) {
 
                 if(reset) {
                     clearAllTweets();
-                    adapter.notifyDataSetChanged();
+                    mAdapter.notifyDataSetChanged();
                 }
                 Log.d("DEBUG", response.toString());
                 List<Tweet> respTweets = new ArrayList<>();
@@ -136,18 +136,18 @@ public abstract class TweetsListFragment extends Fragment {
                     }
                 }
 
-                progressBar.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.VISIBLE);
+                mProgressBar.setVisibility(View.GONE);
+                mRecyclerView.setVisibility(View.VISIBLE);
 
                 addAllTweets(respTweets);
 
-                int curSize = adapter.getItemCount();
-                adapter.notifyItemRangeInserted(curSize, tweets.size()-1);
+                int curSize = mAdapter.getItemCount();
+                mAdapter.notifyItemRangeInserted(curSize, mTweets.size()-1);
 
-                swipeRefreshLayout.setRefreshing(false);
+                mSwipeRefreshLayout.setRefreshing(false);
                 if(reset) {
-                    scrollListener.resetState();
-                    layoutManager.scrollToPosition(0);
+                    mScrollListener.resetState();
+                    mLayoutManager.scrollToPosition(0);
                 }
 
             }
@@ -155,7 +155,7 @@ public abstract class TweetsListFragment extends Fragment {
             @Override
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
-                swipeRefreshLayout.setRefreshing(false);
+                mSwipeRefreshLayout.setRefreshing(false);
                 Snackbar.make(getView(), "Error fetching Tweets! Try Again",
                         Snackbar.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);

@@ -28,12 +28,13 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
 import com.twitterclient.R;
-import com.twitterclient.adapters.SmartFragmentStatePagerAdapter;
+import com.twitterclient.helpers.SmartFragmentStatePagerAdapter;
 import com.twitterclient.databinding.ActivityProfileBinding;
 import com.twitterclient.fragments.ProfileLikesTimelineFragment;
 import com.twitterclient.fragments.ProfileTweetsTimelineFragment;
 import com.twitterclient.models.User;
 import com.twitterclient.network.TwitterClientApplication;
+import com.twitterclient.utils.Constants;
 import com.twitterclient.utils.GenericUtils;
 import com.twitterclient.utils.PatternEditableBuilder;
 
@@ -110,9 +111,9 @@ public class ProfileActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
 
             switch (position) {
-                case 0:
+                case Constants.FIRST_TAB_POSITION:
                     return ProfileTweetsTimelineFragment.newInstance(mScreenName);
-                case 1:
+                case Constants.SECOND_TAB_POSITION:
                     return ProfileLikesTimelineFragment.newInstance(mScreenName);
                 default:
                     return null;

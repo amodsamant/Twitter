@@ -30,26 +30,26 @@ import cz.msebera.android.httpclient.Header;
 
 public abstract class FollowListFragment extends Fragment {
 
-    List<User> users;
-    RecyclerView recyclerView;
-    FollRecyclerAdapter adapter;
-    ProgressBar progressBar;
+    private List<User> mUsers;
+    private RecyclerView mRecyclerView;
+    private FollRecyclerAdapter mAdapter;
+    private ProgressBar mProgressBar;
 
-    DividerItemDecoration dividerItemDecoration;
-    LinearLayoutManager layoutManager;
-    EndlessRecyclerViewScrollListener scrollListener;
+    private DividerItemDecoration mDividerItemDecoration;
+    private LinearLayoutManager mLayoutManager;
+    private EndlessRecyclerViewScrollListener mScrollListener;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        users = new ArrayList<>();
-        adapter = new FollRecyclerAdapter(getActivity(),users);
+        mUsers = new ArrayList<>();
+        mAdapter = new FollRecyclerAdapter(getActivity(),mUsers);
 
-        layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
-        dividerItemDecoration = new DividerItemDecoration(getActivity(),
-                layoutManager.getOrientation());
-        scrollListener = new EndlessRecyclerViewScrollListener(layoutManager) {
+        mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL,false);
+        mDividerItemDecoration = new DividerItemDecoration(getActivity(),
+                mLayoutManager.getOrientation());
+        mScrollListener = new EndlessRecyclerViewScrollListener(mLayoutManager) {
             @Override
             public void onLoadMore(int page, int totalItemsCount, RecyclerView view) {}
         };
@@ -61,25 +61,25 @@ public abstract class FollowListFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.frag_tweets_list, container, false);
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.rvMessages);
-        recyclerView.addItemDecoration(dividerItemDecoration);
-        recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(adapter);
+        mRecyclerView = (RecyclerView) view.findViewById(R.id.rvMessages);
+        mRecyclerView.addItemDecoration(mDividerItemDecoration);
+        mRecyclerView.setLayoutManager(mLayoutManager);
+        mRecyclerView.setAdapter(mAdapter);
 
-        progressBar = (ProgressBar) view.findViewById(R.id.progressBar);
-        recyclerView.setVisibility(View.GONE);
+        mProgressBar = (ProgressBar) view.findViewById(R.id.progressBar);
+        mRecyclerView.setVisibility(View.GONE);
 
-        recyclerView.addOnScrollListener(scrollListener);
+        mRecyclerView.addOnScrollListener(mScrollListener);
 
         return view;
     }
 
     public void addAllUsers(List<User> users) {
-        this.users.addAll(users);
+        this.mUsers.addAll(users);
     }
 
     public void clearAllUsers() {
-        this.users.clear();
+        this.mUsers.clear();
     }
 
     protected JsonHttpResponseHandler getHandler() {
@@ -88,15 +88,15 @@ public abstract class FollowListFragment extends Fragment {
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 
                 clearAllUsers();
-                adapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetChanged();
 
                 Log.d("DEBUG", response.toString());
                 Gson gson = new Gson();
                 Follow followers = gson.fromJson(response.toString(), Follow.class);
-                recyclerView.setVisibility(View.VISIBLE);
-                progressBar.setVisibility(View.GONE);
+                mRecyclerView.setVisibility(View.VISIBLE);
+                mProgressBar.setVisibility(View.GONE);
                 addAllUsers(followers.getUsers());
-                adapter.notifyDataSetChanged();
+                mAdapter.notifyDataSetChanged();
             }
 
             @Override

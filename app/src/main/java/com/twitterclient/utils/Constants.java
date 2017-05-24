@@ -11,4 +11,6 @@ public class Constants {
     public static final int FIRST_TAB_POSITION = 0;
     public static final int SECOND_TAB_POSITION = 1;
     public static final int THIRD_TAB_POSITION = 2;
+
+    public static final String FONT_LIGHT = "fonts/HelveticaNeueLight.ttf";
 }

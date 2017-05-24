@@ -1,6 +1,8 @@
 package com.twitterclient.fragments;
 
 
+import static com.twitterclient.R.id.progressBar;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
@@ -42,7 +44,7 @@ public class SearchFragment extends TweetsListFragment {
 
                 if(sinceId==1) {
                     clearAllTweets();
-                    adapter.notifyDataSetChanged();
+                    mAdapter.notifyDataSetChanged();
                 }
                 Log.d("DEBUG", response.toString());
 
@@ -50,18 +52,18 @@ public class SearchFragment extends TweetsListFragment {
 
                 Statuses statuses = gson.fromJson(response.toString(), Statuses.class);
 
-                progressBar.setVisibility(View.GONE);
-                recyclerView.setVisibility(View.VISIBLE);
+                mProgressBar.setVisibility(View.GONE);
+                mRecyclerView.setVisibility(View.VISIBLE);
 
                 addAllTweets(statuses.getTweets());
 
-                int curSize = adapter.getItemCount();
-                adapter.notifyItemRangeInserted(curSize, tweets.size()-1);
+                int curSize = mAdapter.getItemCount();
+                mAdapter.notifyItemRangeInserted(curSize, mTweets.size()-1);
 
-                swipeRefreshLayout.setRefreshing(false);
+                mSwipeRefreshLayout.setRefreshing(false);
                 if(sinceId==1) {
-                    scrollListener.resetState();
-                    layoutManager.scrollToPosition(0);
+                    mScrollListener.resetState();
+                    mLayoutManager.scrollToPosition(0);
                 }
 
             }
@@ -69,7 +71,7 @@ public class SearchFragment extends TweetsListFragment {
             @Override
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
-                swipeRefreshLayout.setRefreshing(false);
+                mSwipeRefreshLayout.setRefreshing(false);
                 Snackbar.make(getView(), "Error fetching Tweets! Try Again",
                         Snackbar.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);

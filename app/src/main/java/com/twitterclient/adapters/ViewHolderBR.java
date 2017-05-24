@@ -27,7 +27,6 @@ public class ViewHolderBR extends RecyclerView.ViewHolder  {
         super(itemView);
 
         ivUser = (ImageView) itemView.findViewById(R.id.ivUserBR);
-
         tvUser = (TextView) itemView.findViewById(R.id.tvUsernameBR);
         ivVerified = (ImageView) itemView.findViewById(R.id.ivVerified);
         tvScreenName = (TextView) itemView.findViewById(R.id.tvScreenNameBR);

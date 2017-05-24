@@ -39,7 +39,7 @@ public class TweetDetailFragment extends Fragment {
 
     FragTweetDetailBinding binding;
 
-    ForegroundColorSpan twitterGreySpan;
+    private ForegroundColorSpan mTwitterGreySpan;
 
     public static TweetDetailFragment newInstance(Tweet tweet) {
 
@@ -68,7 +68,7 @@ public class TweetDetailFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        twitterGreySpan = new ForegroundColorSpan(
+        mTwitterGreySpan = new ForegroundColorSpan(
                 getResources().getColor(R.color.twitterDarkerGrey));
 
         binding.tvText.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
@@ -216,7 +216,7 @@ public class TweetDetailFragment extends Fragment {
         SpannableStringBuilder ssb = new SpannableStringBuilder(
                 String.valueOf(tweet.getRetweetCount()));
         ssb.setSpan(
-                twitterGreySpan,
+                mTwitterGreySpan,
                 0,
                 ssb.length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -233,7 +233,7 @@ public class TweetDetailFragment extends Fragment {
         SpannableStringBuilder ssbFav = new SpannableStringBuilder(
                 String.valueOf(tweet.getFavouritesCount()));
         ssbFav.setSpan(
-                twitterGreySpan,
+                mTwitterGreySpan,
                 0,
                 ssbFav.length(),
                 Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);

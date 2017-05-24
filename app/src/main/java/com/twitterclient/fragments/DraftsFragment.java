@@ -27,12 +27,11 @@ public class DraftsFragment extends DialogFragment {
         void onFinishDraft(String tweet);
     }
 
-    ListView lvDrafts;
-    DraftsAdapter adapter;
-    List<String> drafts;
+    private ListView mLvDrafts;
+    private DraftsAdapter mAdapter;
+    private List<String> mDrafts;
 
-    public DraftsFragment() {
-    }
+    public DraftsFragment() { }
 
     public static DraftsFragment getInstance() {
         return new DraftsFragment();
@@ -55,25 +54,24 @@ public class DraftsFragment extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        drafts = new SharedPrefHelper().getAll(getActivity());
-        lvDrafts = (ListView) view.findViewById(R.id.lvDrafts);
-        adapter = new DraftsAdapter(getContext(), drafts);
-        lvDrafts.setAdapter(adapter);
+        mDrafts = new SharedPrefHelper().getAll(getActivity());
+        mLvDrafts = (ListView) view.findViewById(R.id.lvDrafts);
+        mAdapter = new DraftsAdapter(getContext(), mDrafts);
+        mLvDrafts.setAdapter(mAdapter);
 
-        lvDrafts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        mLvDrafts.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
                 SharedPreferences sharedPreferences = getActivity()
                         .getSharedPreferences("Drafts", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.remove(adapter.getItem(i));
+                editor.remove(mAdapter.getItem(i));
                 editor.apply();
 
-                sendBackResult(adapter.getItem(i));
+                sendBackResult(mAdapter.getItem(i));
             }
         });
-
     }
 
     /**

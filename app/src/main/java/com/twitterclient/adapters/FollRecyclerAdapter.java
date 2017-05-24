@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.twitterclient.R;
 import com.twitterclient.models.User;
+import com.twitterclient.utils.Constants;
 import com.twitterclient.utils.GenericUtils;
 
 import java.util.List;
@@ -20,18 +21,17 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 
 public class FollRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    Context context;
-    List<User> users;
+    private Context mContext;
+    private List<User> mUsers;
 
     public FollRecyclerAdapter(Context context, List<User> users) {
-        this.context = context;
-        this.users = users;
+        this.mContext = context;
+        this.mUsers = users;
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
         RecyclerView.ViewHolder viewHolder = null;
-
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         switch (viewType) {
             default:
@@ -45,7 +45,7 @@ public class FollRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
-        User user = users.get(position);
+        User user = mUsers.get(position);
         ViewHolderFoll viewHolder = (ViewHolderFoll) holder;
 
         viewHolder.tvUser.setText(user.getName());
@@ -62,32 +62,32 @@ public class FollRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
          * Code to set profile image
          */
         String profileImageUrl = GenericUtils.modifyProfileImageUrl(user.getProfileImageUrl());
-        Glide.with(context).load(profileImageUrl)
+        Glide.with(mContext).load(profileImageUrl)
                 .fitCenter()
-                .bitmapTransform(new RoundedCornersTransformation(context,5,0))
+                .bitmapTransform(new RoundedCornersTransformation(mContext,5,0))
                 .diskCacheStrategy( DiskCacheStrategy.SOURCE )
                 .into(viewHolder.ivUser);
 
         if(!user.isFollowing()) {
-            Drawable img = context.getResources().getDrawable(R.drawable.ic_friend_add);
+            Drawable img = mContext.getResources().getDrawable(R.drawable.ic_friend_add);
 
             viewHolder.btnFriend
-                    .setBackground(context.getResources().getDrawable(R.drawable.border_button_add));
+                    .setBackground(mContext.getResources().getDrawable(R.drawable.border_button_add));
             viewHolder.btnFriend.setCompoundDrawablesWithIntrinsicBounds(null, img, null, null);
         } else {
-            Drawable img = context.getResources().getDrawable(R.drawable.ic_friend);
+            Drawable img = mContext.getResources().getDrawable(R.drawable.ic_friend);
             viewHolder.btnFriend.setCompoundDrawablesWithIntrinsicBounds(null, img, null, null);
         }
 
         viewHolder.tvBody.setText(user.getDescription());
         Typeface fontLight = Typeface
-                .createFromAsset(context.getAssets(), "fonts/HelveticaNeueLight.ttf");
+                .createFromAsset(mContext.getAssets(), Constants.FONT_LIGHT);
         viewHolder.tvBody.setTypeface(fontLight);
 
     }
 
     @Override
     public int getItemCount() {
-        return users.size();
+        return mUsers.size();
     }
 }
