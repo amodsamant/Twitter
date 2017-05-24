@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:fontFamily="serif"
-        android:textSize="22sp"
+        android:textSize="@dimen/text22"
         android:maxLines="3"
         android:ellipsize="end"
         android:textColor="@color/twitterDarkerGrey"/>

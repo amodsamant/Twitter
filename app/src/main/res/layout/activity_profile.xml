@@ -58,7 +58,7 @@
                         android:layout_below="@+id/btnFollow"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="5dp"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text16"
                         android:textColor="@color/twitterDarkerGrey"/>
 
                     <ImageView
@@ -90,7 +90,7 @@
                         android:layout_alignStart="@+id/tvProfileScreenName"
                         android:layout_below="@+id/tvProfileScreenName"
                         android:layout_marginTop="12dp"
-                        android:textSize="16sp"
+                        android:textSize="@dimen/text16"
                         android:textColor="@color/twitterDarkerGrey"
                         android:maxLines="3"
                         android:ellipsize="end"/>

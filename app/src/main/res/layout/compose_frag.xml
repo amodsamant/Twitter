@@ -42,7 +42,7 @@
             android:padding="8dp"/>
 
         <View android:id="@+id/sepTweet"
-            android:background="#e4e4e4"
+            android:background="@color/backgroundShade"
             android:layout_width = "match_parent"
             android:layout_height="1dp"
             android:layout_above="@+id/btnTweet"

@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:text="Name"
         android:layout_marginTop="10dp"
-        android:textSize="16sp"
+        android:textSize="@dimen/text16"
         android:layout_below="@+id/ivHeaderProfile"
         android:layout_alignStart="@+id/ivHeaderProfile"
         android:textColor="@android:color/white"/>
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         android:text="\@Name"
         android:layout_marginTop="6dp"
-        android:textSize="14sp"
+        android:textSize="@dimen/text14"
         android:layout_below="@+id/tvHeaderName"
         android:layout_alignStart="@+id/tvHeaderName"
         android:textColor="@android:color/white"/>
