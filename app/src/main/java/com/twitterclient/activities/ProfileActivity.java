@@ -133,10 +133,10 @@ public class ProfileActivity extends AppCompatActivity {
 
     public void setupViews() {
 
-        binding.tvName.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueBd.ttf"));
-        binding.tvTagline.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueLight.ttf"));
+        binding.tvName.setTypeface(Typeface.createFromAsset(getAssets(), Constants.FONT_BOLD));
+        binding.tvTagline.setTypeface(Typeface.createFromAsset(getAssets(), Constants.FONT_LIGHT));
 
-        binding.tvFollowers.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueLight.ttf"));
+        binding.tvFollowers.setTypeface(Typeface.createFromAsset(getAssets(), Constants.FONT_LIGHT));
 
         binding.tvFollowers.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +148,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        binding.tvFollowing.setTypeface(Typeface.createFromAsset(getAssets(), "fonts/HelveticaNeueLight.ttf"));
+        binding.tvFollowing.setTypeface(Typeface.createFromAsset(getAssets(), Constants.FONT_LIGHT));
         binding.tvFollowing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -23,6 +23,7 @@ import com.twitterclient.activities.HolderActivity;
 import com.twitterclient.activities.ProfileActivity;
 import com.twitterclient.fragments.ComposeTweetFragment;
 import com.twitterclient.models.Tweet;
+import com.twitterclient.utils.Constants;
 import com.twitterclient.utils.DateGenericUtils;
 import com.twitterclient.utils.GenericUtils;
 import com.twitterclient.utils.PatternEditableBuilder;
@@ -140,7 +141,7 @@ public class TimelineRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.V
          * Custom font HelveticaNeueLight
          */
         Typeface fontLight = Typeface
-                .createFromAsset(mContext.getAssets(), "fonts/HelveticaNeueLight.ttf");
+                .createFromAsset(mContext.getAssets(), Constants.FONT_LIGHT);
         viewHolder.tvBody.setTypeface(fontLight);
         viewHolder.tvBody.setText(tweet.getBody());
         new PatternEditableBuilder().

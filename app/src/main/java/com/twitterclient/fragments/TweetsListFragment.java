@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -156,8 +157,8 @@ public abstract class TweetsListFragment extends Fragment {
             public void onFailure(int statusCode, Header[] headers,
                                   Throwable throwable, JSONObject errorResponse) {
                 mSwipeRefreshLayout.setRefreshing(false);
-                Snackbar.make(getView(), "Error fetching Tweets! Try Again",
-                        Snackbar.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Error fetching Tweets! Try Again",
+                        Toast.LENGTH_LONG).show();
                 super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         };

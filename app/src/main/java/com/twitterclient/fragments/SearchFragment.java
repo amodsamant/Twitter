@@ -1,8 +1,6 @@
 package com.twitterclient.fragments;
 
 
-import static com.twitterclient.R.id.progressBar;
-
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;

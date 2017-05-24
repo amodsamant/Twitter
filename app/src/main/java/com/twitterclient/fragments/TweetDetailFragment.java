@@ -25,8 +25,8 @@ import com.twitterclient.R;
 import com.twitterclient.activities.ProfileActivity;
 import com.twitterclient.databinding.FragTweetDetailBinding;
 import com.twitterclient.models.Tweet;
+import com.twitterclient.utils.Constants;
 import com.twitterclient.utils.DateGenericUtils;
-import com.twitterclient.utils.GenericUtils;
 import com.twitterclient.utils.PatternEditableBuilder;
 
 import org.parceler.Parcels;
@@ -72,18 +72,18 @@ public class TweetDetailFragment extends Fragment {
                 getResources().getColor(R.color.twitterDarkerGrey));
 
         binding.tvText.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         binding.tvRetweetCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
         binding.tvLikeCount.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         binding.tvDate.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         binding.tvTime.setTypeface(Typeface.createFromAsset(getContext().getAssets(),
-                GenericUtils.LIGHT_FONT));
+                Constants.FONT_LIGHT));
 
         final Tweet tweet = Parcels.unwrap(getArguments().getParcelable("tweet"));
 
