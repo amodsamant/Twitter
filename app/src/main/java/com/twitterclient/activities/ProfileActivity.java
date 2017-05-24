@@ -48,7 +48,7 @@ import jp.wasabeef.glide.transformations.RoundedCornersTransformation;
 public class ProfileActivity extends AppCompatActivity {
 
     ActivityProfileBinding binding;
-    String screenName;
+    private String mScreenName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,7 +82,7 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
-        screenName = getIntent().getStringExtra(SCREEN_NAME);
+        mScreenName = getIntent().getStringExtra(SCREEN_NAME);
 
         setupViews();
 
@@ -111,9 +111,9 @@ public class ProfileActivity extends AppCompatActivity {
 
             switch (position) {
                 case 0:
-                    return ProfileTweetsTimelineFragment.newInstance(screenName);
+                    return ProfileTweetsTimelineFragment.newInstance(mScreenName);
                 case 1:
-                    return ProfileLikesTimelineFragment.newInstance(screenName);
+                    return ProfileLikesTimelineFragment.newInstance(mScreenName);
                 default:
                     return null;
             }
@@ -142,7 +142,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, HolderActivity.class);
                 intent.putExtra("frag_type","followers");
-                intent.putExtra(SCREEN_NAME,screenName);
+                intent.putExtra(SCREEN_NAME,mScreenName);
                 startActivity(intent);
             }
         });
@@ -153,12 +153,12 @@ public class ProfileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(ProfileActivity.this, HolderActivity.class);
                 intent.putExtra("frag_type","following");
-                intent.putExtra(SCREEN_NAME,screenName);
+                intent.putExtra(SCREEN_NAME,mScreenName);
                 startActivity(intent);
             }
         });
 
-       TwitterClientApplication.getTwitterClient().getUserInfo(screenName, new JsonHttpResponseHandler() {
+       TwitterClientApplication.getTwitterClient().getUserInfo(mScreenName, new JsonHttpResponseHandler() {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
 

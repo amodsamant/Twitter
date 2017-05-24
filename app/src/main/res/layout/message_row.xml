@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,7 +16,6 @@
         android:layout_marginLeft="8dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"/>
-
 
     <TextView
         android:id="@+id/tvUsernameMR"
@@ -39,7 +37,7 @@
         android:layout_marginRight="5dp"
         android:background="@drawable/ic_verified_user"
         android:layout_alignTop="@+id/tvUsernameMR"
-        android:layout_toEndOf="@+id/tvUsernameMR" />
+        android:layout_toEndOf="@+id/tvUsernameMR"/>
 
     <TextView
         android:id="@+id/tvScreenNameMR"
@@ -49,7 +47,7 @@
         android:textSize="14sp"
         android:text="\@ name"
         android:layout_alignTop="@+id/ivVerifiedBR"
-        android:layout_toEndOf="@+id/ivVerifiedBR" />
+        android:layout_toEndOf="@+id/ivVerifiedBR"/>
 
     <TextView
         android:id="@+id/tvSinceTimeMR"
@@ -77,7 +75,7 @@
         android:textSize="16sp"
         android:textColor="@android:color/black"
         android:layout_alignParentRight="true"
-        android:layout_toRightOf="@+id/ivUserMR" />
+        android:layout_toRightOf="@+id/ivUserMR"/>
 
     <ImageView
         android:id="@+id/ivTweetMR"
@@ -89,9 +87,7 @@
         android:layout_marginRight="10dp"
         android:layout_toRightOf="@id/ivUserMR"
         tools:srcCompat="@mipmap/ic_launcher"
-        android:scaleType="fitXY"
-
-        />
+        android:scaleType="fitXY"/>
 
 
 </RelativeLayout>

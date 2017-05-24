@@ -24,9 +24,8 @@ import org.parceler.Parcels;
 
 public class HolderActivity extends AppCompatActivity {
 
-    SearchView searchView;
-    String currentQuery;
-    boolean isSearch;
+    private SearchView mSearchView;
+    private boolean mIsSearch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,8 +40,6 @@ public class HolderActivity extends AppCompatActivity {
         String fragType = getIntent().getStringExtra("frag_type");
         Tweet tweet = Parcels.unwrap(getIntent().getParcelableExtra("tweet"));
         String screenName = getIntent().getStringExtra(SCREEN_NAME);
-
-        isSearch = false;
 
         FragmentManager fm = getSupportFragmentManager();
         switch (fragType) {
@@ -66,7 +63,7 @@ public class HolderActivity extends AppCompatActivity {
                 getSupportActionBar().setTitle("Followers");
                 break;
             case "search":
-                isSearch = true;
+                mIsSearch = true;
             default:
         }
     }
@@ -76,44 +73,33 @@ public class HolderActivity extends AppCompatActivity {
 
         getMenuInflater().inflate(R.menu.holder_menu_search, menu);
         MenuItem searchItem = menu.findItem(R.id.holder_search);
-        searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
-        EditText etSearchView = (EditText) searchView.
+        mSearchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        EditText etSearchView = (EditText) mSearchView.
                 findViewById(android.support.v7.appcompat.R.id.search_src_text);
         etSearchView.setTextColor(Color.GRAY);
         etSearchView.setHintTextColor(Color.GRAY);
         etSearchView.setFocusable(true);
         etSearchView.requestFocusFromTouch();
-        if(isSearch) {
+        if(mIsSearch) {
             MenuItemCompat.expandActionView(searchItem);
-            searchView.requestFocus();
+            mSearchView.requestFocus();
         }
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-
-                //Current query is always set to this query
-                currentQuery = query;
 
                 SearchFragment searchFragment = SearchFragment.newInstance(query);
                 getSupportFragmentManager().beginTransaction()
                         .replace(R.id.holder, searchFragment)
                         .commit();
 
-                searchView.clearFocus();
+                mSearchView.clearFocus();
                 return true;
             }
 
             @Override
-            public boolean onQueryTextChange(String newText) {
-
-                if(newText.length()>0) {
-                    currentQuery = newText;
-                } else {
-                    currentQuery = null;
-                }
-                return false;
-            }
+            public boolean onQueryTextChange(String newText) { return false; }
         });
         return true;
     }

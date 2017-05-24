@@ -17,7 +17,7 @@
         android:text="@string/login_label"
         android:layout_marginBottom="35dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
     <ImageView
         android:id="@+id/imageView"
@@ -26,6 +26,6 @@
         android:layout_marginTop="174dp"
         app:srcCompat="@drawable/ic_twitter_logo"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

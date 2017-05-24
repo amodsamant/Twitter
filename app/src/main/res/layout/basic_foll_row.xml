@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -43,7 +42,7 @@
         android:textSize="16sp"
         android:text="Name"
         android:layout_alignTop="@+id/ivFollUser"
-        android:layout_toEndOf="@+id/ivFollUser" />
+        android:layout_toEndOf="@+id/ivFollUser"/>
 
     <ImageView
         android:id="@+id/ivFollVerified"
@@ -53,7 +52,7 @@
         android:layout_marginRight="5dp"
         android:layout_marginTop="14dp"
         android:layout_toEndOf="@id/tvFollUsername"
-        android:background="@drawable/ic_verified_user" />
+        android:background="@drawable/ic_verified_user"/>
 
     <TextView
         android:id="@+id/tvFollScreenName"
@@ -66,7 +65,7 @@
         android:layout_above="@id/tvFollTagline"
         android:layout_marginTop="5dp"
         android:layout_marginBottom="5dp"
-        android:layout_toEndOf="@+id/ivFollUser" />
+        android:layout_toEndOf="@+id/ivFollUser"/>
 
     <Button
         android:id="@+id/btnFoll"
@@ -78,6 +77,6 @@
         android:layout_marginTop="10dp"
         android:layout_marginRight="10dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"/>
 
 </RelativeLayout>
